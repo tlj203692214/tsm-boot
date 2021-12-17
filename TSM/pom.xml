@@ -42,21 +42,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
-
-
-<!--        mybatis-plus 代码生成器依赖-->
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-generator</artifactId>-->
-<!--            <version>3.3.1.tmp</version>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -110,7 +96,6 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
-
 
     <build>
         <plugins>

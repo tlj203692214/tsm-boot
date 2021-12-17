@@ -1,7 +1,7 @@
 package com.tsm.mapper;
 
-import com.tsm.entity.Classrecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.tsm.entity.Classrecord;
 
 /**
  * <p>

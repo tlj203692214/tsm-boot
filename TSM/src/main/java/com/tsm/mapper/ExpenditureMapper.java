@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tsm.entity.Expenditure;
 import org.apache.ibatis.annotations.Select;
 
-
 /**
  * <p>
  *  Mapper 接口

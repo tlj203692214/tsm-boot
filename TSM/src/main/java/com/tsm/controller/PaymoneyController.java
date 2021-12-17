@@ -3,10 +3,12 @@ package com.tsm.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.entity.Paymoney;
-import com.tsm.mapper.PaymoneyMapper;
 import com.tsm.service.IPaymoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
