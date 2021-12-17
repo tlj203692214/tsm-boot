@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.StudentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Student">
+        <id column="STUDENT_ID" property="studentId" />
+        <result column="STUDENT_NAME" property="studentName" />
+        <result column="STUDENT_SEX" property="studentSex" />
+        <result column="STUDENT_AGE" property="studentAge" />
+        <result column="STUDENT_BIRTHDAY" property="studentBirthday" />
+        <result column="STUDENT_PHONE" property="studentPhone" />
+        <result column="PARENT_PHONE" property="parentPhone" />
+        <result column="STUDENT_SCHOOL" property="studentSchool" />
+        <result column="STUDENT_LOC" property="studentLoc" />
+        <result column="CLASSES_ID" property="classesId" />
+        <result column="DELETED" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        STUDENT_ID, STUDENT_NAME, STUDENT_SEX, STUDENT_AGE, STUDENT_BIRTHDAY, STUDENT_PHONE, PARENT_PHONE, STUDENT_SCHOOL, STUDENT_LOC, CLASSES_ID, DELETED
+    </sql>
+
+</mapper>

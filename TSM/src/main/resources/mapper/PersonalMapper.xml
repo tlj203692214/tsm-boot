@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.PersonalMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Personal">
+        <id column="PERSONAL_ID" property="personalId" />
+        <result column="PERSONAL_NAME" property="personalName" />
+        <result column="PERSONAL_SEX" property="personalSex" />
+        <result column="PERSONAL_AGE" property="personalAge" />
+        <result column="PERSONAL_BIRTHDAY" property="personalBirthday" />
+        <result column="PERSONAL_IDCARD" property="personalIdcard" />
+        <result column="PERSONAL_PHONE" property="personalPhone" />
+        <result column="ENTRY_TIME" property="entryTime" />
+        <result column="PORTRAIT_ID" property="portraitId" />
+        <result column="STAFF_ID" property="staffId" />
+        <result column="DELETED" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        PERSONAL_ID, PERSONAL_NAME, PERSONAL_SEX, PERSONAL_AGE, PERSONAL_BIRTHDAY, PERSONAL_IDCARD, PERSONAL_PHONE, ENTRY_TIME, PORTRAIT_ID, STAFF_ID, DELETED
+    </sql>
+
+</mapper>

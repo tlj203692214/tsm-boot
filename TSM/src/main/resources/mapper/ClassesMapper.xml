@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.ClassesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Classes">
+        <id column="CLASSES_ID" property="classesId" />
+        <result column="CLASSES_NAME" property="classesName" />
+        <result column="CLASSES_NUMBER" property="classesNumber" />
+        <result column="CLASSES_DATE" property="classesDate" />
+        <result column="CLASSROOM_ID" property="classroomId" />
+        <result column="STAFF_ID" property="staffId" />
+        <result column="DELETED" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CLASSES_ID, CLASSES_NAME, CLASSES_NUMBER, CLASSES_DATE, CLASSROOM_ID, STAFF_ID, DELETED
+    </sql>
+
+</mapper>

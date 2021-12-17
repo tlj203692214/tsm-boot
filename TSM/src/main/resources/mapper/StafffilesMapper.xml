@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.StafffilesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Stafffiles">
+        <id column="STAFFFILES_ID" property="stafffilesId" />
+        <result column="STAFFFILES_NAME" property="stafffilesName" />
+        <result column="STAFFFILES_SEX" property="stafffilesSex" />
+        <result column="STAFFFILES_AGE" property="stafffilesAge" />
+        <result column="STAFFFILES_DATE" property="stafffilesDate" />
+        <result column="STAFFFILES_PHONE" property="stafffilesPhone" />
+        <result column="STAFFFILES_IDCRAD" property="stafffilesIdcrad" />
+        <result column="STAFFFILES_EDUCATION" property="stafffilesEducation" />
+        <result column="STAFFFILES_NFAMILY" property="stafffilesNfamily" />
+        <result column="STAFFFILES_ADDRESS" property="stafffilesAddress" />
+        <result column="STAFFFILE_GRADUATION" property="stafffileGraduation" />
+        <result column="STAFFFILES_EXPERIENCE" property="stafffilesExperience" />
+        <result column="STAFFFILES_MONNEY" property="stafffilesMonney" />
+        <result column="STAFFFILES_POSITION" property="stafffilesPosition" />
+        <result column="DELETED" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        STAFFFILES_ID, STAFFFILES_NAME, STAFFFILES_SEX, STAFFFILES_AGE, STAFFFILES_DATE, STAFFFILES_PHONE, STAFFFILES_IDCRAD, STAFFFILES_EDUCATION, STAFFFILES_NFAMILY, STAFFFILES_ADDRESS, STAFFFILE_GRADUATION, STAFFFILES_EXPERIENCE, STAFFFILES_MONNEY, STAFFFILES_POSITION, DELETED
+    </sql>
+
+</mapper>

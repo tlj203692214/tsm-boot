@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.ExpenditureMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Expenditure">
+        <id column="EXPENDITURE_ID" property="expenditureId" />
+        <result column="EXPENDITURE_MONEY" property="expenditureMoney" />
+        <result column="EXPENDITURE_DATE" property="expenditureDate" />
+        <result column="DELETED" property="deleted" />
+        <association property="refundId" javaType="com.tsm.entity.Refund">
+            <id column="REFUND_ID" property="refundId" />
+            <result column="REFUND_DATE" property="refundDate" />
+            <result column="REFUND_MONEY" property="refundMoney" />
+            <result column="REFUND_STATE" property="refundState" />
+            <result column="LEAVESCHOOL_ID" property="leaveschoolId" />
+            <result column="CLASSRECORD_ID" property="classrecordId" />
+            <result column="COURSE_ID" property="courseId" />
+            <result column="STAFF_ID" property="staffId" />
+            <result column="DELETED" property="deleted" />
+        </association>
+        <association property="purchaseId" javaType="com.tsm.entity.Purchase">
+            <id column="PURCHASE_ID" property="purchaseId" />
+            <result column="PURCHASE_NAME" property="purchaseName" />
+            <result column="PURCHASE_NUMBER" property="purchaseNumber" />
+            <result column="PURCHASE_PRICE" property="purchasePrice" />
+            <result column="PURCHASE_AOUNT" property="purchaseAount" />
+            <result column="STAFF_ID" property="staffId" />
+            <result column="COURSE_ID" property="courseId" />
+            <result column="PURCHASE_DATE" property="purchaseDate" />
+            <result column="DELETED" property="deleted" />
+        </association>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        EXPENDITURE_ID, EXPENDITURE_MONEY, EXPENDITURE_DATE, PURCHASE_ID, REFUND_ID, DELETED
+    </sql>
+
+</mapper>
