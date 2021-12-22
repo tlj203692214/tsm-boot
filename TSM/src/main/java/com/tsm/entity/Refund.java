@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,12 +22,13 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Refund对象", description="")
+@KeySequence(value = "refund_seq")
 public class Refund implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("REFUND_ID")
-    private BigDecimal refundId;
+    @TableId(value = "REFUND_ID",type = IdType.INPUT)
+    private int refundId;
 
     @TableField("REFUND_DATE")
     private LocalDateTime refundDate;
@@ -37,7 +37,7 @@ public class Refund implements Serializable {
     private BigDecimal refundMoney;
 
     @TableField("REFUND_STATE")
-    private BigDecimal refundState;
+    private int refundState;
 
     @TableField("LEAVESCHOOL_ID")
     private BigDecimal leaveschoolId;
@@ -52,7 +52,8 @@ public class Refund implements Serializable {
     private BigDecimal staffId;
 
     @TableField("DELETED")
-    private BigDecimal deleted;
+    @TableLogic
+    private int deleted;
 
 
 }

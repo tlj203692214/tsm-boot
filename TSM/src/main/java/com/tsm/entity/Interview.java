@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,11 +21,12 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Interview对象", description="")
+@KeySequence(value = "interview_seq")
 public class Interview implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("INTERVIEW_ID")
+    @TableId(value = "INTERVIEW_ID",type = IdType.INPUT)
     private BigDecimal interviewId;
 
     @TableField("INTERVIEW_CENTENT")
@@ -39,6 +39,7 @@ public class Interview implements Serializable {
     private BigDecimal stafffilesId;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

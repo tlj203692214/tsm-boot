@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.entity.Paymoney;
 import com.tsm.service.IPaymoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -20,16 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/payMoney")
 public class PaymoneyController {
     @Autowired
     private IPaymoneyService iPaymoneyService;
 
-    /*
-     * 财务分页查询
-     */
-    @GetMapping("/selectPayMoney")
-    public IPage<Paymoney> selectPayMoney(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
-        IPage<Paymoney> paymoneyPage = iPaymoneyService.selectPayMoney(page, pageInfo);
-        return paymoneyPage;
-    }
+
+
+
 }

@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +22,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Satffsign对象", description="")
+@KeySequence(value = "staffsign_seq")
 public class Satffsign implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("SIGN_ID")
+    @TableId(value = "SIGN_ID",type = IdType.INPUT)
     private BigDecimal signId;
 
     @TableField("SIGN_STATE")
@@ -40,6 +40,7 @@ public class Satffsign implements Serializable {
     private BigDecimal staffId;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

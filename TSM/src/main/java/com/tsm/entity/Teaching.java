@@ -1,7 +1,7 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonKey;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +23,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Teaching对象", description="")
+@KeySequence(value = "teaching_seq")
 public class Teaching implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("TEACHING_ID")
+    @TableId(value = "TEACHING_ID",type = IdType.INPUT)
     private BigDecimal teachingId;
 
     @TableField("BEGIN_DATE")
@@ -37,6 +38,7 @@ public class Teaching implements Serializable {
     private LocalDateTime endTime;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

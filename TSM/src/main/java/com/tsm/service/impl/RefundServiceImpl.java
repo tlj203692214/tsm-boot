@@ -34,5 +34,21 @@ public class RefundServiceImpl extends ServiceImpl<RefundMapper, Refund> impleme
         return refundMapper.selectById(id);
     }
 
+    @Override
+    public int updateState(int id) {
+        Refund refund = refundMapper.selectById(id);
+        refund.setRefundState(0);
+        int i = refundMapper.updateById(refund);
+        return i;
+    }
+
+    @Override
+    public int deleteById(int id) {
+        Refund refund = refundMapper.selectById(id);
+        refund.setDeleted(1);
+        int i = refundMapper.deleteById(refund);
+        return i;
+    }
+
 
 }

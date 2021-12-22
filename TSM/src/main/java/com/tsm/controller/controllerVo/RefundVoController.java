@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.service.serviceVo.IRefundVoService;
 import com.tsm.vo.RefundVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -20,15 +17,32 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/refundVo")
 public class RefundVoController {
 
     @Autowired
     private IRefundVoService iRefundVoService;
 
+    /**
+     * 查询退费管理信息
+     * @param page
+     * @param pageInfo
+     * @param name
+     * @param state
+     * @return
+     */
     @GetMapping("/selectRefundVoAll")
-    public IPage<RefundVo> selectRefund(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
-        IPage<RefundVo> refundPage = iRefundVoService.selectRefundVoAll(page, pageInfo);
+    public IPage<RefundVo> selectRefund(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo,@RequestParam("stuname") String name,@RequestParam("state") int state){
+        IPage<RefundVo> refundPage = iRefundVoService.selectRefundVoAll(page, pageInfo,name,state);
         return refundPage;
+    }
+
+    /**
+     * 根据id修改审批状态
+     */
+    @PostMapping("/updateState")
+    public int updateState(@RequestBody RefundVo refundVo){
+        return iRefundVoService.updateState(refundVo.getRefundId());
     }
 
 }

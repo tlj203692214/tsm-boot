@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +22,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Receiving对象", description="")
+@KeySequence(value = "receiving_seq")
 public class Receiving implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("RECEIVING_ID")
+    @TableId(value = "RECEIVING_ID",type = IdType.INPUT)
     private BigDecimal receivingId;
 
     @TableField("RECEIVING_TITLE")
@@ -49,6 +49,7 @@ public class Receiving implements Serializable {
     private BigDecimal staffId2;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

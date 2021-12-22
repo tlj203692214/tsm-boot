@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,11 +21,12 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Classrecord对象", description="")
+@KeySequence(value = "classrecord_seq")
 public class Classrecord implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("CLASSRECORD_ID")
+    @TableId(value = "CLASSRECORD_ID",type = IdType.INPUT)
     private BigDecimal classrecordId;
 
     @TableField("CLASSES_ID")
@@ -42,6 +42,7 @@ public class Classrecord implements Serializable {
     private BigDecimal studentattendId;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

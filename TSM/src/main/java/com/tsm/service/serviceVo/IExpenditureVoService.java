@@ -13,6 +13,6 @@ import com.tsm.vo.ExpenditureVo;
  * @since 2021-12-09
  */
 public interface IExpenditureVoService extends IService<ExpenditureVo> {
-        public IPage<ExpenditureVo> selectExpenditurePage(int page, int size);
+        public IPage<ExpenditureVo> selectExpenditurePage(int page, int size,int state);
 
 }

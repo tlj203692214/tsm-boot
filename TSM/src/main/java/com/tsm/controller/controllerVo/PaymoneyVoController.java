@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.service.serviceVo.PaymoneyVoService;
 import com.tsm.vo.payMoneyVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -20,16 +17,42 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/payMoneyVo")
 public class PaymoneyVoController {
     @Autowired
     private PaymoneyVoService paymoneyVoService;
 
-    /*
-     * 财务分页查询
+    /**
+     * 财务：报班缴费模糊查询
      */
     @GetMapping("/selectPayMoneyVo")
-    public IPage<payMoneyVo> selectPayMoney(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
-        IPage<payMoneyVo> paymoneyPage = paymoneyVoService.selectPayMoney(page, pageInfo);
+    public IPage<payMoneyVo> selectPayMoney(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo,
+        @RequestParam("stuname") String stuname,@RequestParam("pay") String pay){
+        IPage<payMoneyVo> paymoneyPage = paymoneyVoService.selectPayMoney(page, pageInfo,stuname,pay);
         return paymoneyPage;
+    }
+
+    /*
+     * 财务统计金额
+     */
+    @GetMapping("/countAllMoney")
+    public double countMoney(){
+        return paymoneyVoService.countMoney();
+    }
+
+    /**
+     * 根据状态统计到账的金额
+     */
+    @GetMapping("/countMoneyByState")
+    public double countMoneyByState(){
+        return paymoneyVoService.countMoneyByState();
+    }
+
+    /**
+     * 根据状态统计未到账金额
+     */
+    @GetMapping("/countMoneyByState2")
+    public double countMoneyByState2(){
+        return paymoneyVoService.countMoneyByState2();
     }
 }

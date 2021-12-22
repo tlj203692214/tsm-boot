@@ -1,8 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -24,11 +22,12 @@ import java.math.BigDecimal;
 @Accessors(chain = true)
 @TableName("POSITION_MENU")
 @ApiModel(value="PositionMenu对象", description="")
+@KeySequence(value = "positionMenu_seq")
 public class PositionMenu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("POSITIONMENU_ID")
+    @TableId(value = "POSITIONMENU_ID",type = IdType.INPUT)
     private BigDecimal positionmenuId;
 
     @TableField("MENU_ID")
@@ -38,6 +37,7 @@ public class PositionMenu implements Serializable {
     private BigDecimal position;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

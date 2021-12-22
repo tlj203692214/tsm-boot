@@ -13,6 +13,5 @@ import com.tsm.entity.Paymoney;
  * @since 2021-12-09
  */
 public interface IPaymoneyService extends IService<Paymoney> {
-        //财务分页查询
-        public IPage<Paymoney> selectPayMoney(int page, int pageInfo);
+        public int deletePayMoney(int id);
 }

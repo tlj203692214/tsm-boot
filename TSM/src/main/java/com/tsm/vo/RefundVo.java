@@ -1,4 +1,5 @@
 package com.tsm.vo;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
@@ -7,11 +8,11 @@ import java.time.LocalDateTime;
 
 @Data
 public class RefundVo {
-    private BigDecimal refundId;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    private int refundId;
+    @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private LocalDateTime refundDate;
     private Double refundMoney;
-    private BigDecimal refundState;
+    private int refundState;
     private String classesName;
     private String studentName;
     private String courseName;
@@ -20,5 +21,6 @@ public class RefundVo {
     private Double coursePrice;
     private Double bookFee;
     private String staffName;
+    @TableLogic
     private BigDecimal deleted;
 }

@@ -1,5 +1,6 @@
 package com.tsm.service.impl.implVo;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -21,8 +22,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExpenditureVoServiceImpl extends ServiceImpl<ExpenditureVoMapper, ExpenditureVo> implements IExpenditureVoService {
     @Autowired
-    private RefundMapper refundMapper;
-    @Autowired
     private ExpenditureVoMapper expenditureMapper;
 
     /**
@@ -33,9 +32,9 @@ public class ExpenditureVoServiceImpl extends ServiceImpl<ExpenditureVoMapper, E
      */
 
     @Override
-    public IPage<ExpenditureVo> selectExpenditurePage(int page, int size) {
+    public IPage<ExpenditureVo> selectExpenditurePage(int page, int size,int state) {
         Page<ExpenditureVo> page1 = new Page<>(page,size);
-        IPage<ExpenditureVo> expenditureIPage = expenditureMapper.sel(page1, null);
+        IPage<ExpenditureVo> expenditureIPage = expenditureMapper.sel(page1, null,state);
         return expenditureIPage;
     }
 

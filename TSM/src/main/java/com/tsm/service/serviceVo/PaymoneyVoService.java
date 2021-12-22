@@ -13,6 +13,19 @@ import com.tsm.vo.payMoneyVo;
  * @since 2021-12-09
  */
 public interface PaymoneyVoService extends IService<payMoneyVo> {
-        //财务分页查询
-        public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo);
+        /**
+         * 财务：报班缴费模糊查询
+         */
+        public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo,String stuname,String payName);
+
+        /**
+         * 统计总金额
+         */
+        public double countMoney();
+
+        /**
+         * 根据状态统计总金额
+         */
+        public double countMoneyByState();
+        public double countMoneyByState2();
 }

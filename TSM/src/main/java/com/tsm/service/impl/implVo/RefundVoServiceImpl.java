@@ -23,9 +23,25 @@ public class RefundVoServiceImpl extends ServiceImpl<RefundVoMapper, RefundVo> i
     private RefundVoMapper refundVoMapper;
 
     @Override
-    public IPage<RefundVo> selectRefundVoAll(int page, int size) {
+    public IPage<RefundVo> selectRefundVoAll(int page, int size,String name,int state) {
+
         Page<RefundVo> page1 = new Page<>(page,size);
-        IPage<RefundVo> refundVoIPage = refundVoMapper.selectRefundVoAll(page1, null);
-        return refundVoIPage;
+        if(state==2){
+            return refundVoMapper.selectRefundByName(page1,null,name);
+        }else{
+            return  refundVoMapper.selectRefundState(page1, null,state,name);
+        }
+    }
+
+    /**
+     * 根据id修改审批状态
+     * @param id
+     * @return
+     */
+    @Override
+    public int updateState(int id) {
+        RefundVo refundVo=refundVoMapper.selectById(id);
+        refundVo.setRefundState(0);
+        return refundVoMapper.updateById(refundVo);
     }
 }

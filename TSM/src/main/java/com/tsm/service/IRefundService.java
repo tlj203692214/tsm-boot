@@ -15,4 +15,8 @@ import com.tsm.entity.Refund;
 public interface IRefundService extends IService<Refund> {
         public IPage<Refund> selectRefund(int page,int size);
         public Refund selectAllById(int id);
+
+        public int updateState(int id);
+
+        public int deleteById(int id);
 }

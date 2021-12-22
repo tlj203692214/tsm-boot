@@ -15,7 +15,7 @@ public class IncomeVo {
     private BigDecimal incomeId;
     private BigDecimal incomeState;
     private BigDecimal paymoneyMoney;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private LocalDateTime paymoneyDate;
     private String paymoneyMode;
     private String staffName;

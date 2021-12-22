@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +22,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Inwarehouse对象", description="")
+@KeySequence(value = "inWarehoue_seq")
 public class Inwarehouse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("INWAREHOUSE_ID")
+    @TableId(value = "INWAREHOUSE_ID",type = IdType.INPUT)
     private BigDecimal inwarehouseId;
 
     @TableField("PURCHASE_ID")
@@ -43,6 +43,7 @@ public class Inwarehouse implements Serializable {
     private BigDecimal staffId;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,17 +21,19 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Portrait对象", description="")
+@KeySequence(value = "portrait_seq")
 public class Portrait implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("PORTRAIT_ID")
+    @TableId(value = "PORTRAIT_ID",type = IdType.INPUT)
     private BigDecimal portraitId;
 
     @TableField("PORTRAIT_URL")
     private String portraitUrl;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

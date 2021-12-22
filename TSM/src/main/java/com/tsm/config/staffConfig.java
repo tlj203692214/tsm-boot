@@ -1,6 +1,7 @@
 package com.tsm.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.incrementer.OracleKeyGenerator;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import lombok.extern.slf4j.Slf4j;
@@ -46,11 +47,6 @@ public class staffConfig {
         return new CorsFilter(source);
     }
 
-//    //分页插件
-//    @Bean
-//    public PaginationInterceptor paginationInterceptor() {
-//        return new PaginationInterceptor();
-//    }
     // 最新版
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
@@ -58,4 +54,12 @@ public class staffConfig {
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.ORACLE));
         return interceptor;
 }
+    /**
+     * 序列生成器
+     */
+    @Bean
+    public OracleKeyGenerator oracleKeyGenerator(){
+        return new OracleKeyGenerator();
+    }
+
 }

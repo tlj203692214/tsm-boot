@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +22,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Staffleave对象", description="")
+@KeySequence(value = "staffleave_seq")
 public class Staffleave implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("LEAVE_ID")
+    @TableId(value = "LEAVE_ID",type = IdType.INPUT)
     private BigDecimal leaveId;
 
     @TableField("LEAVE_CONTENT")
@@ -49,6 +49,7 @@ public class Staffleave implements Serializable {
     private BigDecimal staffId2;
 
     @TableField("DELETED")
+    @TableLogic
     private BigDecimal deleted;
 
 

@@ -4,10 +4,7 @@ package com.tsm.controller;
 import com.tsm.entity.Staff;
 import com.tsm.service.IStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/staff")
 public class StaffController {
     @Autowired
     private IStaffService iStaffService;

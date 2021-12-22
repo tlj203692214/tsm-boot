@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,27 +21,29 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Administration对象", description="")
+@KeySequence(value="administration_seq")
 public class Administration implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("ADMINISTRATION_ID")
-    private BigDecimal administrationId;
+    @TableId(value="ADMINISTRATION_ID",type= IdType.INPUT)
+    private Long administrationId;
 
     @TableField("ADMINISTRATION_STATE")
-    private BigDecimal administrationState;
+    private int administrationState;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DEPT_ID")
-    private BigDecimal deptId;
+    private int deptId;
 
     @TableField("POSITION_ID")
-    private BigDecimal positionId;
+    private int positionId;
 
     @TableField("DELETED")
-    private BigDecimal deleted;
+    @TableLogic
+    private int deleted;
 
 
 }
