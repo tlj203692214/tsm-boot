@@ -1,6 +1,7 @@
 package com.tsm.mapper.voMapper;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -38,7 +39,7 @@ public interface RefundVoMapper extends BaseMapper<RefundVo> {
             "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
             "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
             "left join COURSE o on r.course_id=o.course_id \n" +
-            "left join STAFF t on r.staff_id=t.staff_id where s.student_name like'%${name}%' and r.deleted=0")
+            "left join STAFF t on r.staff_id=t.staff_id where s.student_name like'%${name}%' and r.deleted=0 order by r.refund_id desc")
     public IPage<RefundVo> selectRefundByName(Page page,Wrapper wrapper,@Param("name") String name);
 
     /**
@@ -53,7 +54,8 @@ public interface RefundVoMapper extends BaseMapper<RefundVo> {
             "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
             "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
             "left join COURSE o on r.course_id=o.course_id \n" +
-            "left join STAFF t on r.staff_id=t.staff_id where r.REFUND_STATE=#{state} and s.student_name like'%${name}%' and r.deleted=0")
-    public IPage<RefundVo> selectRefundState(Page page,Wrapper wrapper,@Param("state") int state ,@Param("name") String name);
+            "left join STAFF t on r.staff_id=t.staff_id " +
+            "where r.REFUND_STATE=#{state} and s.student_name like'%${name}%' and r.deleted=0 order by r.refund_id desc")
+    public IPage<RefundVo> selectRefundState(Page page, QueryWrapper wrapper, @Param("state") int state , @Param("name") String name);
 
 }

@@ -46,7 +46,7 @@ public interface PaymoneyVoMapper extends BaseMapper<payMoneyVo> {
      * @return
      */
     @Select("select * from PAYMONEY p LEFT JOIN INCOME i on p.PAYMONEY_ID =i.PAYMONEY_ID left join COURSE c on p.COURSE_ID=c.COURSE_ID " +
-            "LEFT JOIN STAFF s on p.staff_id = s.staff_id left join STUDENT t on p.student_id = t.student_id where p.deleted=0")
+            "LEFT JOIN STAFF s on p.staff_id = s.staff_id left join STUDENT t on p.student_id = t.student_id where p.deleted=0 order by p.paymoney_id desc")
     public List<payMoneyVo> selectAllMoney();
     /*
   * 根据统计方法
