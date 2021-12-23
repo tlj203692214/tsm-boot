@@ -1,8 +1,10 @@
 package com.tsm.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tsm.entity.Studentfiles;
+import com.tsm.service.impl.StudentfilesServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -15,5 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/studentfiles")
 public class StudentfilesController {
-
+    @Autowired
+    private StudentfilesServiceImpl service;
+    //添加意向学生档案
+    @PostMapping("/addstudentfiles")
+    public int addstudentfiles(@RequestBody Studentfiles studentfiles){
+        int a=service.addStudenfiles(studentfiles);
+        return a;
+    }
 }

@@ -8,6 +8,8 @@ import com.tsm.service.IStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -31,7 +33,11 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
         return staff;
     }
 
+    @Override
+    public List<Staff> selectstaffqudao() {
 
+        return staffMapper.selectList(null);
+    }
 
 
 }

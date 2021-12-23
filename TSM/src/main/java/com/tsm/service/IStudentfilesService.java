@@ -12,5 +12,6 @@ import com.tsm.entity.Studentfiles;
  * @since 2021-12-09
  */
 public interface IStudentfilesService extends IService<Studentfiles> {
-
+//添加意向学生档案
+    public int addStudenfiles(Studentfiles studentfiles);
 }

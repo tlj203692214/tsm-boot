@@ -6,6 +6,8 @@ import com.tsm.service.IStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -16,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
-@RequestMapping("/staff")
 public class StaffController {
     @Autowired
     private IStaffService iStaffService;
@@ -27,6 +28,12 @@ public class StaffController {
         String pass = staff.getStaffPass();
         Staff staff2 =iStaffService.selectStaff(name,pass);
         return staff2;
+    }
+
+    @GetMapping("/selectstaffqudao")
+    public List<Staff> selectstaffqudao1(){
+        List<Staff> list=iStaffService.selectstaffqudao();
+        return list;
     }
 
 }
