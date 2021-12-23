@@ -26,6 +26,7 @@ public class Channel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+
     @TableId(value = "CHANNEL_ID",type = IdType.INPUT)
     private BigDecimal channelId;
 

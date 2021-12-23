@@ -3,6 +3,8 @@ package com.tsm.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tsm.entity.Staff;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,7 @@ import com.tsm.entity.Staff;
  */
 public interface IStaffService extends IService<Staff> {
         public Staff selectStaff(String staffName, String staffPass);
+
+        //查询跟进人员工
+        public List<Staff> selectstaffqudao();
 }
