@@ -65,7 +65,7 @@ public class Studentfiles implements Serializable {
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

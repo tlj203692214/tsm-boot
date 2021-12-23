@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Course;
 import com.tsm.mapper.CourseMapper;
 import com.tsm.service.ICourseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> implements ICourseService {
 
+    @Autowired
+    private CourseMapper courseMapper;
+    @Override
+    public List<Course> selectcorse() {
+        List<Course> courses=courseMapper.selectList(null);
+        return courses;
+    }
 }

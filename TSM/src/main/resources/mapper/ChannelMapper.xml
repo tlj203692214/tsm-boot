@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.tsm.entity.Channel">
-        <id column="CHANNEL_ID" property="channelId" />
+        <id column="CHANNEL_ID" property="channelId"/>
         <result column="CHANNEL_NAME" property="channelName" />
         <result column="CHANNEL_LOC" property="channelLoc" />
         <result column="DELETED" property="deleted" />
