@@ -32,10 +32,10 @@ public class ExpenditureVoServiceImpl extends ServiceImpl<ExpenditureVoMapper, E
      */
 
     @Override
-    public IPage<ExpenditureVo> selectExpenditurePage(int page, int size,int state) {
+    public IPage<ExpenditureVo> selectExpenditurePage(int page, int size) {
         Page<ExpenditureVo> page1 = new Page<>(page,size);
 
-        IPage<ExpenditureVo> expenditureIPage = expenditureMapper.sel(page1, null,state);
+        IPage<ExpenditureVo> expenditureIPage = expenditureMapper.sel(page1, null);
         return expenditureIPage;
     }
 
