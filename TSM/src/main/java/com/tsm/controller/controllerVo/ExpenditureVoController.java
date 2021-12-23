@@ -23,8 +23,8 @@ public class ExpenditureVoController {
     private IExpenditureVoService iExpenditureVoService;
 
     @GetMapping("/selectExpenditureVo")
-    public IPage<ExpenditureVo> selectExpenditure(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo,@RequestParam("value") int state){
-        IPage<ExpenditureVo> expenditureIPage = iExpenditureVoService.selectExpenditurePage(page, pageInfo,state);
+    public IPage<ExpenditureVo> selectExpenditure(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
+        IPage<ExpenditureVo> expenditureIPage = iExpenditureVoService.selectExpenditurePage(page, pageInfo);
         return expenditureIPage;
     }
 
