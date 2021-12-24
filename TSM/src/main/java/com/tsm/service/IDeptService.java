@@ -3,6 +3,9 @@ package com.tsm.service;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tsm.entity.Dept;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +17,5 @@ import com.tsm.entity.Dept;
  */
 public interface IDeptService extends IService<Dept> {
     public IPage<Dept> findDepts(String it, int page, int size);
-
+    public List<Dept> updateDept(@RequestBody Dept dept);
 }

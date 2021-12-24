@@ -10,6 +10,8 @@ import com.tsm.service.IDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -29,5 +31,11 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         Page<Dept> page1 = new Page<>(page,size);
         IPage<Dept> iPage = deptMapper.selectPage(page1,wrapper);
         return iPage;
+    }
+
+    @Override
+    public List<Dept> updateDept(Dept dept) {
+        List<Dept> list= deptMapper.selectList(null);
+        return list;
     }
 }

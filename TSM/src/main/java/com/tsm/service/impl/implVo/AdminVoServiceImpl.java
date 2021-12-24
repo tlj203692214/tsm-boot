@@ -18,13 +18,13 @@ public class AdminVoServiceImpl extends ServiceImpl<AdminVoMapper, AdminVo> impl
     @Override
     public IPage<AdminVo> findsadmins(String st, String it, int page, int size) {
         Page<AdminVo> page1 = new Page<>(page,size);
-        QueryWrapper wrapper = new QueryWrapper();
+        QueryWrapper<AdminVo> wrapper = new QueryWrapper();
         if (st.equals("1")){
-            wrapper.like("PERSONAL_NAME",it);
+            wrapper.like("ps.PERSONAL_NAME",it);
         }else if (st.equals("2")){
-            wrapper.like("PERSONAL_PHONE",it);
+            wrapper.like("ps.PERSONAL_PHONE",it);
         }else if (st.equals("3")){
-            wrapper.like("POSITION_NAME",it);
+            wrapper.like("pos.POSITION_NAME",it);
         }
         IPage<AdminVo> iPage = voMapper.findsAdmins(page1,wrapper);
         return iPage;

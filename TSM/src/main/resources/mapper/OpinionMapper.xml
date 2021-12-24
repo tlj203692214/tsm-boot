@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsm.mapper.OpinionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tsm.entity.Opinion">
+        <id column="OPINION_ID" property="opinionId" />
+        <result column="OPINION_TITLE" property="opinionTitle" />
+        <result column="OPINION_CONTENT" property="opinionContent" />
+        <result column="SUGGESTIONS_ID" property="suggestionsId" />
+        <result column="STAFF_ID" property="staffId" />
+        <result column="PUBLICATION_TIME" property="publicationTime" />
+        <result column="RESPONDENT" property="respondent" />
+        <result column="REPLY_TIME" property="replyTime" />
+        <result column="DELETED" property="deleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OPINION_ID, OPINION_TITLE, OPINION_CONTENT, SUGGESTIONS_ID, PUBLISHER, PUBLICATION_TIME, RESPONDENT, REPLY_TIME, DELETED
+    </sql>
+
+</mapper>

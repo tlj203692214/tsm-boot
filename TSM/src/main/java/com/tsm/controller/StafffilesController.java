@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/stafffiles")
 public class StafffilesController {
     @Autowired
     public IStafffilesService service;

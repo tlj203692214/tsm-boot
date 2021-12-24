@@ -8,8 +8,8 @@
         <result column="DRAFT_TITLE" property="draftTitle" />
         <result column="DRAFT_CONTENT" property="draftContent" />
         <result column="DRAFT_DATE" property="draftDate" />
-        <result column="STAFF_ID1" property="staffId1" />
-        <result column="STAFF_ID2" property="staffId2" />
+        <result column="STAFF_ID1" property="staffName1" />
+        <result column="STAFF_ID2" property="staffName2" />
         <result column="DELETED" property="deleted" />
     </resultMap>
 

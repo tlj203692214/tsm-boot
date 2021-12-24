@@ -12,6 +12,6 @@ import java.sql.Wrapper;
 
 @Repository
 public interface StaffsignVoMapper extends BaseMapper<StaffsignVo> {
-    @Select("select * from satffsign s LEFT JOIN personal p on p.STAFF_ID=s.STAFF_ID where personal_name like '%${name}%'")
+    @Select("select * from satffsign s LEFT JOIN personal p on p.STAFF_ID=s.STAFF_ID where p.personal_name like '%${name}%'")
     public IPage<StaffsignVo> findStaffsign(Wrapper wrapper, @Param("name") String name ,Page page);
 }

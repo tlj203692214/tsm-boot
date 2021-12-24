@@ -9,6 +9,13 @@ spring:
     username: project
     password: 123456
     driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  mybatis-plus:
+    mapper-locations: classpath:/mapper/*Mapper.xml
+    global-config:
+      id-type: auto
+      # Sequence序列接口实现类配置
+      key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
     #mysql?????
     #url: jdbc:mysql://127.0.0.1:3308/mydb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
     #username: root

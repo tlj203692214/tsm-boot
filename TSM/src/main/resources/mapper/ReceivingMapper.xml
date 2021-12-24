@@ -4,14 +4,14 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.tsm.entity.Receiving">
-        <id column="RECEIVING_ID" property="receivingId" />
-        <result column="RECEIVING_TITLE" property="receivingTitle" />
-        <result column="RECEIVING_CONTENT" property="receivingContent" />
-        <result column="RECEIVING_DATE" property="receivingDate" />
-        <result column="RECEIVING_STATE" property="receivingState" />
-        <result column="STAFF_ID1" property="staffId1" />
-        <result column="STAFF_ID2" property="staffId2" />
-        <result column="DELETED" property="deleted" />
+        <id column="RECEIVINGS_ID" property="receivingsId" />
+        <result column="RECEIVINGS_TITLE" property="receivingsTitle" />
+        <result column="RECEIVINGS_CONTENT" property="receivingsContent" />
+        <result column="RECEIVINGS_DATE" property="receivingsDate" />
+        <result column="RECEIVINGS_STATE" property="receivingsState" />
+        <result column="STAFF_NAME1" property="staffName1" />
+        <result column="STAFF_NAME2" property="staffName2" />
+        <result column="RECEIVING_DELETED" property="receivingDeleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->

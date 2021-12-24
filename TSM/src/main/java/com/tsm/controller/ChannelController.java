@@ -22,6 +22,7 @@ import java.util.List;
  */
 @RestController
 @Slf4j
+@CrossOrigin(maxAge = 60)
 public class ChannelController {
 
     @Autowired

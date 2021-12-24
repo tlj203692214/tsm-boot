@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/dept")
 public class DeptController {
     @Autowired
     private IDeptService service;
@@ -27,5 +30,11 @@ public class DeptController {
         IPage<Dept> iPage = service.findDepts(it, page, size);
         log.debug(iPage.toString());
         return iPage;
+    }
+
+    @PostMapping("/selectDept")
+    public List<Dept> selectDept(@RequestBody Dept dept){
+        List<Dept> list=service.updateDept(dept);
+        return list;
     }
 }

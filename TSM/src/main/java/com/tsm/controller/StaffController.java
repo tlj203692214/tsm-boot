@@ -1,7 +1,9 @@
 package com.tsm.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tsm.entity.Staff;
+import com.tsm.mapper.StaffMapper;
 import com.tsm.service.IStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,7 @@ import java.util.List;
  */
 @RestController
 @CrossOrigin(maxAge = 60)
+@RequestMapping("/staff")
 public class StaffController {
     @Autowired
     private IStaffService iStaffService;
@@ -34,6 +37,30 @@ public class StaffController {
     public List<Staff> selectstaffqudao1(){
         List<Staff> list=iStaffService.selectstaffqudao();
         return list;
+    }
+
+    @Autowired
+    private StaffMapper staffMapper;
+    @PostMapping("/cxyh")
+    public List<Staff> cxyh(@RequestBody Staff staff){
+        int id=staff.getStaffId();
+        String name=staff.getStaffName();
+        if(id==0){
+            QueryWrapper<Staff> wrapper=new QueryWrapper<>();
+            wrapper.eq("DELETED",0)
+                    .inSql("STAFF_NAME","select STAFF_NAME from STAFF where STAFF_NAME like '%"+name+"%'");
+            List<Staff> staff1=staffMapper.selectList(wrapper);
+            System.out.println("aaaaaas"+name);
+            System.out.println("ssssssssssss"+staff1);
+            return  staff1;
+        }else{
+
+            List<Staff> staff1=staffMapper.selectStaff(id,name);
+            System.out.println("aaaaaas"+name);
+            System.out.println("ssssssssssss"+staff1);
+            return  staff1;
+        }
+
     }
 
 }

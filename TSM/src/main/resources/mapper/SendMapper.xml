@@ -8,8 +8,8 @@
         <result column="SEND_TITLE" property="sendTitle" />
         <result column="SEND_CONTENT" property="sendContent" />
         <result column="SEND_DATE" property="sendDate" />
-        <result column="STAFF_ID1" property="staffId1" />
-        <result column="STAFF_ID2" property="staffId2" />
+        <result column="STAFF_ID1" property="staffName1" />
+        <result column="STAFF_ID2" property="staffName2" />
         <result column="DELETED" property="deleted" />
     </resultMap>
 
