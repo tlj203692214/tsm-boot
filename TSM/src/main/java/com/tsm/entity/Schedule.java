@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,19 +27,19 @@ public class Schedule implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "SCHEDULE_ID",type = IdType.INPUT)
-    private BigDecimal scheduleId;
+    private int scheduleId;
 
     @TableField("SCHEDULE_THEME")
     private String scheduleTheme;
 
     @TableField("SCHEDULE_TYPE")
-    private BigDecimal scheduleType;
+    private int scheduleType;
 
     @TableField("BEGIN_TIME")
-    private LocalDateTime beginTime;
+    private Date beginTime;
 
     @TableField("END_TIME")
-    private LocalDateTime endTime;
+    private Date endTime;
 
     @TableField("SCHEDULE_PLACE")
     private String schedulePlace;
@@ -49,11 +48,11 @@ public class Schedule implements Serializable {
     private String scheduleContent;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

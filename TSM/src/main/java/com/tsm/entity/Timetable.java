@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,7 +27,7 @@ public class Timetable implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "TIMETABLE_ID",type = IdType.INPUT)
-    private BigDecimal timetableId;
+    private int timetableId;
 
     @TableField("TIMETABLE_MORNING")
     private String timetableMorning;
@@ -37,35 +36,35 @@ public class Timetable implements Serializable {
     private String timetableAfternoon;
 
     @TableField("TIMETABLE_TIME")
-    private LocalDateTime timetableTime;
+    private Date timetableTime;
 
     @TableField("TIMETABLE_MORNINGEND")
-    private LocalDateTime timetableMorningend;
+    private Date timetableMorningend;
 
     @TableField("TIMETABLE_AFTERNOONSTART")
-    private LocalDateTime timetableAfternoonstart;
+    private Date timetableAfternoonstart;
 
     @TableField("TIMETABLE_AFTERNOONEND")
-    private LocalDateTime timetableAfternoonend;
+    private Date timetableAfternoonend;
 
     @TableField("TIMETABLE_DATE")
-    private LocalDateTime timetableDate;
+    private Date timetableDate;
 
     @TableField("TIMETABLE_STATE")
-    private BigDecimal timetableState;
+    private int timetableState;
 
     @TableField("TEACHING_ID")
-    private BigDecimal teachingId;
+    private int teachingId;
 
     @TableField("STAFF_ID1")
-    private BigDecimal staffId1;
+    private int staffId1;
 
     @TableField("STAFF_ID2")
-    private BigDecimal staffId2;
+    private int staffId2;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

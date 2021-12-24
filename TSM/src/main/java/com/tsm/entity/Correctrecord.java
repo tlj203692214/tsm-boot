@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,20 +27,20 @@ public class Correctrecord implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "CORRECTRECORD_ID",type = IdType.INPUT)
-    private BigDecimal correctrecordId;
+    private int correctrecordId;
 
     @TableField("CORRECTRECORD_DATE")
-    private LocalDateTime correctrecordDate;
+    private Date correctrecordDate;
 
     @TableField("COURSE_ID")
-    private BigDecimal courseId;
+    private int courseId;
 
     @TableField("COURSECORRECT_ID")
-    private BigDecimal coursecorrectId;
+    private int coursecorrectId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

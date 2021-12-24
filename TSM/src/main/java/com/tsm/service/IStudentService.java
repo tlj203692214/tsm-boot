@@ -12,5 +12,5 @@ import com.tsm.entity.Student;
  * @since 2021-12-09
  */
 public interface IStudentService extends IService<Student> {
-
+    public Long student(int zt);
 }

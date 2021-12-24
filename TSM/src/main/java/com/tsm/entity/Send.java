@@ -1,34 +1,38 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+
+import java.util.Date;
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
- * @author 军
+ * @author ..
  * @since 2021-12-09
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("SEND")
 @ApiModel(value="Send对象", description="")
-@KeySequence(value = "send_seq")
+@KeySequence (value = "SEND_SEQ")
 public class Send implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "SEND_ID",type = IdType.INPUT)
-    private BigDecimal sendId;
+    @TableId(value="SEND_ID",type = IdType.INPUT)
+    private int sendId;
 
     @TableField("SEND_TITLE")
     private String sendTitle;
@@ -36,18 +40,24 @@ public class Send implements Serializable {
     @TableField("SEND_CONTENT")
     private String sendContent;
 
-    @TableField("SEND_DATE")
-    private LocalDateTime sendDate;
 
-    @TableField("STAFF_ID1")
-    private BigDecimal staffId1;
+    @TableField(value ="SEND_DATE", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
+    private Date sendDate;
 
-    @TableField("STAFF_ID2")
-    private BigDecimal staffId2;
+    @TableField("SENDS_STATE")
+    private int sendsState;
 
+    @TableField("STAFF_NAME1")
+    private String staffName1;
+
+    @TableField("STAFF_NAME2")
+    private String staffName2;
+
+
+    @ApiModelProperty(value = "逻辑删除")
+    @TableLogic(value="DELETED")
     @TableField("DELETED")
-    @TableLogic
-    private BigDecimal deleted;
-
+    private int deleted;
 
 }

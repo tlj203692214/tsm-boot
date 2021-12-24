@@ -12,5 +12,5 @@ import com.tsm.entity.Classes;
  * @since 2021-12-09
  */
 public interface IClassesService extends IService<Classes> {
-
+    public Long ClasssCount(int zt);
 }

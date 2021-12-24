@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -31,25 +30,25 @@ public class Refund implements Serializable {
     private int refundId;
 
     @TableField("REFUND_DATE")
-    private LocalDateTime refundDate;
+    private Date refundDate;
 
     @TableField("REFUND_MONEY")
-    private BigDecimal refundMoney;
+    private Double refundMoney;
 
     @TableField("REFUND_STATE")
     private int refundState;
 
     @TableField("LEAVESCHOOL_ID")
-    private BigDecimal leaveschoolId;
+    private int leaveschoolId;
 
     @TableField("CLASSRECORD_ID")
-    private BigDecimal classrecordId;
+    private int classrecordId;
 
     @TableField("COURSE_ID")
-    private BigDecimal courseId;
+    private int courseId;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic

@@ -1,5 +1,6 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Income;
 import com.tsm.mapper.IncomeMapper;
@@ -31,5 +32,15 @@ public class IncomeServiceImpl extends ServiceImpl<IncomeMapper, Income> impleme
         income.setIncomeState(0);
         int i = incomeMapper.updateById(income);
         return i;
+    }
+
+    @Autowired
+    private IncomeMapper mapper;
+    @Override
+    public Long IncomeCount(int zt) {
+        QueryWrapper<Income> wrapper = new QueryWrapper<>();
+        wrapper.eq("DELETED",zt);
+        Long count = incomeMapper.selectCount(wrapper);
+        return count;
     }
 }

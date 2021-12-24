@@ -1,8 +1,11 @@
 package com.tsm.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tsm.entity.Attendance;
+import com.tsm.service.IAttendanceService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -12,8 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 军
  * @since 2021-12-09
  */
+@Slf4j
 @RestController
+@CrossOrigin(maxAge = 60)
 @RequestMapping("/attendance")
 public class AttendanceController {
-
+    @Autowired
+    private IAttendanceService service;
+    @PostMapping("/addattendance")
+    public int addattendance(@RequestBody Attendance attendance){
+        int add = service.addAttendance(attendance);
+        System.out.println("新增"+add+"条数据");
+        return add;
+    }
 }

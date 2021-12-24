@@ -7,7 +7,6 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * <p>
@@ -27,20 +26,20 @@ public class Interview implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "INTERVIEW_ID",type = IdType.INPUT)
-    private BigDecimal interviewId;
+    private int interviewId;
 
     @TableField("INTERVIEW_CENTENT")
     private String interviewCentent;
 
     @TableField("INTERVIEW_STATE")
-    private BigDecimal interviewState;
+    private int interviewState;
 
     @TableField("STAFFFILES_ID")
-    private BigDecimal stafffilesId;
+    private int stafffilesId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

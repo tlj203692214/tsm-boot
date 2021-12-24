@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,23 +27,23 @@ public class Stundentpunish implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "STUNDENTPUNISH_ID",type = IdType.INPUT)
-    private BigDecimal stundentpunishId;
+    private int stundentpunishId;
 
     @TableField("STUNDENTPUNISH_GRADE")
-    private BigDecimal stundentpunishGrade;
+    private int stundentpunishGrade;
 
     @TableField("STUNDENTPUNISH_DATE")
-    private LocalDateTime stundentpunishDate;
+    private Date stundentpunishDate;
 
     @TableField("STUNDENTPUNISH_REASON")
     private String stundentpunishReason;
 
     @TableField("STUDENT_ID")
-    private BigDecimal studentId;
+    private int studentId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

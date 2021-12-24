@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,10 +27,10 @@ public class Menu implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "MENU_ID",type = IdType.INPUT)
-    private BigDecimal menuId;
+    private int menuId;
 
     @TableField("MENU_PID")
-    private BigDecimal menuPid;
+    private int menuPid;
 
     @TableField("MENU_NAME")
     private String menuName;
@@ -46,29 +45,29 @@ public class Menu implements Serializable {
     private String menuComponent;
 
     @TableField("MENU_TYPE")
-    private BigDecimal menuType;
+    private int menuType;
 
     @TableField("MENU_ICON")
     private String menuIcon;
 
     @TableField("MENU_ORDERNUM")
-    private BigDecimal menuOrdernum;
+    private int menuOrdernum;
 
     @TableField("MENU_CREATED")
-    private LocalDateTime menuCreated;
+    private Date menuCreated;
 
     @TableField("MENU_UPDATED")
-    private LocalDateTime menuUpdated;
+    private Date menuUpdated;
 
     @TableField("MENU_STATE")
-    private BigDecimal menuState;
+    private int menuState;
 
     @TableField("MENU_DESCRIBE")
     private String menuDescribe;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

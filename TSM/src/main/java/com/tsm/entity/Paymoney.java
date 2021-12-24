@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,13 +27,13 @@ public class Paymoney implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "PAYMONEY_ID",type = IdType.INPUT)
-    private Long paymoneyId;
+    private int paymoneyId;
 
     @TableField("PAYMONEY_MONEY")
     private double paymoneyMoney;
 
     @TableField("PAYMONEY_DATE")
-    private LocalDateTime paymoneyDate;
+    private Date paymoneyDate;
 
     @TableField("PAYMONEY_MODE")
     private String paymoneyMode;
@@ -46,7 +45,7 @@ public class Paymoney implements Serializable {
     private int staffId;
 
     @TableField("STUDENT_ID")
-    private BigDecimal studentId;
+    private int studentId;
 
     @TableField("DELETED")
     @TableLogic

@@ -7,7 +7,6 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * <p>
@@ -27,14 +26,14 @@ public class Portrait implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "PORTRAIT_ID",type = IdType.INPUT)
-    private BigDecimal portraitId;
+    private int portraitId;
 
     @TableField("PORTRAIT_URL")
     private String portraitUrl;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

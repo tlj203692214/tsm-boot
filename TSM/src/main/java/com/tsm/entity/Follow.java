@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,23 +27,23 @@ public class Follow implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "FOLLOW_ID",type = IdType.INPUT)
-    private BigDecimal followId;
+    private int followId;
 
     @TableField("FOLLOW_CONTENT")
     private String followContent;
 
     @TableField("FOLLOW_DATE")
-    private LocalDateTime followDate;
+    private Date followDate;
 
     @TableField("STUDENTFILES_ID")
-    private BigDecimal studentfilesId;
+    private int studentfilesId;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

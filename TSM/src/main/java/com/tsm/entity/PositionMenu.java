@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 
 /**
  * <p>
@@ -28,17 +28,17 @@ public class PositionMenu implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "POSITIONMENU_ID",type = IdType.INPUT)
-    private BigDecimal positionmenuId;
+    private int positionmenuId;
 
     @TableField("MENU_ID")
-    private BigDecimal menuId;
+    private int menuId;
 
     @TableField("POSITION")
-    private BigDecimal position;
+    private int position;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

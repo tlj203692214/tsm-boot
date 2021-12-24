@@ -1,15 +1,13 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonKey;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -29,17 +27,17 @@ public class Teaching implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "TEACHING_ID",type = IdType.INPUT)
-    private BigDecimal teachingId;
+    private int teachingId;
 
     @TableField("BEGIN_DATE")
-    private LocalDateTime beginDate;
+    private Date beginDate;
 
     @TableField("END_TIME")
-    private LocalDateTime endTime;
+    private Date endTime;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

@@ -14,4 +14,6 @@ import com.tsm.entity.Paymoney;
  */
 public interface IPaymoneyService extends IService<Paymoney> {
         public int deletePayMoney(int id);
+        public Long PaymoneyCount(int zt);
+        public double PaymoneySum(int zt);
 }

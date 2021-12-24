@@ -28,7 +28,7 @@ public class Channel implements Serializable {
 
 
     @TableId(value = "CHANNEL_ID",type = IdType.INPUT)
-    private BigDecimal channelId;
+    private int channelId;
 
     @TableField("CHANNEL_NAME")
     private String channelName;
@@ -38,7 +38,7 @@ public class Channel implements Serializable {
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,32 +27,32 @@ public class Transferrecord implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "TRANSFERRECORD_ID",type = IdType.INPUT)
-    private BigDecimal transferrecordId;
+    private int transferrecordId;
 
     @TableField("STUDENT_ID")
-    private BigDecimal studentId;
+    private int studentId;
 
     @TableField("TRANSFERRECORD_STATE")
-    private BigDecimal transferrecordState;
+    private int transferrecordState;
 
     @TableField("CLASSES_ONE")
-    private BigDecimal classesOne;
+    private int classesOne;
 
     @TableField("CLASSES_TWO")
-    private BigDecimal classesTwo;
+    private int classesTwo;
 
     @TableField("TRANSFERRECORD_DATE")
-    private LocalDateTime transferrecordDate;
+    private Date transferrecordDate;
 
     @TableField("TRANSFERRECORD_REASON")
     private String transferrecordReason;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

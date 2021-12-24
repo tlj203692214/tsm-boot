@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,20 +27,20 @@ public class Expend implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "EXPEND_ID",type = IdType.INPUT)
-    private BigDecimal expendId;
+    private int expendId;
 
     @TableField("EXPEND_MONEY")
-    private BigDecimal expendMoney;
+    private int expendMoney;
 
     @TableField("EXPEND_DATE")
-    private LocalDateTime expendDate;
+    private Date expendDate;
 
     @TableField("PAYAPPROVAL_ID")
-    private BigDecimal payapprovalId;
+    private int payapprovalId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

@@ -1,14 +1,14 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -22,16 +22,16 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Notice对象", description="")
-@KeySequence(value = "notice_seq")
+@KeySequence(value = "NOTICE_SEQ")
 public class Notice implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "NOTICE_ID",type = IdType.INPUT)
-    private BigDecimal noticeId;
+    @TableId(value="NOTICE_ID",type= IdType.INPUT)
+    private int noticeId;
 
     @TableField("NOTICE_TYPE")
-    private BigDecimal noticeType;
+    private int noticeType;
 
     @TableField("NOTICE_THEME")
     private String noticeTheme;
@@ -39,15 +39,18 @@ public class Notice implements Serializable {
     @TableField("NOTICE_CONTENT")
     private String noticeContent;
 
-    @TableField("NOTICE_DATE")
-    private LocalDateTime noticeDate;
+    @TableField(value="NOTICE_DATE",fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
+    private Date noticeDate;
+
+    @TableField("NOTICE_STATE")
+    private int noticeState;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
-    @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

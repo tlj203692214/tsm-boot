@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,20 +27,20 @@ public class Satffsign implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "SIGN_ID",type = IdType.INPUT)
-    private BigDecimal signId;
+    private int signId;
 
     @TableField("SIGN_STATE")
-    private BigDecimal signState;
+    private int signState;
 
     @TableField("SIGN_DATE")
-    private LocalDateTime signDate;
+    private Date signDate;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+
 
 /**
  * <p>
@@ -27,23 +27,23 @@ public class Classrecord implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "CLASSRECORD_ID",type = IdType.INPUT)
-    private BigDecimal classrecordId;
+    private int classrecordId;
 
     @TableField("CLASSES_ID")
-    private BigDecimal classesId;
+    private int classesId;
 
     @TableField("COURSE_ID")
-    private BigDecimal courseId;
+    private int courseId;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("STUDENTATTEND_ID")
-    private BigDecimal studentattendId;
+    private int studentattendId;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }

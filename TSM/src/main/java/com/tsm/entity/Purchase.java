@@ -7,8 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,32 +27,32 @@ public class Purchase implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "PURCHASE_ID",type = IdType.INPUT)
-    private BigDecimal purchaseId;
+    private int purchaseId;
 
     @TableField("PURCHASE_NAME")
     private String purchaseName;
 
     @TableField("PURCHASE_NUMBER")
-    private BigDecimal purchaseNumber;
+    private int purchaseNumber;
 
     @TableField("PURCHASE_PRICE")
-    private BigDecimal purchasePrice;
+    private Double purchasePrice;
 
     @TableField("PURCHASE_AOUNT")
-    private BigDecimal purchaseAount;
+    private Double purchaseAount;
 
     @TableField("STAFF_ID")
-    private BigDecimal staffId;
+    private int staffId;
 
     @TableField("COURSE_ID")
-    private BigDecimal courseId;
+    private int courseId;
 
     @TableField("PURCHASE_DATE")
-    private LocalDateTime purchaseDate;
+    private Date purchaseDate;
 
     @TableField("DELETED")
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 
 
 }
