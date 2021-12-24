@@ -7,10 +7,15 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.mapper.voMapper.FollowVoMapper;
 import com.tsm.service.serviceVo.FollowVoService;
 import com.tsm.vo.FollowVo;
+import freemarker.core.UnknownDateTypeFormattingUnsupportedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,21 +32,169 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         return iPage;
     }
 
-
-
     @Override
-    public IPage<FollowVo> selectmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr) {
+    public IPage<FollowVo> selectmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc,String gjr,String sj1,String sj2) throws ParseException {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
         List<FollowVo> followVos=new ArrayList<>();
-        System.out.println(name+qkzt+lyqd+yxkc+gjr+":数据");
-//        if (qkzt==null){
-//
-//        }
-//            if (qkzt==0){
-//                queryWrapper.like("STUDENTFILES_STATE",qkzt);
-//            }
+        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse(sj1);
+        Date date1 = sdf.parse(sj2);
+        System.out.println(date+" "+date1+":数据");
+        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
+            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
+        }else {
+            System.out.println("时间空");
+        }
+        if (name!=null&&name.length()!=0){
+            queryWrapper.like("s.STUDENTFILES_NAME",name)
+            ;
+        }else{
+            System.out.println("name空");
+        }
+        if (qkzt!=null&&qkzt.length()!=0){
+            queryWrapper.eq("STUDENTFILES_STATE",qkzt)
+            ;
+        }else{
+            System.out.println("qkzt空");
+        }
 
-        return null;
+        if (lyqd!=null&&lyqd.length()!=0){
+            queryWrapper.eq("c.CHANNEL_ID",lyqd);
+        }else{
+            System.out.println("lyqd空");
+        }
+        if (yxkc!=null&&yxkc.length()!=0){
+            queryWrapper.eq("cou.COURSE_ID",yxkc);
+        }else{
+            System.out.println("yxkc空");
+        }
+        if (gjr!=null&&gjr.length()!=0){
+            queryWrapper.like("sta.STAFF_ID",gjr);
+        }
+        IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
+
+        return followVoIPage;
+    }
+
+    @Override
+    public IPage<FollowVo> selectmohufollowvo1(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr) {
+        Page<FollowVo> followVoPage =new Page<>(page,size);
+        QueryWrapper queryWrapper=new QueryWrapper();
+        List<FollowVo> followVos=new ArrayList<>();
+        System.out.println(name+qkzt+lyqd+yxkc+":数据");
+
+        if (qkzt!=null&&qkzt.length()!=0){
+            queryWrapper.eq("STUDENTFILES_STATE",qkzt)
+            ;
+        }else{
+            System.out.println("qkzt空");
+        }
+        if (name!=null&&name.length()!=0){
+            queryWrapper.like("s.STUDENTFILES_NAME",name)
+            ;
+        }else{
+            System.out.println("name空");
+        }
+        if (lyqd!=null&&lyqd.length()!=0){
+            queryWrapper.eq("c.CHANNEL_ID",lyqd);
+        }else{
+            System.out.println("lyqd空");
+        }
+        if (yxkc!=null&&yxkc.length()!=0){
+            queryWrapper.eq("cou.COURSE_ID",yxkc);
+        }else{
+            System.out.println("yxkc空");
+        }
+        if (gjr!=null&&gjr.length()!=0){
+            queryWrapper.like("sta.STAFF_ID",gjr);
+        }
+        IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
+
+        return followVoIPage;
+    }
+
+    @Override
+    public IPage<FollowVo> selectmohufollowvo2(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr, String sj1, String sj2) throws ParseException {
+        Page<FollowVo> followVoPage =new Page<>(page,size);
+        QueryWrapper queryWrapper=new QueryWrapper();
+        List<FollowVo> followVos=new ArrayList<>();
+        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse(sj1);
+        Date date1 = sdf.parse(sj2);
+        System.out.println(date+" "+date1+":数据");
+        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
+            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
+        }else {
+            System.out.println("时间空");
+        }
+        if (name!=null&&name.length()!=0){
+            queryWrapper.eq("s.PARENT_PHONE",name);
+
+        }else{
+            System.out.println("name空");
+        }
+        if (qkzt!=null&&qkzt.length()!=0){
+            queryWrapper.eq("STUDENTFILES_STATE",qkzt)
+            ;
+        }else{
+            System.out.println("qkzt空");
+        }
+
+        if (lyqd!=null&&lyqd.length()!=0){
+            queryWrapper.eq("c.CHANNEL_ID",lyqd);
+        }else{
+            System.out.println("lyqd空");
+        }
+        if (yxkc!=null&&yxkc.length()!=0){
+            queryWrapper.eq("cou.COURSE_ID",yxkc);
+        }else{
+            System.out.println("yxkc空");
+        }
+        if (gjr!=null&&gjr.length()!=0){
+            queryWrapper.like("sta.STAFF_ID",gjr);
+        }
+        IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
+
+        return followVoIPage;
+    }
+
+    @Override
+    public IPage<FollowVo> selectmohufollowvo3(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr) {
+        Page<FollowVo> followVoPage =new Page<>(page,size);
+        QueryWrapper queryWrapper=new QueryWrapper();
+        List<FollowVo> followVos=new ArrayList<>();
+        System.out.println(name+qkzt+lyqd+yxkc+":数据");
+
+        if (qkzt!=null&&qkzt.length()!=0){
+            queryWrapper.eq("STUDENTFILES_STATE",qkzt)
+            ;
+        }else{
+            System.out.println("qkzt空");
+        }
+        if (name!=null&&name.length()!=0){
+            queryWrapper.eq("s.PARENT_PHONE",name);
+            ;
+        }else{
+            System.out.println("name空");
+        }
+        if (lyqd!=null&&lyqd.length()!=0){
+            queryWrapper.eq("c.CHANNEL_ID",lyqd);
+        }else{
+            System.out.println("lyqd空");
+        }
+        if (yxkc!=null&&yxkc.length()!=0){
+            queryWrapper.eq("cou.COURSE_ID",yxkc);
+        }else{
+            System.out.println("yxkc空");
+        }
+        if (gjr!=null&&gjr.length()!=0){
+            queryWrapper.like("sta.STAFF_ID",gjr);
+        }
+        IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
+
+        return followVoIPage;
     }
 }
