@@ -16,6 +16,6 @@ public interface IncomeVoService extends IService<IncomeVo> {
     /**
      * 收入分页查询
      */
-    public IPage<IncomeVo> selectIncomeVo(int page,int size);
+    public IPage<IncomeVo> selectIncomeVo(int page,int size,String name,String payMode);
 
 }

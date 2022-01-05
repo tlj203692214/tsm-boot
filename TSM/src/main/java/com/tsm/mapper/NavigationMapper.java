@@ -1,9 +1,8 @@
 package com.tsm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tsm.entity.Paymoney;
+import com.tsm.entity.Navigation;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,9 +10,9 @@ import org.springframework.stereotype.Repository;
  * </p>
  *
  * @author 军
- * @since 2021-12-09
+ * @since 2021-12-29
  */
 @Mapper
-public interface PaymoneyMapper extends BaseMapper<Paymoney> {
+public interface NavigationMapper extends BaseMapper<Navigation> {
 
 }

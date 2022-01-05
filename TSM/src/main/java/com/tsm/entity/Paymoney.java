@@ -21,7 +21,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Paymoney对象", description="")
-@KeySequence(value = "payMoney")
+@KeySequence(value = "payMoney_seq")
 public class Paymoney implements Serializable {
 
     private static final long serialVersionUID = 1L;

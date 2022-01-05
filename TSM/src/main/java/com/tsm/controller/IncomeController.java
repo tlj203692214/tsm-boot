@@ -22,6 +22,11 @@ public class IncomeController {
     @Autowired
     private IIncomeService incomeService;
 
+    /**
+     * 修改收入到账的状态
+     * @param income
+     * @return
+     */
     @PostMapping("/updateState")
     public int updateState(@RequestBody Income income){
         return incomeService.updateState(income.getIncomeId());

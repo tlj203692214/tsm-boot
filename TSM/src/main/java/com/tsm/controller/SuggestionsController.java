@@ -33,6 +33,7 @@ public class SuggestionsController {
     }
     @PostMapping("/updateSuggestions")              //添加新的意见箱
     public int updateSuggestions(@RequestBody Suggestions suggestions){
+        System.out.println(suggestions.toString());
         int a =iSuggestionsService.updateSuggestions(suggestions);
         return a;
     }

@@ -27,8 +27,8 @@ public class PaymoneyVoController {
      */
     @GetMapping("/selectPayMoneyVo")
     public IPage<payMoneyVo> selectPayMoney(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo,
-        @RequestParam("stuname") String stuname,@RequestParam("pay") String pay){
-        IPage<payMoneyVo> paymoneyPage = paymoneyVoService.selectPayMoney(page, pageInfo,stuname,pay);
+        @RequestParam("stuname") String stuname,@RequestParam("pay") String pay,@RequestParam("payState")int state){
+        IPage<payMoneyVo> paymoneyPage = paymoneyVoService.selectPayMoney(page, pageInfo,stuname,pay,state);
         return paymoneyPage;
     }
 

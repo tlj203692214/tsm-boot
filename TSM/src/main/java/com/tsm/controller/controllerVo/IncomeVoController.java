@@ -25,8 +25,9 @@ public class IncomeVoController {
     private IncomeVoService incomeVoService;
 
     @GetMapping("/selectIncomeVo")
-    public IPage<IncomeVo> selectIncomVo(@RequestParam("currentPage")int page,@RequestParam("pagesize")int size){
-        IPage<IncomeVo> incomeVoIPage = incomeVoService.selectIncomeVo(page, size);
+    public IPage<IncomeVo> selectIncomVo(@RequestParam("currentPage")int page,@RequestParam("pagesize")int size,
+           @RequestParam("stuname") String name,@RequestParam("pay")String payMode){
+        IPage<IncomeVo> incomeVoIPage = incomeVoService.selectIncomeVo(page, size,name,payMode);
         return incomeVoIPage;
     }
 }

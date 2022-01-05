@@ -1,8 +1,10 @@
 package com.tsm.mapper.voMapper;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tsm.vo.payMoneyVo;
 import org.apache.ibatis.annotations.Mapper;
@@ -27,12 +29,8 @@ public interface PaymoneyVoMapper extends BaseMapper<payMoneyVo> {
      * 财务：报班缴费模糊查询
      */
     @Select("select * from PAYMONEY p LEFT JOIN INCOME i on p.PAYMONEY_ID =i.PAYMONEY_ID left join COURSE c on p.COURSE_ID=c.COURSE_ID " +
-            "LEFT JOIN STAFF s on p.staff_id = s.staff_id left join STUDENT t on p.student_id = t.student_id where t.student_name like'%${stuName}%' and p.deleted=0")
-    public IPage<payMoneyVo> selectPayMoneyVoAll2(Page page, Wrapper wrapper, @Param("stuName") String name);
-
-    @Select("select * from PAYMONEY p LEFT JOIN INCOME i on p.PAYMONEY_ID =i.PAYMONEY_ID left join COURSE c on p.COURSE_ID=c.COURSE_ID " +
-            "LEFT JOIN STAFF s on p.staff_id = s.staff_id left join STUDENT t on p.student_id = t.student_id where t.student_name like'%${stuName}%' and p.payMoney_mode=#{payMoney} and p.deleted=0")
-    public IPage<payMoneyVo> selectPayMoneyVoAll3(Page page, Wrapper wrapper, @Param("stuName") String name,@Param("payMoney") String payMoney);
+            "LEFT JOIN STAFF s on p.staff_id = s.staff_id left join STUDENT t on p.student_id = t.student_id" + " ${ew.customSqlSegment} ")
+      IPage<payMoneyVo> selectPayMoneyVo(Page page, @Param(Constants.WRAPPER)QueryWrapper<payMoneyVo> queryWrapper);
 
     /**
      * 统计方法

@@ -20,5 +20,5 @@ public interface ISuggestionsService extends IService<Suggestions> {
     //新增意见箱
     public int addSuggestions(@RequestBody Suggestions suggestions);
     //修改意见箱
-    public int updateSuggestions(@RequestBody Suggestions suggestions);
+    public int updateSuggestions(Suggestions suggestions);
 }
