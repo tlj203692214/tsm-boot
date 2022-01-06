@@ -1,10 +1,13 @@
 package com.tsm.controller;
 
 
+import com.tsm.entity.Classes;
 import com.tsm.service.IClassesService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -26,5 +29,11 @@ public class ClassesController {
         Long count = service.ClasssCount(0);
         log.debug(count.toString());
         return count;
+    }
+
+    @PostMapping("/cxclasscount")
+    public List<Classes> cxclasses(){
+        List<Classes> list=service.cx();
+        return list;
     }
 }

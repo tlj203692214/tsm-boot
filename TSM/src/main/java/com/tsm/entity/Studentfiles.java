@@ -36,16 +36,16 @@ public class Studentfiles implements Serializable {
     private String studentfilesSex;
 
     @TableField("STUDENTFILES_AGE")
-    private int studentfilesAge;
+    private Long studentfilesAge;
 
     @TableField("STUDENTFILES_BIRTHDAY")
     private Date studentfilesBirthday;
 
     @TableField("STUDENTFILES_PHONE")
-    private String studentfilesPhone;
+    private Long studentfilesPhone;
 
     @TableField("PARENT_PHONE")
-    private String parentPhone;
+    private Long parentPhone;
 
     @TableField("STUDENTFILES_SCHOOL")
     private String studentfilesSchool;
@@ -57,14 +57,17 @@ public class Studentfiles implements Serializable {
     private String studentfilesRemarks;
 
     @TableField("STUDENTFILES_STATE")
-    private int studentfilesState;
+    private Long studentfilesState;
 
     @TableField("COURSE_ID")
-    private int courseId;
+    private Long courseId;
+
+    @TableField("CHANNEL_ID")
+    private Long channelid;
 
     @TableField("DELETED")
     @TableLogic
-    private int deleted;
+    private Long deleted;
 
 
 }

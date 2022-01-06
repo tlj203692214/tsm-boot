@@ -1,5 +1,6 @@
 package com.tsm.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tsm.entity.Student;
 
@@ -13,4 +14,7 @@ import com.tsm.entity.Student;
  */
 public interface IStudentService extends IService<Student> {
     public Long student(int zt);
+
+    //编辑学生
+    public int updatastudent(Student student);
 }
