@@ -24,9 +24,9 @@ public interface IReceivingService extends IService<Receiving> {
     //添加收件箱
     public  int addreceiving(Receiving receiving);
     //模糊分页查询收件箱
-    public IPage<Receiving> findAllreceiving(int page,int size,String name,String zt,String js,String input) ;
+    public IPage<Receiving> findAllreceiving(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("StaffNames") String name, @RequestParam("zt") String zt, @RequestParam("js") String js, @RequestParam("input") String input) ;
     //逻辑删除收件箱
-    public  int delectsends(Receiving receiving);
+    public  int delectsends(@RequestBody Receiving receiving);
     //修改收件箱阅读状态（已读/未读）
-    public  int xgreceiving(Receiving receiving);
+    public  int xgreceiving(@RequestBody Receiving receiving);
 }

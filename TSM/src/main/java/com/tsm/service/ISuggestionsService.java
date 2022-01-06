@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 /**
  * <p>
  *  服务类
@@ -18,13 +16,9 @@ import java.util.List;
  */
 public interface ISuggestionsService extends IService<Suggestions> {
     //分页模糊查询意见箱
-    public IPage<Suggestions> suggestions(int page,int size,String zt, String js,String input);
+    public IPage<Suggestions> suggestions(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size,@RequestParam("zt") String zt, @RequestParam("js") String js, @RequestParam("input") String input);
     //新增意见箱
-    public int addSuggestions(Suggestions suggestions);
+    public int addSuggestions(@RequestBody Suggestions suggestions);
     //修改意见箱
     public int updateSuggestions(Suggestions suggestions);
-     //查询意见箱
-    public List<Suggestions> selectSuggestions(String userScope);
-    //查询所有意见箱(无条件查询)
-    public List<Suggestions> selectSuggestionss();
 }

@@ -39,20 +39,5 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
         return staffMapper.selectList(null);
     }
 
-    @Override
-    public int updateStaff(int staffid) {
-        Staff s1 = staffMapper.selectById(staffid);
-        System.out.println("状态1111"+s1.getDeleted());
-        if (s1.getDeleted()==0){
-            s1.setDeleted(1);
-            log.debug("员工辞退成功");
-        }else{
-            s1.setDeleted(0);
-            log.debug("员工恢复成功");
-        }
-        int update = staffMapper.updateById(s1);
-        return update;
-    }
-
 
 }
