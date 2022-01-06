@@ -37,28 +37,4 @@ public class DeptController {
         List<Dept> list=service.updateDept(dept);
         return list;
     }
-    //逻辑删除部门
-    @PostMapping("/deldept/{deptid}")
-    public int deldept(@PathVariable("deptid") int deptid){
-        int del = service.delDept(deptid);
-        return del;
-    }
-
-    @PostMapping("/updept")
-    public int updept(@RequestBody Dept dept){
-        int updete = service.upDept(dept);
-        return updete;
-    }
-
-    @PostMapping("/addDept")
-    public int addDept(@RequestBody Dept dept){
-        int insert = service.addDept(dept);
-        return insert;
-    }
-
-    @GetMapping("/listDept")
-    public List<Dept> ListDept(){
-        List<Dept> list = service.ListDept();
-        return list;
-    }
 }

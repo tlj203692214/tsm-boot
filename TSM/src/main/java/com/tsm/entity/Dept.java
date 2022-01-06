@@ -1,7 +1,5 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.KeySequence;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
@@ -24,12 +22,11 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Dept对象", description="")
-@KeySequence(value = "dept_seq")
 public class Dept implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "DEPT_ID",type = IdType.INPUT)
+    @TableId("DEPT_ID")
     private int deptId;
 
     @TableField("DEPT_NAME")

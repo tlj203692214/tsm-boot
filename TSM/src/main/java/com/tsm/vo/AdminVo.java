@@ -3,6 +3,7 @@ package com.tsm.vo;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Data
 public class AdminVo {
@@ -12,7 +13,6 @@ public class AdminVo {
     private Integer deptId;
     private Integer portraitId;
     private Integer positionId;
-    private Integer staffId;
     private String portraitUrl;
     private String personalName;
     private String personalPhone;

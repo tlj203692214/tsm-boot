@@ -12,5 +12,5 @@ import com.tsm.entity.Administration;
  * @since 2021-12-09
  */
 public interface IAdministrationService extends IService<Administration> {
-    public int updateAdmin(int staffid);
+
 }

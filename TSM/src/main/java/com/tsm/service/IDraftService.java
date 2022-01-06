@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 public interface IDraftService extends IService<Draft> {
     //新增草稿箱
-    public  int addDraft(Draft draft);
+    public  int addDraft(@RequestBody Draft draft);
     //模糊分页查询草稿箱
-    public IPage<Draft> findAllDraft(int page,int size,String name, String js,String input);
+    public IPage<Draft> findAllDraft(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("StaffNames") String name, @RequestParam("js") String js, @RequestParam("input") String input);
     //逻辑删除草稿箱
-    public int delectDraft(Draft draft);
+    public int delectDraft(@RequestBody Draft draft);
 }
