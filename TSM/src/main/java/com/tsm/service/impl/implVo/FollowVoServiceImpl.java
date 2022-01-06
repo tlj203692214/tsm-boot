@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.tsm.entity.Studentfiles;
 import com.tsm.mapper.voMapper.FollowVoMapper;
 import com.tsm.service.serviceVo.FollowVoService;
 import com.tsm.vo.FollowVo;
@@ -26,27 +27,27 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
     public IPage<FollowVo> selectfollowvo(int page, int size) {
         Page<FollowVo> page1=new Page<>(page,size);
         QueryWrapper<FollowVo> queryWrapper=new QueryWrapper();
-
-        queryWrapper.orderByDesc("FOLLOW_ID");
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo>iPage=followVoMapper.selectfollowvo(page1,queryWrapper);
         return iPage;
     }
 
     @Override
-    public IPage<FollowVo> selectmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc,String gjr,String sj1,String sj2) throws ParseException {
+    public IPage<FollowVo> selectmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc) throws ParseException {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
         List<FollowVo> followVos=new ArrayList<>();
-        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = sdf.parse(sj1);
-        Date date1 = sdf.parse(sj2);
-        System.out.println(date+" "+date1+":数据");
-        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
-            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
-        }else {
-            System.out.println("时间空");
-        }
+//        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        Date date = sdf.parse(sj1);
+//        Date date1 = sdf.parse(sj2);
+//        System.out.println(date+" "+date1+":数据");
+//        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
+//            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
+//        }else {
+//            System.out.println("时间空");
+//        }
         if (name!=null&&name.length()!=0){
             queryWrapper.like("s.STUDENTFILES_NAME",name)
             ;
@@ -70,16 +71,16 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-        if (gjr!=null&&gjr.length()!=0){
-            queryWrapper.like("sta.STAFF_ID",gjr);
-        }
+//        if (gjr!=null&&gjr.length()!=0){
+//            queryWrapper.like("sta.STAFF_ID",gjr);
+//        }
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
     }
 
     @Override
-    public IPage<FollowVo> selectmohufollowvo1(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr) {
+    public IPage<FollowVo> selectmohufollowvo1(int page, int size, String name, String qkzt, String lyqd, String yxkc) {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
         List<FollowVo> followVos=new ArrayList<>();
@@ -107,29 +108,29 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-        if (gjr!=null&&gjr.length()!=0){
-            queryWrapper.like("sta.STAFF_ID",gjr);
-        }
+//        if (gjr!=null&&gjr.length()!=0){
+//            queryWrapper.like("sta.STAFF_ID",gjr);
+//        }
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
     }
 
     @Override
-    public IPage<FollowVo> selectmohufollowvo2(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr, String sj1, String sj2) throws ParseException {
+    public IPage<FollowVo> selectmohufollowvo2(int page, int size, String name, String qkzt, String lyqd, String yxkc) throws ParseException {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
-        List<FollowVo> followVos=new ArrayList<>();
-        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = sdf.parse(sj1);
-        Date date1 = sdf.parse(sj2);
-        System.out.println(date+" "+date1+":数据");
-        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
-            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
-        }else {
-            System.out.println("时间空");
-        }
+      //  List<FollowVo> followVos=new ArrayList<>();
+//        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        Date date = sdf.parse(sj1);
+//        Date date1 = sdf.parse(sj2);
+//        System.out.println(date+" "+date1+":数据");
+//        if (sj1!=null&&sj1.length()!=0&&sj2!=null&&sj2.length()!=0){
+//            queryWrapper.between("f.FOLLOW_DATE",date,date1); //查询时间段在sj1和sj2之间的数据
+//        }else {
+//            System.out.println("时间空");
+//        }
         if (name!=null&&name.length()!=0){
             queryWrapper.eq("s.PARENT_PHONE",name);
 
@@ -153,16 +154,16 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-        if (gjr!=null&&gjr.length()!=0){
-            queryWrapper.like("sta.STAFF_ID",gjr);
-        }
+//        if (gjr!=null&&gjr.length()!=0){
+//            queryWrapper.like("sta.STAFF_ID",gjr);
+//        }
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
     }
 
     @Override
-    public IPage<FollowVo> selectmohufollowvo3(int page, int size, String name, String qkzt, String lyqd, String yxkc, String gjr) {
+    public IPage<FollowVo> selectmohufollowvo3(int page, int size, String name, String qkzt, String lyqd, String yxkc) {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
         List<FollowVo> followVos=new ArrayList<>();
@@ -190,11 +191,20 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-        if (gjr!=null&&gjr.length()!=0){
-            queryWrapper.like("sta.STAFF_ID",gjr);
-        }
+//        if (gjr!=null&&gjr.length()!=0){
+//            queryWrapper.like("sta.STAFF_ID",gjr);
+//        }
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
+    }
+
+    @Override
+    public List<FollowVo> selectList(String id) {
+
+        QueryWrapper wrapper=new QueryWrapper();
+        wrapper.eq("f.FOLLOW_ID",id);
+        List<FollowVo> list=followVoMapper.selectfollowvoid(wrapper);
+        return list;
     }
 }

@@ -1,6 +1,8 @@
 package com.tsm.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Student;
 import com.tsm.mapper.StudentMapper;
@@ -27,4 +29,13 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         Long count = mapper.selectCount(wrapper);
         return count;
     }
+
+    @Override
+    public int updatastudent(Student student) {
+        //QueryWrapper<Student> studentQueryWrapper=new QueryWrapper<>();
+        int a=mapper.updateById(student);
+        return a;
+    }
+
+
 }

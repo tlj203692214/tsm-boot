@@ -54,11 +54,11 @@ public class Student implements Serializable {
     private String studentLoc;
 
     @TableField("CLASSES_ID")
-    private int classesId;
+    private Long classesId;
 
     @TableField("DELETED")
     @TableLogic
     private int deleted;
-
-
+    @TableField("STUDENT_ENTRANCE")
+    private Date studententrance; //入学时间
 }

@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,19 +28,20 @@ public class Follow implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "FOLLOW_ID",type = IdType.INPUT)
-    private int followId;
+    private Long followId;
 
     @TableField("FOLLOW_CONTENT")
     private String followContent;
 
     @TableField("FOLLOW_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date followDate;
 
     @TableField("STUDENTFILES_ID")
-    private int studentfilesId;
+    private Long studentfilesId;
 
     @TableField("STAFF_ID")
-    private int staffId;
+    private Long staffId;
 
     @TableField("DELETED")
     @TableLogic

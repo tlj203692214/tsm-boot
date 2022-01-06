@@ -1,12 +1,12 @@
 package com.tsm.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.tsm.entity.Student;
 import com.tsm.service.IStudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/student")
+@CrossOrigin(maxAge = 60)
 public class StudentController {
     @Autowired
     private IStudentService service;
@@ -27,5 +28,11 @@ public class StudentController {
         Long count = service.student(0);
         log.debug(count.toString());
         return count;
+    }
+    //编辑学员
+    @PostMapping("/updatastudent")
+    public int updatastudent(@RequestBody Student student){
+        int a=service.updatastudent(student);
+        return a;
     }
 }

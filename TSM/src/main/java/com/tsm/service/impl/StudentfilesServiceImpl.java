@@ -1,5 +1,6 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Studentfiles;
 import com.tsm.mapper.StudentfilesMapper;
@@ -21,8 +22,37 @@ public class StudentfilesServiceImpl extends ServiceImpl<StudentfilesMapper, Stu
 private StudentfilesMapper studentfilesMapper;
     @Override
     public int addStudenfiles(Studentfiles studentfiles) {
-        studentfiles.setDeleted(0);
+        studentfiles.setDeleted(0l);
         int a =studentfilesMapper.insert(studentfiles);
+        return a;
+    }
+
+    @Override
+    public int updateStudenfiles(Studentfiles studentfiles) {
+        studentfiles.setDeleted(0l);
+        int a=studentfilesMapper.updateById(studentfiles);
+        return a;
+    }
+
+    @Override
+    public int updatestudenfileszt(Studentfiles studentfiles) {
+
+        studentfiles.setStudentfilesState(2l);
+        int a=studentfilesMapper.updateById(studentfiles);
+        return a;
+    }
+
+    @Override
+    public int updatestudenfilesjhzt(Studentfiles studentfiles) {
+        studentfiles.setStudentfilesState(0l);
+        int a=studentfilesMapper.updateById(studentfiles);
+        return a;
+    }
+
+    @Override
+    public int scselect(Studentfiles studentfiles) {
+        //studentfiles.setDeleted(1l);
+        int a=studentfilesMapper.updatestudent(studentfiles);
         return a;
     }
 }
