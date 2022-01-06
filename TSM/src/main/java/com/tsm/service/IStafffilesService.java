@@ -15,4 +15,5 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 public interface IStafffilesService extends IService<Stafffiles> {
     public IPage<Stafffiles> findStafffs(String st,String it,int page,int size);
+    public int addStafffiles(Stafffiles stafffiles);
 }

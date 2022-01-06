@@ -3,6 +3,7 @@ package com.tsm.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tsm.entity.Dept;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -13,6 +14,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2021-12-09
  */
 @Mapper
+@Repository
 public interface DeptMapper extends BaseMapper<Dept> {
 
 }

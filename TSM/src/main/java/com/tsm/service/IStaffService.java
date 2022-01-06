@@ -18,4 +18,7 @@ public interface IStaffService extends IService<Staff> {
 
         //查询跟进人员工
         public List<Staff> selectstaffqudao();
+
+        //员工辞退修改账号状态
+        public int updateStaff(int staffid);
 }

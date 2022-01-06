@@ -18,4 +18,8 @@ import java.util.List;
 public interface IDeptService extends IService<Dept> {
     public IPage<Dept> findDepts(String it, int page, int size);
     public List<Dept> updateDept(@RequestBody Dept dept);
+    public int delDept(int deptid);
+    public int upDept(@RequestBody Dept dept);
+    public int addDept(Dept dept);
+    public List<Dept> ListDept();
 }
