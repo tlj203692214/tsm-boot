@@ -1,7 +1,7 @@
 package com.tsm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tsm.entity.Notepad;
+import com.tsm.entity.Navigation;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author 军
- * @since 2021-12-09
+ * @since 2021-12-29
  */
 @Mapper
-public interface NotepadMapper extends BaseMapper<Notepad> {
+public interface NavigationMapper extends BaseMapper<Navigation> {
 
 }

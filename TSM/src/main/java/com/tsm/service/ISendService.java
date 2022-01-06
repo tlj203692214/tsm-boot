@@ -23,9 +23,9 @@ import java.util.List;
 @Transactional(propagation = Propagation.REQUIRES_NEW)
 public interface ISendService extends IService<Send> {
     //新增发件箱
-    public Send addsend(@RequestBody Send send);
+    public Send addsend(Send send);
     //分页模糊查询发件箱
-    public IPage<Send> findAllSend(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("StaffNames") String name, @RequestParam("js") String js, @RequestParam("input") String input);
+    public IPage<Send> findAllSend(int page, int size,String name,String js,String input);
     //逻辑删除发件箱
-    public int delectSend(@RequestBody Send send);
+    public int delectSend(Send send);
 }

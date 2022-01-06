@@ -7,6 +7,9 @@ import com.tsm.service.ISuggestionsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -33,7 +36,18 @@ public class SuggestionsController {
     }
     @PostMapping("/updateSuggestions")              //添加新的意见箱
     public int updateSuggestions(@RequestBody Suggestions suggestions){
+        System.out.println(suggestions.toString());
         int a =iSuggestionsService.updateSuggestions(suggestions);
         return a;
+    }
+    @PostMapping("/selectSuggestions/{staffName}")              //查询意见箱
+    public List<Suggestions> selectSuggestions(@PathVariable("staffName") String staffName){
+      List<Suggestions> list =iSuggestionsService.selectSuggestions(staffName);
+     return  list;
+    }
+    @PostMapping("/selectSuggestionss")              //查询所有意见箱(无条件查询)
+    public List<Suggestions> selectSuggestionss(){
+        List<Suggestions> list =iSuggestionsService.selectSuggestionss();
+        return  list;
     }
 }

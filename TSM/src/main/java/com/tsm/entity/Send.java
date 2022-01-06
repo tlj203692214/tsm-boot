@@ -55,8 +55,7 @@ public class Send implements Serializable {
     private String staffName2;
 
 
-    @ApiModelProperty(value = "逻辑删除")
-    @TableLogic(value="DELETED")
+
     @TableField("DELETED")
     private int deleted;
 

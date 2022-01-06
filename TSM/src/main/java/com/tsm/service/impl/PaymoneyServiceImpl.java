@@ -9,6 +9,7 @@ import com.tsm.mapper.PaymoneyMapper;
 import com.tsm.service.IPaymoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +28,6 @@ public class PaymoneyServiceImpl extends ServiceImpl<PaymoneyMapper, Paymoney> i
     private PaymoneyMapper paymoneyMapper;
 
 
-    @Override
-    public int deletePayMoney(int id) {
-        Paymoney paymoney = paymoneyMapper.selectById(id);
-        paymoney.setDeleted(1);
-        int i = paymoneyMapper.deleteById(paymoney);
-        return i;
-    }
 
     @Override
     public Long PaymoneyCount(int zt) {
@@ -54,5 +48,12 @@ public class PaymoneyServiceImpl extends ServiceImpl<PaymoneyMapper, Paymoney> i
             a=a+list.get(i).getPaymoneyMoney();
         }
         return a;
+    }
+
+    @Override
+    public int deleteByIds(int ids) {
+        Paymoney paymoney = paymoneyMapper.selectById(ids);
+        paymoney.setDeleted(1);
+        return paymoneyMapper.deleteById(paymoney);
     }
 }

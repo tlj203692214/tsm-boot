@@ -57,10 +57,8 @@ public class SendServiceImpl extends ServiceImpl<SendMapper, Send> implements IS
 
     @Override
     public int delectSend(Send send) {
-        int id= send.getSendId();
-        Send send1=sendMapper.selectById(id);
-        send1.setDeleted(1);
-        Integer integer=sendMapper.updateById(send1);
+
+        Integer integer=sendMapper.updateById(send);
         return integer;
     }
 }

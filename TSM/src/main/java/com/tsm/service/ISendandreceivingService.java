@@ -21,7 +21,7 @@ public interface ISendandreceivingService extends IService<Sendandreceiving> {
     //新增发件表和收件表的中间表数据
     public  int addsandr(Sendandreceiving sendandreceiving);
     //查询中间表数据
-    public List<Sendandreceiving> findAllsandr(Long id);
+    public List<Sendandreceiving> findAllsandr(int id);
     //修改阅读状态（已读/未读）
-    public int xgsandr(@RequestBody Sendandreceiving sendandreceiving);
+    public int xgsandr(Sendandreceiving sendandreceiving);
 }

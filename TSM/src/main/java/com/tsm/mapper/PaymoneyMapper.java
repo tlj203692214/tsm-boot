@@ -2,6 +2,7 @@ package com.tsm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tsm.entity.Paymoney;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @author 军
  * @since 2021-12-09
  */
-@Repository
+@Mapper
 public interface PaymoneyMapper extends BaseMapper<Paymoney> {
 
 }

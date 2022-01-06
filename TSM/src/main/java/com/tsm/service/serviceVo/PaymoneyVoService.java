@@ -16,7 +16,7 @@ public interface PaymoneyVoService extends IService<payMoneyVo> {
         /**
          * 财务：报班缴费模糊查询
          */
-        public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo,String stuname,String payName);
+        public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo,String stuname,String payName,int state);
 
         /**
          * 统计总金额
@@ -28,4 +28,6 @@ public interface PaymoneyVoService extends IService<payMoneyVo> {
          */
         public double countMoneyByState();
         public double countMoneyByState2();
+
+
 }

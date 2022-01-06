@@ -34,6 +34,7 @@ public class RefundController {
      */
     @PostMapping("/updateState")
     public int updateState(@RequestBody Refund refund){
+        System.out.println(refund);
         return iRefundService.updateState(refund.getRefundId());
     }
 
