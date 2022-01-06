@@ -25,11 +25,6 @@ public class RefundVoController {
 
     /**
      * 查询退费管理信息
-     * @param page
-     * @param pageInfo
-     * @param name
-     * @param state
-     * @return
      */
     @GetMapping("/selectRefundVoAll")
     public IPage<RefundVo> selectRefund(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo,@RequestParam("stuname") String name,@RequestParam("state") int state){
