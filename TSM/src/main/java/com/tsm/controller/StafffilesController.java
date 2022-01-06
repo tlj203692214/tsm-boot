@@ -24,11 +24,18 @@ import org.springframework.web.bind.annotation.*;
 public class StafffilesController {
     @Autowired
     public IStafffilesService service;
-    //学员档案分页模糊查询
+    //员工档案分页模糊查询
     @GetMapping("/stafffs")
     public IPage<Stafffiles> findStafffs(@RequestParam("select") String st,@RequestParam("input") String it,@RequestParam("currentPage") int page, @RequestParam("pagesize") int size){
         IPage<Stafffiles> IPage = service.findStafffs(st,it,page,size);
         log.debug(IPage.toString());
         return IPage;
+    }
+    //新增员工档案信息
+    @PostMapping("/addstafffs")
+    public int addstafffs(@RequestBody Stafffiles stafffiles){
+        int add = service.addStafffiles(stafffiles);
+        System.out.println("新增数据"+add+"条");
+        return add;
     }
 }
