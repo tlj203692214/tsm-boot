@@ -8,6 +8,8 @@ import com.tsm.service.IClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -26,5 +28,11 @@ public class ClassesServiceImpl extends ServiceImpl<ClassesMapper, Classes> impl
         wrapper.eq("DELETED",zt);
         Long count = mapper.selectCount(wrapper);
         return count;
+    }
+
+    @Override
+    public List<Classes> cx() {
+        List<Classes> list=mapper.selectList(null);
+        return list;
     }
 }

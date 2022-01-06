@@ -3,6 +3,8 @@ package com.tsm.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tsm.entity.Classes;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,7 @@ import com.tsm.entity.Classes;
  */
 public interface IClassesService extends IService<Classes> {
     public Long ClasssCount(int zt);
+    
+    //查询班级
+    public List<Classes> cx();
 }
