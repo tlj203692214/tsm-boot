@@ -17,5 +17,5 @@ import java.util.List;
  */
 public interface IDeptService extends IService<Dept> {
     public IPage<Dept> findDepts(String it, int page, int size);
-    public List<Dept> updateDept(@RequestBody Dept dept);
+    public List<Dept> updateDept(Dept dept);
 }

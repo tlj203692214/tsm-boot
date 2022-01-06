@@ -10,6 +10,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -52,7 +54,23 @@ public class SuggestionsServiceImpl extends ServiceImpl<SuggestionsMapper, Sugge
 
     @Override
     public int updateSuggestions(Suggestions suggestions) {
+        System.out.println(suggestions+"谁大啊大大大是");
         int a=suggestionsMapper.updateById(suggestions);
         return  a;
+    }
+
+    @Override
+    public List<Suggestions> selectSuggestions(String userScope) {
+        QueryWrapper<Suggestions> wrapper=new QueryWrapper<>();
+        wrapper.like("USER_SCOPE",userScope)
+               .eq("DELETED",0);
+            List<Suggestions> list=suggestionsMapper.selectList(wrapper);
+        return list;
+    }
+
+    @Override
+    public List<Suggestions> selectSuggestionss() {
+        List<Suggestions> list=suggestionsMapper.selectList(null);
+        return list;
     }
 }

@@ -30,7 +30,7 @@ public class SendandreceivingController {
         return a;
     }
     @PostMapping("/findsandr/{id}")
-    public List<Sendandreceiving> finsandr(@PathVariable("id") long id){
+    public List<Sendandreceiving> finsandr(@PathVariable("id") int id){
 
    List<Sendandreceiving> list=iSendandreceivingService.findAllsandr(id);
 

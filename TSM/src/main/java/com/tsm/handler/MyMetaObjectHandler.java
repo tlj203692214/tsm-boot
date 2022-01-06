@@ -28,7 +28,7 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
     public  void updateFill(MetaObject metaObject){
     log.info("start update fill........");
     this.setFieldValByName("sandrDate",new Date(),metaObject);
-    this.setFieldValByName("replyTime",new Date(),metaObject);
+
 }
 }
 
