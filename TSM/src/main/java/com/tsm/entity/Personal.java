@@ -40,6 +40,7 @@ public class Personal implements Serializable {
     private int personalAge;
 
     @TableField("PERSONAL_BIRTHDAY")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date personalBirthday;
 
     @TableField("PERSONAL_IDCARD")
@@ -48,12 +49,13 @@ public class Personal implements Serializable {
     @TableField("PERSONAL_PHONE")
     private String personalPhone;
 
-    @TableField("PERSONAL_STATE")
-    private int personalstate;
 
     @TableField("ENTRY_TIME")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date entryTime;
+
+    @TableField("PERSONAL_STATE")
+    private int personalState;
 
     @TableField("PORTRAIT_ID")
     private int portraitId;
@@ -62,6 +64,7 @@ public class Personal implements Serializable {
     private int staffId;
 
     @TableField("DELETED")
+    @TableLogic
     private int deleted;
 
 

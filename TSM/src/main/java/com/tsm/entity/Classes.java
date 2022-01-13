@@ -45,6 +45,9 @@ public class Classes implements Serializable {
     @TableField("STAFF_ID")
     private int staffId;
 
+    @TableField("COURSE_ID")
+    private int courseid ;
+
     @TableField("DELETED")
     @TableLogic
     private int deleted;

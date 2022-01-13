@@ -43,4 +43,13 @@ public class PersonalController {
         log.debug(list.toString());
         return list;
     }
+
+    /**
+     * 修改用户
+     */
+    @PostMapping("/updatePersonal")
+    public int updatePersonal(@RequestBody Personal personal){
+        return service.updatePersonal(personal);
+    }
+
 }

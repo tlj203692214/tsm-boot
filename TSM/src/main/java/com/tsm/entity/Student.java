@@ -59,6 +59,10 @@ public class Student implements Serializable {
     @TableField("DELETED")
     @TableLogic
     private int deleted;
+
     @TableField("STUDENT_ENTRANCE")
     private Date studententrance; //入学时间
+
+    @TableField("COURSE_ID")
+    private int courseid ;//课程
 }
