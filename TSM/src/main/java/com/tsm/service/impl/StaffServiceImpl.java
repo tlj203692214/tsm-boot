@@ -54,5 +54,11 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
         return update;
     }
 
+    @Override
+    public int updatePass(Staff staff) {
+        int a=staffMapper.updateById(staff);
+        return a;
+    }
+
 
 }

@@ -29,6 +29,7 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
     public IPage<Notice> updateNotice(int page, int size, String zt, String js, String input) {
         QueryWrapper<Notice> wrapper=new QueryWrapper<>();
         wrapper.eq("DELETED",0);
+        wrapper.orderByDesc("NOTICE_ID");
         if(zt.equals("a")){
 
         }else if(zt.equals("b")){

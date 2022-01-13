@@ -33,7 +33,8 @@ public class DraftServiceImpl extends ServiceImpl<DraftMapper, Draft> implements
     public IPage<Draft> findAllDraft(int page, int size, String name, String js, String input) {
         QueryWrapper<Draft> wrapper=new QueryWrapper<>();
         wrapper.eq("DELETED",0)
-                .eq("STAFF_NAME1",name);
+                .eq("STAFF_NAME1",name)
+                .orderByDesc("DRAFT_ID");
 
         if(js.equals("标题")){
             wrapper.inSql("DRAFT_TITLE", "select DRAFT_TITLE from DRAFT where DRAFT_TITLE like '%" +input+ "%'");

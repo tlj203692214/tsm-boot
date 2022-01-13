@@ -8,8 +8,10 @@ import com.tsm.entity.Refund;
 import com.tsm.mapper.PaymoneyMapper;
 import com.tsm.mapper.RefundMapper;
 import com.tsm.mapper.voMapper.PaymoneyVoMapper;
+import com.tsm.mapper.voMapper.PersonalVoMapper;
 import com.tsm.vo.RefundVo;
 import com.tsm.vo.payMoneyVo;
+import com.tsm.vo.personalVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,13 +26,12 @@ class TsmApplicationTests {
     private PaymoneyMapper paymoneyMapper;
     @Autowired
     private RefundMapper refundMapper;
-
+    @Autowired
+    private PersonalVoMapper personalVoMapper;
     @Test
     void contextLoads() {
-//        Refund refund = refundMapper.selectById(4);
-//        refund.setDeleted(1);
-//        int i = refundMapper.deleteById(refund);
-//        System.out.println("删除成功"+i);
+       List<personalVo> list=personalVoMapper.selectPersonalVo(2);
+        System.out.println(list+"盘骨干是再");
     }
 
 }

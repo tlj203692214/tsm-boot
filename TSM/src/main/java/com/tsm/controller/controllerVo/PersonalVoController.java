@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -26,5 +28,10 @@ public class PersonalVoController {
     public personalVo selectById(@PathVariable("id") int id){
         System.out.println(id+"编号");
         return personalVoService.selectPicture(id);
+    }
+    @GetMapping("/selectPersonal/{staffId}")
+    public List<personalVo> selectPersonalVo(@PathVariable("staffId") int id){
+        System.out.println(id+"编号");
+        return personalVoService.selectPersonal(id);
     }
 }

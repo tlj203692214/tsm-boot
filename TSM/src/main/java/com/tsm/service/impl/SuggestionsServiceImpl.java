@@ -27,6 +27,7 @@ public class SuggestionsServiceImpl extends ServiceImpl<SuggestionsMapper, Sugge
     @Override
     public IPage<Suggestions> suggestions(int page, int size,String zt, String js, String input) {
         QueryWrapper<Suggestions>  wrapper=new QueryWrapper<>();
+        wrapper.orderByDesc("SUGGESTIONS_ID");
         if(js.equals("意见箱名称")){
             wrapper.like("SUGGESTIONS_NAME",input);
         }else if(js.equals("管理员")){

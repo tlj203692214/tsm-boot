@@ -67,7 +67,6 @@ public class StaffController {
             System.out.println("ssssssssssss"+staff1);
             return  staff1;
         }else{
-
             List<Staff> staff1=staffMapper.selectStaff(id,name);
             System.out.println("aaaaaas"+name);
             System.out.println("ssssssssssss"+staff1);
@@ -75,5 +74,10 @@ public class StaffController {
         }
 
     }
+    @PostMapping("/updatePass")
+    public int updatePass(@RequestBody Staff staff){
 
+      int a=iStaffService.updatePass(staff);
+        return a;
+    }
 }

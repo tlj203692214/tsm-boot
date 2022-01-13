@@ -43,7 +43,8 @@ public class SendServiceImpl extends ServiceImpl<SendMapper, Send> implements IS
     public IPage<Send> findAllSend(int page, int size, String name, String js, String input) {
         QueryWrapper<Send> wrapper=new QueryWrapper<>();
         wrapper.eq("DELETED",0)
-                .eq("STAFF_NAME1",name);
+                .eq("STAFF_NAME1",name)
+                .orderByDesc("SEND_ID");
 
         if(js.equals("标题")){
             wrapper.inSql("SEND_TITLE", "select SEND_TITLE from SEND where SEND_TITLE like '%" +input+ "%'");

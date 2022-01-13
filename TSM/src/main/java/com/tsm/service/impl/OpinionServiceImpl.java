@@ -9,6 +9,7 @@ import com.tsm.service.IOpinionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
  * @since 2021-12-22
  */
 @Service
+@Transactional
 public class OpinionServiceImpl extends ServiceImpl<OpinionMapper, Opinion> implements IOpinionService {
 @Autowired
 private OpinionMapper opinionMapper;
@@ -30,6 +32,7 @@ private OpinionMapper opinionMapper;
         QueryWrapper<Opinion> wrapper=new QueryWrapper<>();
         wrapper.eq("publisher",staffName);
         wrapper.eq("DELETED",0);
+        wrapper.orderByDesc("OPINION_ID");
         if(zt.equals("全部的意见")){
 
         }else  if(zt.equals("待回复的意见")){
@@ -55,9 +58,7 @@ private OpinionMapper opinionMapper;
     }
 
     @Override
-    public int delectOpinion(int opinionId) {
-        Opinion opinion=opinionMapper.selectById(opinionId);
-        opinion.setDeleted(1);
+    public int delectOpinion(Opinion opinion) {
         int a=opinionMapper.updateById(opinion);
         return a;
     }

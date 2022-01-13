@@ -22,7 +22,7 @@ public interface IOpinionService extends IService<Opinion> {
     //修改意见内容
     public int updateOpinion(Opinion opinion);
     //删除意见
-    public int delectOpinion(int opinionId);
+    public int delectOpinion(Opinion opinion);
     //分页模糊查询收到的意见
     public IPage<Opinion> selectOpinion(int page,int size,String zt,int staffId);
     //回复意见

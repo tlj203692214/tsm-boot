@@ -40,7 +40,8 @@ public class ReceivingServiceImpl extends ServiceImpl<ReceivingMapper, Receiving
 
         QueryWrapper<Receiving> wrapper=new QueryWrapper<>();
         wrapper.inSql("STAFF_NAME2", "select STAFF_NAME2 from RECEIVING where STAFF_NAME2 like '%" + name + "%'")
-                .notLike("RECEIVING_DELETED",name);
+                .notLike("RECEIVING_DELETED",name)
+                .orderByDesc("RECEIVINGS_ID");
         if(zt.equals("a")){
 
         }else if(zt.equals("b")){
