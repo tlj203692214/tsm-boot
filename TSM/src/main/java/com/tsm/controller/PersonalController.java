@@ -28,4 +28,13 @@ public class PersonalController {
         System.out.println("新增数据"+add+"条");
         return add;
     }
+
+    /**
+     * 修改用户
+     */
+    @PostMapping("/updatePersonal")
+    public int updatePersonal(@RequestBody Personal personal){
+        return service.updatePersonal(personal);
+    }
+
 }

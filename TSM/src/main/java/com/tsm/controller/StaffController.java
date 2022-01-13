@@ -27,6 +27,11 @@ public class StaffController {
     @Autowired
     private IStaffService iStaffService;
 
+    /**
+     * 登录
+     * @param staff
+     * @return
+     */
     @PostMapping("/selectStaff")
     public Staff selectStaff(@RequestBody Staff staff){
         String name = staff.getStaffName();
