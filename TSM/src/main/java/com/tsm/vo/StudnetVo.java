@@ -29,6 +29,6 @@ public class StudnetVo {
     private int deleted;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date studententrance;//入学时间
-
+    private int courseid ;
 
 }
