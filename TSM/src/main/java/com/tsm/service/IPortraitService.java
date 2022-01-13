@@ -12,5 +12,6 @@ import com.tsm.entity.Portrait;
  * @since 2021-12-09
  */
 public interface IPortraitService extends IService<Portrait> {
-
+        public int updatePortrait(Portrait portrait);
+        public Portrait selectPortrait(int id);
 }

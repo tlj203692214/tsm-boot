@@ -13,4 +13,5 @@ import com.tsm.entity.Personal;
  */
 public interface IPersonalService extends IService<Personal> {
     public int addpersonal(Personal personal);
+    public int updatePersonal(Personal personal);
 }

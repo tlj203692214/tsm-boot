@@ -35,6 +35,9 @@ public class Staff implements Serializable {
     @TableField("STAFF_PASS")
     private String staffPass;
 
+    @TableField("STAFF_STATE")
+    private int staffState;
+
     @TableField("DELETED")
     private int deleted;
 

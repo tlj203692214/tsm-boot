@@ -21,4 +21,6 @@ public interface IStaffService extends IService<Staff> {
 
         //员工辞退修改账号状态
         public int updateStaff(int staffid);
+
+
 }

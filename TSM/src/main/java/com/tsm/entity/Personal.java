@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -39,6 +40,7 @@ public class Personal implements Serializable {
     private int personalAge;
 
     @TableField("PERSONAL_BIRTHDAY")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date personalBirthday;
 
     @TableField("PERSONAL_IDCARD")
@@ -48,7 +50,11 @@ public class Personal implements Serializable {
     private String personalPhone;
 
     @TableField("ENTRY_TIME")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date entryTime;
+
+    @TableField("PERSONAL_STATE")
+    private int personalState;
 
     @TableField("PORTRAIT_ID")
     private int portraitId;

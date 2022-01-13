@@ -6,6 +6,7 @@ import com.tsm.mapper.PersonalMapper;
 import com.tsm.service.IPersonalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
  * @since 2021-12-09
  */
 @Service
+@Transactional
 public class PersonalServiceImpl extends ServiceImpl<PersonalMapper, Personal> implements IPersonalService {
     @Autowired
     private PersonalMapper personalMapper;
@@ -29,4 +31,11 @@ public class PersonalServiceImpl extends ServiceImpl<PersonalMapper, Personal> i
         }
         return add;
     }
+
+    @Override
+    public int updatePersonal(Personal personal) {
+        return personalMapper.updateById(personal);
+    }
+
+
 }

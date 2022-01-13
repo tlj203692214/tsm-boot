@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -39,9 +40,11 @@ public class Position implements Serializable {
     private String positionRemark;
 
     @TableField("POSITION_CREATED")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date positionCreated;
 
     @TableField("POSITION_UPDATED")
+    @JsonFormat(pattern = "YYYY-MM-dd")
     private Date positionUpdated;
 
     @TableField("POSITION_STATE")
