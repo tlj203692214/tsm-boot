@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StaffleaveVoMapper extends BaseMapper<StaffleaveVo> {
-    @Select("select * from staffleave sl left join personal ps on sl.STAFF_ID1 = ps.STAFF_ID " +
-            "left join personal p on sl.STAFF_ID2 = p.STAFF_ID" + " ${ew.customSqlSegment}")//员工请假分页模糊查询
+    @Select("select * from staffleave sl left join personal ps on sl.STAFF_ID1 = ps.STAFF_ID left join personal p " +
+            "on sl.STAFF_ID2 = p.STAFF_ID" + " ${ew.customSqlSegment}" + " order by LEAVE_ID desc")//员工请假分页模糊查询
     public IPage<StaffleaveVo> findleaveVo(Page page, @Param(Constants.WRAPPER) QueryWrapper<StaffleaveVo> adminVoQueryWrapper);
 }

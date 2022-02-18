@@ -35,6 +35,9 @@ public class Dept implements Serializable {
     @TableField("DEPT_NAME")
     private String deptName;
 
+    @TableField("DEPT_DID")
+    private int deptdid;
+
     @TableField("DELETED")
     private int deleted;
 

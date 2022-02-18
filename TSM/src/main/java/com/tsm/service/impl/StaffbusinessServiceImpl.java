@@ -41,4 +41,15 @@ public class StaffbusinessServiceImpl extends ServiceImpl<StaffbusinessMapper, S
         IPage<Staffbusiness> iPage = mapper.selectPage(page1,wrapper);
         return iPage;
     }
+
+    @Override
+    public int addstaffbusiness(Staffbusiness staffbusiness) {
+        int add = mapper.insert(staffbusiness);
+        if (add>0){
+            log.debug("新增成功");
+        }else{
+            log.debug("新增失败");
+        }
+        return add;
+    }
 }

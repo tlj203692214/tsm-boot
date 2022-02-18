@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -27,5 +29,11 @@ public class SatffsignController {
         int daka = service.updateStaffsign(satffsign);
         System.out.println(daka);
         return daka;
+    }
+    //查询所有员工打卡
+    @GetMapping("/staffsignlist")
+    public List<Satffsign> StaffsignList(){
+        List<Satffsign> list = service.StaffsignList();
+        return list;
     }
 }
