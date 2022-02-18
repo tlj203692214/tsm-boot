@@ -26,9 +26,11 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
     @Autowired
     private  NoticeMapper noticeMapper;
     @Override
-    public IPage<Notice> updateNotice(int page, int size, String zt, String js, String input) {
+    public IPage<Notice> selectNotice(int page, int size, String zt, String js, String input) {
         QueryWrapper<Notice> wrapper=new QueryWrapper<>();
         wrapper.eq("DELETED",0);
+        wrapper.orderByDesc("NOTICE_ID");
+
         if(zt.equals("a")){
 
         }else if(zt.equals("b")){
@@ -40,8 +42,8 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
         }
         if(js.equals("公告主题")){
             wrapper.like("NOTICE_THEME",input);
-        }else if(js.equals("公告内容")){
-            wrapper.like("NOTICE_CONTENT",input);
+        }else if(js.equals("部门范围")){
+            wrapper.like("DEPT_NAME",input);
         }else{
 
         }
@@ -88,5 +90,17 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
     public int updateNotice(Notice notice) {
 
         return noticeMapper.updateById(notice);
+    }
+
+    @Override
+    public IPage<Notice> selectNotices(int page, int size, String deptId) {
+        System.out.println("ssssssssssssssssssssssssssssssss");
+        QueryWrapper<Notice> wrapper=new QueryWrapper<>();
+        wrapper.inSql("DEPT_NAME","select DEPT_NAME from NOTICE where DEPT_NAME like '%0%' or DEPT_NAME like '%" +deptId+ "%'")
+                .eq("NOTICE_STATE",1)
+         .eq("DELETED",0);
+        Page<Notice> page1=new Page<>(page,size);
+        IPage<Notice> sendIPage = noticeMapper.selectPage(page1, wrapper);
+        return sendIPage;
     }
 }

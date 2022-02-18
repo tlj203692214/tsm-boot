@@ -28,7 +28,8 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
 @Override
     public  void updateFill(MetaObject metaObject){
     log.info("start update fill........");
-    this.setFieldValByName("sandDate",new Date(),metaObject);
+    this.setFieldValByName("sandrDate",new Date(),metaObject);
+    this.setFieldValByName("noticeDate",new Date(),metaObject);
     this.setFieldValByName("positionCreated",new Date(),metaObject);
     this.setFieldValByName("positionUpdated",new Date(),metaObject);
 

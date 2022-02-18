@@ -32,9 +32,48 @@ public class DeptController {
         return iPage;
     }
 
-    @PostMapping("/selectDept")
+    @PostMapping("/selectDept")  //查询所有部门
     public List<Dept> selectDept(@RequestBody Dept dept){
         List<Dept> list=service.updateDept(dept);
         return list;
+    }
+    //逻辑删除部门
+    @PostMapping("/deldept/{deptid}")
+    public int deldept(@PathVariable("deptid") int deptid){
+        int del = service.delDept(deptid);
+        return del;
+    }
+
+    @PostMapping("/updept")
+    public int updept(@RequestBody Dept dept){
+        int updete = service.upDept(dept);
+        return updete;
+    }
+
+    @PostMapping("/addDept")
+    public int addDept(@RequestBody Dept dept){
+        int insert = service.addDept(dept);
+        return insert;
+    }
+
+    @GetMapping("/listDept")
+    public List<Dept> ListDept(){
+        List<Dept> list = service.ListDept();
+        return list;
+    }
+    @PostMapping("/selectDepts/{staffId}")   //通过员工id查询部门
+    public List<Dept> selectDepts(@PathVariable("staffId") int id){
+   List<Dept> list = service.selectDept(id);
+        return list;
+    }
+    @PostMapping("/selectDeptjl/{staffId}")   //查询多级部门
+    public List<Dept> selectDeptjl(@PathVariable("staffId") int id){
+            List<Dept> list=service.selectDeptlj(id);
+        return list;
+    }
+    @PostMapping("/selectDeptsl/{staffId}")   //统计下一级是否还包含部门
+    public Long selectDeptsl(@PathVariable("staffId") int id){
+       Long a=service.selectDeptsl(id);
+        return a;
     }
 }
