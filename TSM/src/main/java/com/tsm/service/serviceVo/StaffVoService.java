@@ -18,4 +18,6 @@ import java.util.List;
 public interface StaffVoService extends IService<StaffVo> {
         public IPage<StaffVo> selectStaffVoAll(int page,int size,String name);
         int updateStaffVo(StaffVo staffVo);
+//        根据用户id查询角色
+        public int[] selectPosByStaffId(int id);
 }

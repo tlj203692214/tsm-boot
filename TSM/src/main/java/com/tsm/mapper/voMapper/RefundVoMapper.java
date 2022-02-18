@@ -4,12 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tsm.vo.RefundVo;
+import com.tsm.vo.payMoneyVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * <p>
@@ -21,13 +25,54 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface RefundVoMapper extends BaseMapper<RefundVo> {
-//    @Select("select * from refund r LEFT JOIN LEAVESCHOOL l on r.LEAVESCHOOL_ID = l.LEAVESCHOOL_ID \n" +
-//            "LEFT JOIN STUDENT s on l.student_id=s.student_id \n" +
-//            "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
-//            "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
-//            "left join COURSE o on r.course_id=o.course_id \n" +
-//            "left join STAFF t on r.staff_id=t.staff_id")
-//    IPage<RefundVo> selectRefundVoAll(Page page,Wrapper wrapper);
+    /**
+     * 查询退费所有信息
+     */
+    @Select("select * from refund r \n" +
+            "LEFT JOIN LEAVESCHOOL l on r.LEAVESCHOOL_ID = l.LEAVESCHOOL_ID \n" +
+            "LEFT JOIN STUDENT s on l.student_id=s.student_id \n" +
+            "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
+            "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
+            "left join COURSE o on r.course_id=o.course_id \n" +
+            "left join STAFF t on r.staff_id=t.staff_id" + " ${ew.customSqlSegment}")
+    public List<RefundVo> selectRefundVo(@Param(Constants.WRAPPER)QueryWrapper<RefundVo> queryWrapper);
+
+    /*
+    * 多表统计财务所有信息
+    * */
+    @Select("\n" +
+            "select count(*) from refund r \n" +
+            "LEFT JOIN LEAVESCHOOL l on r.LEAVESCHOOL_ID = l.LEAVESCHOOL_ID \n" +
+            "LEFT JOIN STUDENT s on l.student_id=s.student_id \n" +
+            "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
+            "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
+            "left join COURSE o on r.course_id=o.course_id \n" +
+            "left join STAFF t on r.staff_id=t.staff_id")
+    public int countMoney();
+
+    /*
+     * 多表统计财务未退费的所有数据
+     * */
+    @Select("select count(*) from refund r \n" +
+            "LEFT JOIN LEAVESCHOOL l on r.LEAVESCHOOL_ID = l.LEAVESCHOOL_ID \n" +
+            "LEFT JOIN STUDENT s on l.student_id=s.student_id \n" +
+            "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
+            "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
+            "left join COURSE o on r.course_id=o.course_id \n" +
+            "left join STAFF t on r.staff_id=t.staff_id where r.refund_state=0")
+    public int countStateMoney();
+
+    /*
+     * 多表统计财务已退费的所有数据
+     * */
+    @Select("select count(*) from refund r \n" +
+            "LEFT JOIN LEAVESCHOOL l on r.LEAVESCHOOL_ID = l.LEAVESCHOOL_ID \n" +
+            "LEFT JOIN STUDENT s on l.student_id=s.student_id \n" +
+            "left join CLASSRECORD c on r.classrecord_id=c.classrecord_id \n" +
+            "left join CLASSES cl on c.classes_id =cl.classes_id \n" +
+            "left join COURSE o on r.course_id=o.course_id \n" +
+            "left join STAFF t on r.staff_id=t.staff_id where r.refund_state=1")
+    public int countStateMoney2();
 
     /**
      * 根据名字模糊查询

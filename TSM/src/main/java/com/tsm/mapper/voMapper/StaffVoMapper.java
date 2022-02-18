@@ -28,4 +28,10 @@ public interface StaffVoMapper extends BaseMapper<StaffVo> {
             "left join PORTRAIT por on per.PORTRAIT_id=por.PORTRAIT_id where per.personal_name like '%${name}%' ")
     public IPage<StaffVo> selectAllStaff(Page page,@Param("name") String name);
 
+    @Select("select p.position_id from staff_position sp \n" +
+            "left join staff s on sp.STAFF_ID = s.STAFF_ID \n" +
+            "left join POSITION p on sp.position_id = p.position_id\n" +
+            "where s.STAFF_ID = #{id}")
+    public int[] selectPositionByStaffId(int id);
+
 }

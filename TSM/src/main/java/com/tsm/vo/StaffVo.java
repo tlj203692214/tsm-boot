@@ -13,9 +13,11 @@ public class StaffVo {
     private int staffpositionId;
     private String deptName;
 
+    private int staffId;
     private String staffName;
     private int staffState;
 
+    private int positionId;
     private String positionName;
     private String positionCode;
     private String positionRemark;

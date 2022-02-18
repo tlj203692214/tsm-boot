@@ -38,6 +38,9 @@ public class Paymoney implements Serializable {
     @TableField("PAYMONEY_MODE")
     private String paymoneyMode;
 
+    @TableField("PAYMONEY_STATE")
+    private int paymoneyState;
+
     @TableField("COURSE_ID")
     private int courseId;
 

@@ -6,19 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class IncomeVo {
-    private BigDecimal incomeId;
-    private BigDecimal incomeState;
-    private BigDecimal paymoneyMoney;
+    private int paymoneyId;
+    private int paymoneyState;
+    private double paymoneyMoney;
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private LocalDateTime paymoneyDate;
+    private Date paymoneyDate;
     private String paymoneyMode;
     private String staffName;
-    private String studentName;
+    private String studentfilesName;
     private BigDecimal deleted;
 }

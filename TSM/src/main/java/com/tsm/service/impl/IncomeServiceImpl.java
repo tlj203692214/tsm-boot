@@ -21,21 +21,6 @@ public class IncomeServiceImpl extends ServiceImpl<IncomeMapper, Income> impleme
     @Autowired
     private IncomeMapper incomeMapper;
 
-    /**
-     * 根据id修改审批状态
-     * @param id
-     * @return
-     */
-    @Override
-    public int updateState(int id) {
-        Income income = incomeMapper.selectById(id);
-        income.setIncomeState(0);
-        int i = incomeMapper.updateById(income);
-        return i;
-    }
-
-    @Autowired
-    private IncomeMapper mapper;
     @Override
     public Long IncomeCount(int zt) {
         QueryWrapper<Income> wrapper = new QueryWrapper<>();

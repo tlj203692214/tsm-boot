@@ -10,6 +10,8 @@ import com.tsm.service.IPositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -27,8 +29,28 @@ public class PositionServiceImpl extends ServiceImpl<PositionMapper, Position> i
     public IPage<Position> selectPosition(int size, int page,String name) {
         Page<Position> page1 = new Page<>(size,page);
         QueryWrapper<Position> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByAsc("POSITION_ID");
         queryWrapper.like("POSITION_NAME",name);
         IPage<Position> positionPage = positionMapper.selectPage(page1, queryWrapper);
         return positionPage;
+    }
+
+    /**
+     * 查询所有的角色
+     * @return
+     */
+    @Override
+    public List<Position> selectPositionAll() {
+        return positionMapper.selectList(null);
+    }
+
+    @Override
+    public int insertPosition(Position position) {
+        return positionMapper.insert(position);
+    }
+
+    @Override
+    public int updatePosition(Position position) {
+        return positionMapper.updateById(position);
     }
 }

@@ -15,4 +15,6 @@ import com.tsm.vo.ExpenditureVo;
 public interface IExpenditureVoService extends IService<ExpenditureVo> {
         public IPage<ExpenditureVo> selectExpenditurePage(int page, int size);
 
+//        统计校务支出金额
+        public double countMoney();
 }
