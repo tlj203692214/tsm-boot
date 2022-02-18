@@ -27,17 +27,14 @@ public class StaffsignVoServiceImpl extends ServiceImpl<StaffsignVoMapper, Staff
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         DateFormat dateFormat = DateFormat.getDateInstance();
         String nyr = dateFormat.format(date);
-        System.out.println("系统时间"+nyr);
         // 视图层vo的值进行了更改显示，但是数据库的状态并没有改变
         for (int i=0;i<Ipage.getRecords().size();i++){
             StaffsignVo s=Ipage.getRecords().get(i);
             String mydate = dateFormat.format(s.getSignDate());
-            System.out.println("数据库时间"+mydate);
             if (mydate.equals(nyr)){
 
             }else{
                 s.setSignState(0);
-                System.out.println("状态"+s.getSignState());
             }
         }
         return Ipage;

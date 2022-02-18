@@ -6,6 +6,7 @@ import com.tsm.entity.Staffbusiness;
 import com.tsm.service.IStaffbusinessService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -28,5 +29,11 @@ public class StaffbusinessController {
         IPage<Staffbusiness> iPage = service.findbusiness(st, page, size);
         log.debug(iPage.toString());
         return iPage;
+    }
+    @PostMapping("insertbusiness")
+    public int Insertbusiness(@RequestBody Staffbusiness staffbusiness){
+        int add = service.addstaffbusiness(staffbusiness);
+        log.debug("新增成功"+add+"条数据");
+        return add;
     }
 }

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.tsm.entity.Attendance;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -14,4 +16,5 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface IAttendanceService extends IService<Attendance> {
     public int addAttendance(@RequestBody Attendance attendance);
+    public List<Attendance> AttendancesByid(int staffid);
 }

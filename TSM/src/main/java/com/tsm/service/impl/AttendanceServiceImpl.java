@@ -1,5 +1,6 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Attendance;
 import com.tsm.mapper.AttendanceMapper;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -34,5 +36,13 @@ public class AttendanceServiceImpl extends ServiceImpl<AttendanceMapper, Attenda
             log.debug("新增失败！");
         }
         return insert;
+    }
+
+    @Override
+    public List<Attendance> AttendancesByid(int staffid) {
+        QueryWrapper<Attendance> wrapper = new QueryWrapper<>();
+        wrapper.eq("STAFF_ID",staffid);
+        List<Attendance> list = attendanceMapper.selectList(wrapper);
+        return list;
     }
 }
