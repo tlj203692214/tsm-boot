@@ -7,6 +7,8 @@ import com.tsm.vo.personalVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -22,5 +24,11 @@ public class PersonalVoServiceImpl extends ServiceImpl<PersonalVoMapper, persona
     @Override
     public personalVo selectPicture(int id) {
         return personalVoMapper.selectPicture(id);
+    }
+
+    @Override
+    public List<personalVo> selectPersonal(int id) {
+
+        return personalVoMapper.selectPersonalVo(id);
     }
 }
