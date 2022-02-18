@@ -15,6 +15,7 @@ import java.util.List;
  * @author 军
  * @since 2021-12-09
  */
+
 public interface IDeptService extends IService<Dept> {
     public IPage<Dept> findDepts(String it, int page, int size);
     public List<Dept> updateDept(@RequestBody Dept dept);
@@ -22,4 +23,10 @@ public interface IDeptService extends IService<Dept> {
     public int upDept(@RequestBody Dept dept);
     public int addDept(Dept dept);
     public List<Dept> ListDept();
+    //通过员工id查询部门
+    public List<Dept>  selectDept(int staffId);
+    //查询多级部门
+    public List<Dept>  selectDeptlj(int staffId);
+    //统计是否包含子部门
+    public Long selectDeptsl(int staffId);
 }

@@ -39,7 +39,7 @@ public class Notice implements Serializable {
     @TableField("NOTICE_CONTENT")
     private String noticeContent;
 
-    @TableField(value="NOTICE_DATE",fill = FieldFill.INSERT)
+    @TableField(value="NOTICE_DATE",fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
     private Date noticeDate;
 
@@ -48,6 +48,9 @@ public class Notice implements Serializable {
 
     @TableField("STAFF_ID")
     private int staffId;
+
+    @TableField("DEPT_NAME")
+    private String deptName;
 
     @TableField("DELETED")
     private int deleted;

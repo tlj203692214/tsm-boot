@@ -25,7 +25,7 @@ public class NoticeController {
     @GetMapping("/bulletinbox")   //根据条件分页模糊查询公告箱
     public IPage<Notice> updateNotice(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("zt") String zt, @RequestParam("js") String js, @RequestParam("input") String input) {
 
-        IPage<Notice> sendIPage =iNoticeService.updateNotice(page, size, zt, js, input);
+        IPage<Notice> sendIPage =iNoticeService.selectNotice(page, size, zt, js, input);
         return sendIPage;
     }
     @PostMapping("/addNotice")
@@ -57,5 +57,11 @@ public class NoticeController {
 
         int  a =iNoticeService.updateNotice(notice);
         return a;
+    }
+    @GetMapping("/selectNotice/{deptId}")
+    public IPage<Notice> selectNotice(@PathVariable("deptId") String deptId) {
+
+       IPage<Notice>  iPage =iNoticeService.selectNotices(1,5,deptId);
+        return iPage;
     }
 }

@@ -31,7 +31,7 @@ public class PersonalVoController {
     }
     @GetMapping("/selectPersonal/{staffId}")
     public List<personalVo> selectPersonalVo(@PathVariable("staffId") int id){
-        System.out.println(id+"编号");
+
         return personalVoService.selectPersonal(id);
     }
 }

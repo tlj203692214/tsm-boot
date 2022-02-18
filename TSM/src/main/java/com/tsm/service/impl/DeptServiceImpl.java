@@ -92,4 +92,28 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return list;
     }
 
+    @Override
+    public List<Dept> selectDept(int staffId) {
+        List<Dept> list=deptMapper.selectDept(staffId);
+        return list;
+    }
+
+    @Override
+    public List<Dept> selectDeptlj(int staffId) {
+        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
+        wrapper.eq("DEPT_DID",staffId);
+        List<Dept> list=deptMapper.selectList(wrapper);
+        return list;
+    }
+
+    @Override
+    public Long selectDeptsl(int staffId) {
+        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
+        wrapper.eq("DEPT_DID",staffId);
+       Long a=deptMapper.selectCount(wrapper);
+
+        return a;
+    }
+
+
 }

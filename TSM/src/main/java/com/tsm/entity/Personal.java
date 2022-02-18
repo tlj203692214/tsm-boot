@@ -50,6 +50,7 @@ public class Personal implements Serializable {
     private String personalPhone;
 
     @TableField("ENTRY_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date entryTime;
 
     @TableField("PORTRAIT_ID")

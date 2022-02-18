@@ -32,7 +32,7 @@ public class DeptController {
         return iPage;
     }
 
-    @PostMapping("/selectDept")
+    @PostMapping("/selectDept")  //查询所有部门
     public List<Dept> selectDept(@RequestBody Dept dept){
         List<Dept> list=service.updateDept(dept);
         return list;
@@ -60,5 +60,20 @@ public class DeptController {
     public List<Dept> ListDept(){
         List<Dept> list = service.ListDept();
         return list;
+    }
+    @PostMapping("/selectDepts/{staffId}")   //通过员工id查询部门
+    public List<Dept> selectDepts(@PathVariable("staffId") int id){
+   List<Dept> list = service.selectDept(id);
+        return list;
+    }
+    @PostMapping("/selectDeptjl/{staffId}")   //查询多级部门
+    public List<Dept> selectDeptjl(@PathVariable("staffId") int id){
+            List<Dept> list=service.selectDeptlj(id);
+        return list;
+    }
+    @PostMapping("/selectDeptsl/{staffId}")   //统计下一级是否还包含部门
+    public Long selectDeptsl(@PathVariable("staffId") int id){
+       Long a=service.selectDeptsl(id);
+        return a;
     }
 }
