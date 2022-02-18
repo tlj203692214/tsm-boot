@@ -32,10 +32,6 @@ public class StaffVoController {
 
     /**
      * 查询所有的用户
-     * @param page
-     * @param size
-     * @param perName
-     * @return
      */
     @GetMapping("/selectStaffVoAll")
     public IPage<StaffVo> selectStaffVoAll(@RequestParam("currentPage")int page,
@@ -45,12 +41,18 @@ public class StaffVoController {
 
     /**
      * 修改用户信息
-     * @param staffVo
-     * @return
      */
     @PostMapping("/updateStaffVo")
     public int updateStaffVo(@RequestBody StaffVo staffVo){
         return staffVoService.updateStaffVo(staffVo);
+    }
+
+    /**
+     * 根据用户id查询角色
+     */
+    @PostMapping("/selectPosById")
+    public int[] selectPosById(@RequestBody StaffVo staffVo){
+        return staffVoService.selectPosByStaffId(staffVo.getStaffId());
     }
 
 }

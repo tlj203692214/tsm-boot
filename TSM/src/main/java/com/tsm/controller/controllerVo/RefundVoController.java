@@ -1,6 +1,7 @@
 package com.tsm.controller.controllerVo;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.service.serviceVo.IRefundVoService;
 import com.tsm.vo.RefundVo;
@@ -38,6 +39,30 @@ public class RefundVoController {
     @PostMapping("/updateState")
     public int updateState(@RequestBody RefundVo refundVo){
         return iRefundVoService.updateState(refundVo.getRefundId());
+    }
+
+    /**
+     * 统计退费所有的金额
+     */
+    @GetMapping("/countAllMoney")
+    public double countAllMoney(){
+        return iRefundVoService.selectRefundVo();
+    }
+
+    /**
+     * 根据状态统计已退金额
+     */
+    @GetMapping("/countByStateMoney")
+    public double countByStateMoney(){
+        return iRefundVoService.selectCountState();
+    }
+
+    /**
+     * 根据状态统计未退金额
+     */
+    @GetMapping("/countByStateMoney2")
+    public double countByStateMoney2(){
+        return iRefundVoService.selectCountState2();
     }
 
 }

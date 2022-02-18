@@ -1,7 +1,6 @@
 package com.tsm.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -24,11 +23,12 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Navigation对象", description="")
+@KeySequence(value = "NAVIGATION_seq")
 public class Navigation implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("NAVIGATION_ID")
+    @TableId(value = "NAVIGATION_ID",type = IdType.INPUT)
     private int navigationId;
 
     @TableField("NAVIGATION_NAME")
@@ -44,7 +44,8 @@ public class Navigation implements Serializable {
     private String navigationIcon;
 
     @TableField("DELETED")
-    private BigDecimal deleted;
+    @TableLogic
+    private int deleted;
 
     @TableField(exist = false)
     private List<Navigation> childern=new ArrayList<>();

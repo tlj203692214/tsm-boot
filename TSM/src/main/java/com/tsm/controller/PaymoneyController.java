@@ -50,6 +50,12 @@ public class PaymoneyController {
       return iPaymoneyService.deleteByIds(paymoney.getPaymoneyId());
     }
 
-
+    /**
+     * 根据id修改审核状态
+     */
+    @PostMapping("updateStateById")
+    public int updatePaymoneyState(@RequestBody Paymoney paymoney){
+        return iPaymoneyService.updateState(paymoney.getPaymoneyId());
+    }
 
 }
