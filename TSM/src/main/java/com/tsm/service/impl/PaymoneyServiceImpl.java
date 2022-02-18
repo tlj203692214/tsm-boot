@@ -73,4 +73,10 @@ public class PaymoneyServiceImpl extends ServiceImpl<PaymoneyMapper, Paymoney> i
         paymoney.setPaymoneyState(0);
         return paymoneyMapper.updateById(paymoney);
     }
+
+    @Override
+    public int intoPaymone(Paymoney paymoney) {
+        int a = paymoneyMapper.insert(paymoney);
+        return a;
+    }
 }

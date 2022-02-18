@@ -55,4 +55,10 @@ public class StudentfilesController {
         int a=service.scselect(studentfiles);
         return a;
     }
+    //修改意向学员变成已报名
+    @PostMapping("/updatefollow")
+    public int updatefollow(@RequestBody Studentfiles studentfiles){
+        int a=service.updatestudnetzt(studentfiles);
+        return a;
+    }
 }
