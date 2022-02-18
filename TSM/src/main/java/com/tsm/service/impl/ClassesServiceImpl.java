@@ -1,6 +1,8 @@
 package com.tsm.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Classes;
 import com.tsm.mapper.ClassesMapper;
@@ -34,5 +36,32 @@ public class ClassesServiceImpl extends ServiceImpl<ClassesMapper, Classes> impl
     public List<Classes> cx() {
         List<Classes> list=mapper.selectList(null);
         return list;
+    }
+
+    @Override
+    public int addclasses(Classes classes) {
+        int a=mapper.insert(classes);
+        return a;
+    }
+
+    @Override
+    public IPage<Classes> selectclasseslist(int page, int size) {
+        Page<Classes> page1=new Page<>(page,size);
+        QueryWrapper<Classes> wrapper=new QueryWrapper<>();
+        wrapper.orderByDesc("CLASSES_ID");
+        IPage<Classes> list=mapper.selecclassestlist(page1,wrapper);
+        return list;
+    }
+
+    @Override
+    public int updataclasses(Classes classes) {
+        int a=mapper.updateById(classes);
+        return a;
+    }
+
+    @Override
+    public int updataclasseszt(Classes classes) {
+        int a =mapper.updateclasses(classes);
+        return a;
     }
 }

@@ -22,4 +22,6 @@ public interface IStudentfilesService extends IService<Studentfiles> {
     public int updatestudenfilesjhzt(Studentfiles studentfiles);
     //删除意向学员
     public int scselect(Studentfiles studentfiles);
+    //修改意向学员状态
+    public int updatestudnetzt(Studentfiles studentfiles);
 }

@@ -50,6 +50,12 @@ public class PaymoneyController {
       return iPaymoneyService.deleteByIds(paymoney.getPaymoneyId());
     }
 
+    //添加缴费记录
+    @PostMapping("/intopatmoney")
+    public int intopayMoney(@RequestBody Paymoney paymoney){
+        int a=iPaymoneyService.intoPaymone(paymoney);
+        return a;
+    }
 
 
 }

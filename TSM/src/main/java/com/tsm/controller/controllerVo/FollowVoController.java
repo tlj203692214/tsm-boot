@@ -26,6 +26,13 @@ public class FollowVoController {
         IPage<FollowVo> followVoIPage=followVoService.selectmohufollowvo(page, size, name, qkzt, lyqd, yxkc);
         return followVoIPage;
     }
+    //新生报名模糊查询
+    @GetMapping("/xsmh")
+    public IPage<FollowVo> selectfollowvoxsmohu(@RequestParam("currentPage") int page,@RequestParam("size") int size,@RequestParam("nameabc") String name,@RequestParam("qkzt") String qkzt,@RequestParam("lyqd") String lyqd,@RequestParam("yxkc") String yxkc,@RequestParam("xsbm") String sfbm) throws ParseException {
+        IPage<FollowVo> followVoIPage=followVoService.selectxsmohufollowvo(page, size, name, qkzt, lyqd, yxkc,sfbm);
+        return followVoIPage;
+    }
+
     @GetMapping("/sssss")
     public IPage<FollowVo> selectfollowvomohu1(@RequestParam("currentPage") int page,@RequestParam("size") int size,@RequestParam("nameabc") String name,@RequestParam("qkzt") String qkzt,@RequestParam("lyqd") String lyqd,@RequestParam("yxkc") String yxkc) {
         IPage<FollowVo> followVoIPage=followVoService.selectmohufollowvo1(page, size, name, qkzt, lyqd, yxkc);

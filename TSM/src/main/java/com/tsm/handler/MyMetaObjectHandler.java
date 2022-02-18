@@ -21,6 +21,7 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
         this.setFieldValByName("draftDate",new Date(),metaObject);
         this.setFieldValByName("noticeDate",new Date(),metaObject);
         this.setFieldValByName("publicationTime",new Date(),metaObject);
+        this.setFieldValByName("studententrance",new Date(),metaObject);
 
     }
 //更新时的填充策略

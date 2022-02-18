@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -33,6 +34,7 @@ public class Paymoney implements Serializable {
     private double paymoneyMoney;
 
     @TableField("PAYMONEY_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date paymoneyDate;
 
     @TableField("PAYMONEY_MODE")
@@ -44,8 +46,14 @@ public class Paymoney implements Serializable {
     @TableField("STAFF_ID")
     private int staffId;
 
-    @TableField("STUDENT_ID")
-    private int studentId;
+//    @TableField("STUDENT_ID")
+//    private int studentId;
+
+    @TableField("PAYMONEY_STATE")
+    private int paymoneyState;
+
+    @TableField("STUDENTFILES_ID")
+    private int studentfilesId;
 
     @TableField("DELETED")
     @TableLogic
