@@ -30,7 +30,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     public IPage<Dept> findDepts(String it, int page, int size) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
         wrapper.eq("DELETED",0);
+        wrapper.eq("DEPT_DID",0);
         wrapper.like("DEPT_NAME",it);
+        wrapper.orderByDesc("DEPT_ID");
         Page<Dept> page1 = new Page<>(page,size);
         IPage<Dept> iPage = deptMapper.selectPage(page1,wrapper);
         return iPage;
@@ -73,8 +75,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     public int addDept(Dept dept) {
         String name = dept.getDeptName();
+        int did = dept.getDeptdid();
         Dept dept1 = new Dept();
         dept1.setDeptName(name);
+        dept1.setDeptdid(did);
         int insert = deptMapper.insert(dept1);
         if (insert>0){
             log.debug("新增部门成功");

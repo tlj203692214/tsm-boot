@@ -14,4 +14,5 @@ import com.tsm.entity.Staffbusiness;
  */
 public interface IStaffbusinessService extends IService<Staffbusiness> {
     public IPage<Staffbusiness> findbusiness(String st, int page, int size);
+    public int addstaffbusiness(Staffbusiness staffbusiness);
 }

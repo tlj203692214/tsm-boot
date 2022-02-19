@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -27,5 +29,11 @@ public class AttendanceController {
         int add = service.addAttendance(attendance);
         System.out.println("新增"+add+"条数据");
         return add;
+    }
+    @GetMapping("/attendancebyid/{staffid}")
+    public List<Attendance> attendancesByid(@PathVariable("staffid") int staffid){
+        List<Attendance> list = service.AttendancesByid(staffid);
+        log.debug(list.toString());
+        return list;
     }
 }
