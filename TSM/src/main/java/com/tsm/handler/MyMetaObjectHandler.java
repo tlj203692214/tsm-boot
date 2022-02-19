@@ -21,6 +21,9 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
         this.setFieldValByName("draftDate",new Date(),metaObject);
         this.setFieldValByName("noticeDate",new Date(),metaObject);
         this.setFieldValByName("publicationTime",new Date(),metaObject);
+        this.setFieldValByName("positionCreated",new Date(),metaObject);
+        this.setFieldValByName("positionUpdated",new Date(),metaObject);
+        this.setFieldValByName("studententrance",new Date(),metaObject);
 
     }
 //更新时的填充策略
@@ -28,6 +31,9 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
     public  void updateFill(MetaObject metaObject){
     log.info("start update fill........");
     this.setFieldValByName("sandrDate",new Date(),metaObject);
+    this.setFieldValByName("noticeDate",new Date(),metaObject);
+    this.setFieldValByName("positionCreated",new Date(),metaObject);
+    this.setFieldValByName("positionUpdated",new Date(),metaObject);
 
 }
 }

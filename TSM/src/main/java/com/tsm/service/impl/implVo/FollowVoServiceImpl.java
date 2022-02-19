@@ -37,7 +37,6 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
     public IPage<FollowVo> selectmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc) throws ParseException {
         Page<FollowVo> followVoPage =new Page<>(page,size);
         QueryWrapper queryWrapper=new QueryWrapper();
-        List<FollowVo> followVos=new ArrayList<>();
 //        System.out.println(name+qkzt+lyqd+yxkc+sj1+sj2+":数据");
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 //        Date date = sdf.parse(sj1);
@@ -76,6 +75,34 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
 //        }
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
+        return followVoIPage;
+    }
+
+    @Override
+    public IPage<FollowVo> selectxsmohufollowvo(int page, int size, String name, String qkzt, String lyqd, String yxkc, String sfbm) throws ParseException {
+        Page<FollowVo> followVoPage =new Page<>(page,size);
+        QueryWrapper queryWrapper=new QueryWrapper();
+       if(sfbm!=null&&sfbm.length()!=0){
+           queryWrapper.orderByDesc("s.STUDENTFILES_ID");
+           queryWrapper.eq("s.STUDENTFILES_STATE",3);
+          if (name!=null&&name.length()!=0){
+              queryWrapper.like("s.STUDENTFILES_NAME",name);
+          }
+          if (yxkc!=null&&yxkc.length()!=0){
+              queryWrapper.eq("cou.COURSE_ID",yxkc);
+          }
+
+       }else{
+           queryWrapper.ne("s.STUDENTFILES_STATE",3);
+           queryWrapper.orderByDesc("s.STUDENTFILES_ID");
+           if (name!=null&&name.length()!=0){
+               queryWrapper.like("s.STUDENTFILES_NAME",name);
+           }
+           if (yxkc!=null&&yxkc.length()!=0){
+               queryWrapper.eq("cou.COURSE_ID",yxkc);
+           }
+       }
+        IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
         return followVoIPage;
     }
 

@@ -13,16 +13,15 @@ public class payMoneyVo {
     private Double paymoneyMoney;
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private LocalDateTime paymoneyDate;
-    private int incomeId;
-    private BigDecimal incomeState;
     private String paymoneyMode;
+    private int paymoneyState;
     private String courseName;
     private Double courseMoney;
     private Double courseHour;
     private Double coursePrice;
     private Double bookFee;
     private String staffName;
-    private String studentName;
+    private String studentfilesName;
     @TableLogic
     private int deleted;
 }

@@ -18,5 +18,16 @@ public interface IPaymoneyService extends IService<Paymoney> {
         public Long PaymoneyCount(int zt);
         public double PaymoneySum(int zt);
 
+        /**
+         * 根据id删除
+         */
         int deleteByIds(int ids);
+
+        /**
+         * 根据id修改审核状态
+         */
+        public int updateState(int id);
+
+        //添加缴费记录
+        public int intoPaymone(Paymoney paymoney);
 }

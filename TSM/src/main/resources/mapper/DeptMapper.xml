@@ -6,6 +6,7 @@
     <resultMap id="BaseResultMap" type="com.tsm.entity.Dept">
         <id column="DEPT_ID" property="deptId" />
         <result column="DEPT_NAME" property="deptName" />
+        <result column="DEPT_DID" property="deptDid"/>
         <result column="DELETED" property="deleted" />
     </resultMap>
 

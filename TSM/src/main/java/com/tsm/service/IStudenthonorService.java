@@ -12,5 +12,7 @@ import com.tsm.entity.Studenthonor;
  * @since 2021-12-09
  */
 public interface IStudenthonorService extends IService<Studenthonor> {
+    public int addstudenthon (Studenthonor studenthonor);
 
+    public int delectry (Studenthonor studenthonor);
 }

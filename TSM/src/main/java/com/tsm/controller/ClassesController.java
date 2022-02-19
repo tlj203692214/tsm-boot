@@ -1,6 +1,7 @@
 package com.tsm.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.tsm.entity.Classes;
 import com.tsm.service.IClassesService;
 import lombok.extern.slf4j.Slf4j;
@@ -35,5 +36,31 @@ public class ClassesController {
     public List<Classes> cxclasses(){
         List<Classes> list=service.cx();
         return list;
+    }
+
+    @PostMapping("/addclasses")
+    public int addclasses(@RequestBody Classes classes){
+        int a=service.addclasses(classes);
+        return a;
+    }
+
+    @GetMapping("/selectclasseslist")
+    public IPage<Classes> selectclasseslist(){
+        int page=1;
+        int size=1;
+        IPage<Classes> list=service.selectclasseslist(page,size);
+        return list;
+    }
+
+    @PostMapping("/updataclasses")
+    public int updataclasses(@RequestBody Classes classes){
+        int a=service.updataclasses(classes);
+        return a;
+    }
+
+    @PostMapping("/updataclasseszt")
+    public int updataclasseszt(@RequestBody Classes classes){
+        int a=service.updataclasseszt(classes);
+        return a;
     }
 }

@@ -23,7 +23,8 @@ public class StudentVoServiceImpl  extends ServiceImpl<StudentVoMapper, StudnetV
     public IPage<StudnetVo> cxstudentfy(int page, int size) {
         Page<StudnetVo> page1=new Page<>(page,size);
         QueryWrapper<StudnetVo> wrapper=new QueryWrapper<>();
-        wrapper.orderByDesc("STUDENT_ID");
+        wrapper.orderByDesc("s.STUDENT_ID");
+        wrapper.eq("s.DELETED",0);
         IPage<StudnetVo> iPage=mapper.ipage(page1,wrapper);
         return iPage;
     }
@@ -32,9 +33,9 @@ public class StudentVoServiceImpl  extends ServiceImpl<StudentVoMapper, StudnetV
     public IPage<StudnetVo> mohustudent(int page, int size, String xsname, String bj, Boolean sffb,String values) {
         Page<StudnetVo> page1=new Page<>(page,size);
         QueryWrapper<StudnetVo> wrapper=new QueryWrapper<>();
-if(values.equals("学生名字")) {
+if(values.equals("学生姓名")) {
     if (xsname != null && xsname.length() != 0) {
-        wrapper.eq("s.STUDENT_NAME", xsname);
+        wrapper.like("s.STUDENT_NAME", xsname);
     } else {
         log.debug(xsname + "xsname是空");
     }
@@ -51,7 +52,7 @@ if(values.equals("学生名字")) {
     }
 }else {
     if (xsname != null && xsname.length() != 0) {
-        wrapper.eq("c.CLASSES_NAME", xsname);
+        wrapper.like("c.CLASSES_NAME", xsname);
     } else {
         log.debug(xsname + "xsname是空");
     }

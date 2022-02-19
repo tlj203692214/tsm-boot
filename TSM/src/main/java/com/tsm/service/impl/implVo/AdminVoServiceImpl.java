@@ -16,15 +16,9 @@ public class AdminVoServiceImpl extends ServiceImpl<AdminVoMapper, AdminVo> impl
     private AdminVoMapper voMapper;
 
     @Override
-    public IPage<AdminVo> findsadmins(String ri, String st, String it, int page, int size) {
+    public IPage<AdminVo> findsadmins(String st, String it, int page, int size) {
         Page<AdminVo> page1 = new Page<>(page,size);
         QueryWrapper<AdminVo> wrapper = new QueryWrapper();
-        wrapper.eq("ad.DELETED",0);
-        if (ri.equals("3")){
-            wrapper.eq("ad.ADMINISTRATION_STATE",0);
-        }else if (ri.equals("6")){
-            wrapper.eq("ad.ADMINISTRATION_STATE",1);
-        }
         if (st.equals("1")){
             wrapper.like("ps.PERSONAL_NAME",it);
         }else if (st.equals("2")){

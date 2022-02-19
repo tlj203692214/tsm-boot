@@ -7,6 +7,7 @@ import com.tsm.mapper.SatffsignMapper;
 import com.tsm.service.ISatffsignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -27,6 +28,7 @@ public class SatffsignServiceImpl extends ServiceImpl<SatffsignMapper, Satffsign
     private SatffsignMapper mapper;
 
     @Override
+    @Transactional
     public int updateStaffsign(Satffsign satffsign) {
         int id = satffsign.getStaffId();
         Satffsign s1=mapper.selectById(id);

@@ -12,5 +12,9 @@ import com.tsm.entity.StaffPosition;
  * @since 2021-12-09
  */
 public interface IStaffPositionService extends IService<StaffPosition> {
+//    添加用户角色关联表
+    public int insertStaffPos(StaffPosition staffPosition);
+
+    int[] selectPositionById(int id);
 
 }

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.StaffPosition;
 import com.tsm.mapper.StaffPositionMapper;
 import com.tsm.service.IStaffPositionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class StaffPositionServiceImpl extends ServiceImpl<StaffPositionMapper, StaffPosition> implements IStaffPositionService {
+    @Autowired
+    private StaffPositionMapper staffPositionMapper;
 
+    @Override
+    public int insertStaffPos(StaffPosition staffPosition) {
+        return staffPositionMapper.insert(staffPosition);
+    }
+
+    @Override
+    public int[] selectPositionById(int id) {
+        return staffPositionMapper.selectPositionByStaffId(id);
+    }
 }

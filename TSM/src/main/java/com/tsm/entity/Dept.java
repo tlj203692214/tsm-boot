@@ -36,7 +36,7 @@ public class Dept implements Serializable {
     private String deptName;
 
     @TableField("DEPT_DID")
-    private int deptdid;
+    private int deptDid;
 
     @TableField("DELETED")
     private int deleted;

@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tsm.entity.Staff;
 import com.tsm.mapper.StaffMapper;
 import com.tsm.service.IStaffService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +18,6 @@ import java.util.List;
  * @author 军
  * @since 2021-12-09
  */
-@Slf4j
 @RestController
 @CrossOrigin(maxAge = 60)
 @RequestMapping("/staff")
@@ -44,17 +42,6 @@ public class StaffController {
     public List<Staff> selectstaffqudao1(){
         List<Staff> list=iStaffService.selectstaffqudao();
         return list;
-    }
-
-    @PostMapping("/upstaffstate/{staffid}")
-    public int updatestaff(@PathVariable("staffid") int staffid){
-        int upstaff = iStaffService.updateStaff(staffid);
-        if (upstaff>0){
-            log.debug("修改成功");
-        }else{
-            log.debug("修改失败");
-        }
-        return upstaff;
     }
 
     @Autowired

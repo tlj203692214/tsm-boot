@@ -12,5 +12,5 @@ import com.tsm.entity.Graduation;
  * @since 2021-12-09
  */
 public interface IGraduationService extends IService<Graduation> {
-
+public int addgraduation(Graduation graduation);
 }

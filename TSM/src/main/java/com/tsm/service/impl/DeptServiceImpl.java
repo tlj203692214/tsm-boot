@@ -40,7 +40,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public List<Dept> updateDept(Dept dept) {
-        List<Dept> list= deptMapper.selectList(null);
+        List<Dept> list = deptMapper.selectList(null);
         return list;
     }
 
@@ -49,9 +49,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         Dept dept = deptMapper.selectById(deptid);
         dept.setDeleted(1);
         int del = deptMapper.updateById(dept);
-        if (del>0){
-            log.debug("删除成功"+dept.getDeleted());
-        }else{
+        if (del > 0) {
+            log.debug("删除成功" + dept.getDeleted());
+        } else {
             log.debug("删除失败");
         }
         return del;
@@ -64,9 +64,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         Dept dept1 = deptMapper.selectById(id);
         dept1.setDeptName(name);
         int update = deptMapper.updateById(dept1);
-        if (update>0){
-            log.debug("修改部门成功"+dept1.getDeptName());
-        }else {
+        if (update > 0) {
+            log.debug("修改部门成功" + dept1.getDeptName());
+        } else {
             log.debug("修改部门失败");
         }
         return update;
@@ -75,14 +75,14 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     public int addDept(Dept dept) {
         String name = dept.getDeptName();
-        int did = dept.getDeptdid();
+        int did = dept.getDeptDid();
         Dept dept1 = new Dept();
         dept1.setDeptName(name);
-        dept1.setDeptdid(did);
+        dept1.setDeptDid(did);
         int insert = deptMapper.insert(dept1);
-        if (insert>0){
+        if (insert > 0) {
             log.debug("新增部门成功");
-        }else {
+        } else {
             log.debug("新增部门失败");
         }
         return insert;
@@ -95,5 +95,29 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }
+
+    @Override
+    public List<Dept> selectDept(int staffId) {
+        List<Dept> list = deptMapper.selectDept(staffId);
+        return list;
+    }
+
+    @Override
+    public List<Dept> selectDeptlj(int staffId) {
+        QueryWrapper<Dept> wrapper = new QueryWrapper<>();
+        wrapper.eq("DEPT_DID", staffId);
+        List<Dept> list = deptMapper.selectList(wrapper);
+        return list;
+    }
+
+    @Override
+    public Long selectDeptsl(int staffId) {
+        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
+        wrapper.eq("DEPT_DID",staffId);
+       Long a=deptMapper.selectCount(wrapper);
+
+        return a;
+    }
+
 
 }

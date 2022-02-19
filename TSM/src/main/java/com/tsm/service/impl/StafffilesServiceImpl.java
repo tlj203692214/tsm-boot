@@ -11,8 +11,6 @@ import com.tsm.service.IStafffilesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 /**
  * <p>
  *  服务实现类
@@ -29,7 +27,6 @@ public class StafffilesServiceImpl extends ServiceImpl<StafffilesMapper, Stafffi
     @Override
     public IPage<Stafffiles> findStafffs(String st, String it, int page, int size) {
         QueryWrapper<Stafffiles> wrapper = new QueryWrapper<>();
-        wrapper.eq("DELETED",0);
         if (st.equals("1")){
             wrapper.like("STAFFFILES_NAME",it);
         }else if (st.equals("2")){
@@ -40,16 +37,5 @@ public class StafffilesServiceImpl extends ServiceImpl<StafffilesMapper, Stafffi
         Page<Stafffiles> page1 = new Page<>(page,size);
         IPage<Stafffiles> IPage = mapper.selectPage(page1,wrapper);
         return IPage;
-    }
-
-    @Override
-    public int addStafffiles(Stafffiles stafffiles) {
-        int add = mapper.insert(stafffiles);
-        if (add>0){
-            log.debug("新增成功");
-        }else{
-            log.debug("新增失败");
-        }
-        return add;
     }
 }
