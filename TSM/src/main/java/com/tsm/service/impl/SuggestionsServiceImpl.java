@@ -74,4 +74,12 @@ public class SuggestionsServiceImpl extends ServiceImpl<SuggestionsMapper, Sugge
         List<Suggestions> list=suggestionsMapper.selectList(null);
         return list;
     }
+
+    @Override
+    public List<Suggestions> selectStaffId(int suggestionsId) {
+       QueryWrapper<Suggestions> wrapper=new QueryWrapper<>();
+       wrapper.eq("SUGGESTIONS_ID",suggestionsId);
+       List<Suggestions> list=suggestionsMapper.selectList(wrapper);
+        return list;
+    }
 }

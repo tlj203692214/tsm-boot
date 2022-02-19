@@ -27,4 +27,6 @@ public interface ISuggestionsService extends IService<Suggestions> {
     public List<Suggestions> selectSuggestions(String userScope);
     //查询所有意见箱(无条件查询)
     public List<Suggestions> selectSuggestionss();
+    //通过意见箱编号查询管理员
+    public List<Suggestions> selectStaffId(int suggestionsId);
 }
