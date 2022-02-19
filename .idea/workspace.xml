@@ -5,39 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/NotepadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/NotepadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/SuggestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/SuggestionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/NotepadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/NotepadMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/ClassesVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/ClassesVoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/INotepadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/INotepadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/ISuggestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/ISuggestionsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DraftServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DraftServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/NotepadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/NotepadServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/NoticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/NoticeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/OpinionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/OpinionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/ReceivingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/ReceivingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SatffsignServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SatffsignServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SuggestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SuggestionsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/ClassesVoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/ClassesVoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/logback-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/mapper/DeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/mapper/DeptMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/mapper/OpinionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/mapper/OpinionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/mapper/SendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/mapper/SendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/mapper/SendandreceivingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/mapper/SendandreceivingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/18dde436dd3e4b78be2c8aa898498f40_2048374.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/519215aad1d64302b9399ce656f3e83c_狗.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/e8e62796d2634188b56fd04603f56f37_2048374.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/AdminVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/AdminVo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lijun" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
