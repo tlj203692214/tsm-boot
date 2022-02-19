@@ -43,21 +43,26 @@ public class Opinion implements Serializable {
     private String opinionContent;
 
     @TableField("SUGGESTIONS_ID")
-    private BigDecimal suggestionsId;
+    private int suggestionsId;
 
     @TableField("STAFF_ID")
     private int staffId;
 
-    @TableField(value="PUBLICATION_TIME",fill = FieldFill.INSERT)
+    @TableField("PUBLISHER")
+    private String publisher;
 
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
+    @TableField(value="PUBLICATION_TIME",fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
     private Date publicationTime;
 
     @TableField("RESPONDENT")
     private String respondent;
 
-    @TableField(value="REPLY_TIME",fill=FieldFill.UPDATE)
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
+    @TableField("REPLYCONTENT")
+    private String replyContent;
+
+    @TableField("REPLY_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
     private Date replyTime;
 
     @TableField("DELETED")

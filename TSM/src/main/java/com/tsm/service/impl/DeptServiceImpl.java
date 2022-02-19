@@ -74,10 +74,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     public int addDept(Dept dept) {
         String name = dept.getDeptName();
-        int did = dept.getDeptdid();
+        int did = dept.getDeptDid();
         Dept dept1 = new Dept();
         dept1.setDeptName(name);
-        dept1.setDeptdid(did);
+        dept1.setDeptId(did);
         int insert = deptMapper.insert(dept1);
         if (insert>0){
             log.debug("新增部门成功");

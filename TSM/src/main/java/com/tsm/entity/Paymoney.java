@@ -52,9 +52,6 @@ public class Paymoney implements Serializable {
 //    @TableField("STUDENT_ID")
 //    private int studentId;
 
-    @TableField("PAYMONEY_STATE")
-    private int paymoneyState;
-
     @TableField("STUDENTFILES_ID")
     private int studentfilesId;
 

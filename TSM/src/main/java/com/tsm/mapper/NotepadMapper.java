@@ -2,6 +2,7 @@ package com.tsm.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tsm.entity.Notepad;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.tsm.entity.Notepad;
  * @author 军
  * @since 2021-12-09
  */
+@Mapper
 public interface NotepadMapper extends BaseMapper<Notepad> {
 
 }

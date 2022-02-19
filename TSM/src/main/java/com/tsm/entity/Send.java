@@ -40,7 +40,6 @@ public class Send implements Serializable {
     @TableField("SEND_CONTENT")
     private String sendContent;
 
-
     @TableField(value ="SEND_DATE", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
     private Date sendDate;
@@ -54,10 +53,8 @@ public class Send implements Serializable {
     @TableField("STAFF_NAME2")
     private String staffName2;
 
-
-    @ApiModelProperty(value = "逻辑删除")
-    @TableLogic(value="DELETED")
     @TableField("DELETED")
+    @TableLogic
     private int deleted;
 
 }

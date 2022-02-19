@@ -44,9 +44,13 @@ public class ClassesVoServiceImpl extends ServiceImpl<ClassesVoMapper, ClassesVo
         }else{
             System.out.println(jsname+"空");
         }
-        wrapper.orderByDesc("cla.CLASSES_ID");
+        wrapper.eq(" cla.DELETED",0);
+//        cou.COURSE_ID,cla.CLASSES_NUMBER,cla.CLASSES_ID,cla.CLASSES_NAME,rom.CLASSROOM_ID,rom.CLASSROOM_NAME,sta.STAFF_ID,sta.STAFF_NAME,COUNT(stu.CLASSES_ID) studentzh," +
+//        "cla.CLASSES_DATE,cou.COURSE_NAME
         wrapper.groupBy("cla.CLASSES_ID","cla.CLASSES_NAME","rom.CLASSROOM_NAME",
+
                 "sta.STAFF_NAME","cla.CLASSES_DATE","cou.COURSE_NAME","rom.CLASSROOM_ID","cou.COURSE_ID","sta.STAFF_ID","cla.CLASSES_NUMBER");
+        wrapper.orderByDesc("cla.CLASSES_ID");
         IPage<ClassesVo> iPage=mapper.selectClassesmhVo(page1,wrapper);
         return iPage;
     }

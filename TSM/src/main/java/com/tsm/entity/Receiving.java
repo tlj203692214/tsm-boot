@@ -53,7 +53,7 @@ public class Receiving implements Serializable {
     private String staffName2;
 
     @TableField("RECEIVING_DELETED")
-    private String receivingDeleted="1";
+    private String receivingDeleted;
 
 
 }

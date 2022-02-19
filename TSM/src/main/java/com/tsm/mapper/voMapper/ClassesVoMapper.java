@@ -23,7 +23,7 @@ public interface ClassesVoMapper extends BaseMapper<ClassesVo> {
     @Select("select cou.COURSE_ID,cla.CLASSES_NUMBER,cla.CLASSES_ID,cla.CLASSES_NAME,rom.CLASSROOM_ID,rom.CLASSROOM_NAME,sta.STAFF_ID,sta.STAFF_NAME,COUNT(stu.CLASSES_ID) studentzh," +
             "cla.CLASSES_DATE,cou.COURSE_NAME from CLASSES cla LEFT JOIN CLASSROOM rom on cla.CLASSROOM_ID=rom.CLASSROOM_ID" +
             " LEFT JOIN STAFF sta on cla.STAFF_ID=sta.STAFF_ID LEFT JOIN COURSE cou on cla.COURSE_ID=cou.COURSE_ID LEFT JOIN" +
-            " STUDENT stu on cla.CLASSES_ID=stu.CLASSES_ID WHERE cla.DELETED=0" + " ${ew.customSqlSegment}")
+            " STUDENT stu on cla.CLASSES_ID=stu.CLASSES_ID " + " ${ew.customSqlSegment}")
     public IPage<ClassesVo> selectClassesmhVo(Page page, @Param(Constants.WRAPPER) QueryWrapper<ClassesVo> followVoQueryWrapper);
 
     @Select("select * from STUDENT sta LEFT JOIN  CLASSES cla  on cla.CLASSES_ID=sta.CLASSES_ID" + " ${ew.customSqlSegment}")
