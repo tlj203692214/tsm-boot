@@ -48,4 +48,10 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         IPage<Course> iPage=courseMapper.selectPage(page1,wrapper);
         return iPage;
     }
+
+    @Override
+    public int addcourse(Course course) {
+        int a=courseMapper.insert(course);
+        return a;
+    }
 }

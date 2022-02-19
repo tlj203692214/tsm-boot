@@ -22,4 +22,7 @@ public List<Course> selectcorse();
     public IPage<Course> fyselectcourse(int page,int size);
     //名称模糊查询
     public IPage<Course> mohuselect(int page , int size, String name);
+
+    //添加课程
+    public int addcourse(Course course);
 }
