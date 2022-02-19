@@ -13,6 +13,7 @@ public class AdminVo {
     private Integer deptId;
     private Integer portraitId;
     private Integer positionId;
+    private Integer staffId;
     private String portraitUrl;
     private String personalName;
     private String personalPhone;
