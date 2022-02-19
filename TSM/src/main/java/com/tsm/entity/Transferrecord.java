@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -42,6 +43,7 @@ public class Transferrecord implements Serializable {
     private int classesTwo;
 
     @TableField("TRANSFERRECORD_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date transferrecordDate;
 
     @TableField("TRANSFERRECORD_REASON")

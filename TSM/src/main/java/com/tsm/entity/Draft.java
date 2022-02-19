@@ -47,6 +47,7 @@ public class Draft implements Serializable {
     private String staffName2;
 
     @TableField("DELETED")
+    @TableLogic
     private int deleted;
 
 

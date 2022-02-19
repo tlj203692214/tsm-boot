@@ -40,9 +40,8 @@ public class Send implements Serializable {
     @TableField("SEND_CONTENT")
     private String sendContent;
 
-
     @TableField(value ="SEND_DATE", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
     private Date sendDate;
 
     @TableField("SENDS_STATE")
@@ -54,9 +53,8 @@ public class Send implements Serializable {
     @TableField("STAFF_NAME2")
     private String staffName2;
 
-
-
     @TableField("DELETED")
+    @TableLogic
     private int deleted;
 
 }

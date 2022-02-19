@@ -12,5 +12,5 @@ import com.tsm.entity.Staffleave;
  * @since 2021-12-09
  */
 public interface IStaffleaveService extends IService<Staffleave> {
-
+    public int addstaffleave(Staffleave staffleave);
 }

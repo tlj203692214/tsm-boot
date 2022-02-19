@@ -20,7 +20,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/notepad")
 @CrossOrigin(maxAge = 60)
-
 public class NotepadController {
 @Autowired
     private INotepadService iNotepadService;

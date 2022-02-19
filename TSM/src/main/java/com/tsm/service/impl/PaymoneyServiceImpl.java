@@ -50,10 +50,33 @@ public class PaymoneyServiceImpl extends ServiceImpl<PaymoneyMapper, Paymoney> i
         return a;
     }
 
+    /**
+     * 根据id删除选中的行
+     * @param ids
+     * @return
+     */
     @Override
     public int deleteByIds(int ids) {
         Paymoney paymoney = paymoneyMapper.selectById(ids);
         paymoney.setDeleted(1);
         return paymoneyMapper.deleteById(paymoney);
+    }
+
+    /**
+     * 根据id修改审批状态
+     * @param id
+     * @return
+     */
+    @Override
+    public int updateState(int id) {
+        Paymoney paymoney = paymoneyMapper.selectById(id);
+        paymoney.setPaymoneyState(0);
+        return paymoneyMapper.updateById(paymoney);
+    }
+
+    @Override
+    public int intoPaymone(Paymoney paymoney) {
+        int a = paymoneyMapper.insert(paymoney);
+        return a;
     }
 }

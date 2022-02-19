@@ -1,10 +1,12 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,16 +34,15 @@ public class Position implements Serializable {
     @TableField("POSITION_NAME")
     private String positionName;
 
-    @TableField("POSITION_CODE")
-    private String positionCode;
-
     @TableField("POSITION_REMARK")
     private String positionRemark;
 
-    @TableField("POSITION_CREATED")
+    @TableField(value = "POSITION_CREATED",fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "YYYY-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date positionCreated;
 
-    @TableField("POSITION_UPDATED")
+    @TableField(value = "POSITION_UPDATED",fill = FieldFill.INSERT_UPDATE)
+    @JsonFormat(pattern = "YYYY-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date positionUpdated;
 
     @TableField("POSITION_STATE")

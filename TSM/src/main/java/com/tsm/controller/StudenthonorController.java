@@ -1,8 +1,11 @@
 package com.tsm.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tsm.entity.Studenthonor;
+import com.tsm.service.IStudenthonorService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -12,8 +15,25 @@ import org.springframework.web.bind.annotation.RestController;
  * @author 军
  * @since 2021-12-09
  */
+@Slf4j
 @RestController
 @RequestMapping("/studenthonor")
+@CrossOrigin(maxAge = 60)
 public class StudenthonorController {
+
+    @Autowired
+    private IStudenthonorService service;
+    //添加荣誉
+    @PostMapping("/addstudenthon")
+    public int addstudnethon(@RequestBody Studenthonor studenthonor){
+        int a=service.addstudenthon(studenthonor);
+        return a;
+    }
+    //删除荣誉
+    @PostMapping("/delectry")
+    public int delectstudenthon(@RequestBody Studenthonor studenthonor){
+        int a = service.delectry(studenthonor);
+        return a;
+    }
 
 }

@@ -45,7 +45,6 @@ public class SendServiceImpl extends ServiceImpl<SendMapper, Send> implements IS
         wrapper.eq("DELETED",0)
                 .eq("STAFF_NAME1",name)
                 .orderByDesc("SEND_ID");
-
         if(js.equals("标题")){
             wrapper.inSql("SEND_TITLE", "select SEND_TITLE from SEND where SEND_TITLE like '%" +input+ "%'");
         }else {
@@ -58,8 +57,9 @@ public class SendServiceImpl extends ServiceImpl<SendMapper, Send> implements IS
 
     @Override
     public int delectSend(Send send) {
-
-        Integer integer=sendMapper.updateById(send);
+        int id= send.getSendId();
+        Send send1=sendMapper.selectById(id);
+        Integer integer=sendMapper.deleteById(send1);
         return integer;
     }
 }

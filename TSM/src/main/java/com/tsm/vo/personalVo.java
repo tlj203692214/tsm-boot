@@ -1,6 +1,4 @@
 package com.tsm.vo;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +13,6 @@ public class personalVo {
     private String personalName;
     private String personalSex;
     private int personalAge;
-    @TableField("PERSONAL_BIRTHDAY")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date personalBirthday;
     private String personalIdcard;
     private String personalPhone;

@@ -9,79 +9,81 @@ import com.tsm.service.IOpinionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author 军
  * @since 2021-12-22
  */
 @Service
-@Transactional
 public class OpinionServiceImpl extends ServiceImpl<OpinionMapper, Opinion> implements IOpinionService {
-@Autowired
-private OpinionMapper opinionMapper;
-    @Override
-    public IPage<Opinion> opinion(int page, int size, String zt,String staffName) {
-        QueryWrapper<Opinion> wrapper=new QueryWrapper<>();
-        wrapper.eq("publisher",staffName);
-        wrapper.eq("DELETED",0);
-        wrapper.orderByDesc("OPINION_ID");
-        if(zt.equals("全部的意见")){
+    @Autowired
+    private OpinionMapper opinionMapper;
 
-        }else  if(zt.equals("待回复的意见")){
+    @Override
+    public IPage<Opinion> opinion(int page, int size, String zt, String staffName) {
+        QueryWrapper<Opinion> wrapper = new QueryWrapper<>();
+        wrapper.eq("publisher", staffName)
+                .eq("DELETED", 0)
+                .orderByDesc("OPINION_ID");
+        if (zt.equals("全部的意见")) {
+
+        } else if (zt.equals("待回复的意见")) {
             wrapper.isNull("RESPONDENT");
-        }else {
+        } else {
             wrapper.isNotNull("RESPONDENT");
         }
-        Page<Opinion> page1=new Page<>(page,size);
-        IPage<Opinion> iPage=opinionMapper.selectPage(page1,wrapper);
+        Page<Opinion> page1 = new Page<>(page, size);
+        IPage<Opinion> iPage = opinionMapper.selectPage(page1, wrapper);
         return iPage;
     }
 
     @Override
     public int addOpinion(Opinion opinion) {
-        int a=opinionMapper.insert(opinion);
+        int a = opinionMapper.insert(opinion);
         return a;
     }
 
     @Override
     public int updateOpinion(Opinion opinion) {
-        int a=opinionMapper.updateById(opinion);
+        int a = opinionMapper.updateById(opinion);
         return a;
     }
 
     @Override
-    public int delectOpinion(Opinion opinion) {
-        int a=opinionMapper.updateById(opinion);
+    public int delectOpinion(int opinionId) {
+        Opinion opinion = opinionMapper.selectById(opinionId);
+        opinion.setDeleted(1);
+        int a = opinionMapper.updateById(opinion);
         return a;
     }
 
     @Override
     public IPage<Opinion> selectOpinion(int page, int size, String zt, int staffId) {
-        QueryWrapper<Opinion> wrapper=new QueryWrapper<>();
-        wrapper.eq("STAFF_ID",staffId);
-        wrapper.eq("DELETED",0);
-        if(zt.equals("待回复的意见")){
+        QueryWrapper<Opinion> wrapper = new QueryWrapper<>();
+        wrapper.eq("STAFF_ID", staffId)
+                .eq("DELETED", 0)
+                .orderByDesc("OPINION_ID");
+        if (zt.equals("待回复的意见")) {
             wrapper.isNull("RESPONDENT");
-        }else{
+        } else {
             wrapper.isNotNull("RESPONDENT");
         }
-        Page<Opinion> page1=new Page<>(page,size);
-        IPage<Opinion> iPage=opinionMapper.selectPage(page1,wrapper);
+        Page<Opinion> page1 = new Page<>(page, size);
+        IPage<Opinion> iPage = opinionMapper.selectPage(page1, wrapper);
         return iPage;
     }
 
     @Override
     public int replyOpinion(Opinion opinion) {
         opinion.setReplyTime(new Date());
-        int a=opinionMapper.updateById(opinion);
+        int a = opinionMapper.updateById(opinion);
         return a;
     }
 }

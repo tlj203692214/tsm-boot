@@ -40,7 +40,7 @@ public class Receiving implements Serializable {
     private String receivingsContent;
 
     @TableField(value="RECEIVINGS_DATE", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss")
     private Date receivingsDate;
 
     @TableField("RECEIVINGS_STATE")
@@ -53,7 +53,7 @@ public class Receiving implements Serializable {
     private String staffName2;
 
     @TableField("RECEIVING_DELETED")
-    private String receivingDeleted="1";
+    private String receivingDeleted;
 
 
 }

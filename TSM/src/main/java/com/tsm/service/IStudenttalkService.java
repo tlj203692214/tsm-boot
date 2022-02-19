@@ -12,5 +12,9 @@ import com.tsm.entity.Studenttalk;
  * @since 2021-12-09
  */
 public interface IStudenttalkService extends IService<Studenttalk> {
+    //添加谈话
+    public int addstudenttalk(Studenttalk studenttalk);
 
+    //删除谈话
+    public int delectstudenttalk(Studenttalk studenttalk);
 }

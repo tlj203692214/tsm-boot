@@ -55,4 +55,11 @@ private StudentfilesMapper studentfilesMapper;
         int a=studentfilesMapper.updatestudent(studentfiles);
         return a;
     }
+
+    @Override
+    public int updatestudnetzt(Studentfiles studentfiles) {
+        studentfiles.setStudentfilesState(3l);
+        int a=studentfilesMapper.updateById(studentfiles);
+        return a;
+    }
 }

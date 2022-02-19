@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -39,6 +40,7 @@ public class Student implements Serializable {
     private int studentAge;
 
     @TableField("STUDENT_BIRTHDAY")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date studentBirthday;
 
     @TableField("STUDENT_PHONE")
@@ -59,6 +61,12 @@ public class Student implements Serializable {
     @TableField("DELETED")
     @TableLogic
     private int deleted;
-    @TableField("STUDENT_ENTRANCE")
+
+    @TableField(value = "STUDENT_ENTRANCE",fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date studententrance; //入学时间
+
+    @TableField("COURSE_ID")
+    private Long courseid ;//课程
+
 }

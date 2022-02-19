@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,13 +38,17 @@ public class Classes implements Serializable {
     private int classesNumber;
 
     @TableField("CLASSES_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date classesDate;
 
     @TableField("CLASSROOM_ID")
-    private int classroomId;
+    private Long classroomId;
 
     @TableField("STAFF_ID")
-    private int staffId;
+    private Long staffId;
+
+    @TableField("COURSE_ID")
+    private Long courseid ;
 
     @TableField("DELETED")
     @TableLogic

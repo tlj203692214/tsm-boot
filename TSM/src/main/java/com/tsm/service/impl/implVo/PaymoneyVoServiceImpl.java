@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author 军
@@ -30,23 +30,23 @@ public class PaymoneyVoServiceImpl extends ServiceImpl<PaymoneyVoMapper, payMone
      * 财务：报班缴费模糊查询
      */
     @Override
-    public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo,String stuname,String payName,int state) {
-        Page<payMoneyVo> page1 = new Page<>(page,pageInfo);
+    public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo, String stuname, String payName, int state) {
+        Page<payMoneyVo> page1 = new Page<>(page, pageInfo);
         QueryWrapper<payMoneyVo> queryWrapper = new QueryWrapper<>();
 
-        queryWrapper.like("t.STUDENT_NAME",stuname)
-                .eq("p.DELETED",0);
-    if(payName.equals("全部支付")){
-    }else{
-        queryWrapper.eq("p.PAYMONEY_MODE",payName);
-    }
+        queryWrapper.like("st.STUDENTFILES_NAME", stuname)
+                .eq("p.DELETED", 0);
+        if (payName.equals("全部支付")) {
+        } else {
+            queryWrapper.eq("p.PAYMONEY_MODE", payName);
+        }
 
-    if(state==2){
-    }else if(state==0){
-        queryWrapper.eq("i.INCOME_STATE",state);
-    }else if(state==1){
-        queryWrapper.eq("i.INCOME_STATE",state);
-    }
+        if (state == 2) {
+        } else if (state == 0) {
+            queryWrapper.eq("p.PAYMONEY_STATE", state);
+        } else if (state == 1) {
+            queryWrapper.eq("p.PAYMONEY_STATE", state);
+        }
         IPage<payMoneyVo> payMoneyVoIPage = paymoneyVoMapper.selectPayMoneyVo(page1, queryWrapper);
 
         return payMoneyVoIPage;
@@ -54,21 +54,23 @@ public class PaymoneyVoServiceImpl extends ServiceImpl<PaymoneyVoMapper, payMone
 
     /**
      * 统计总金额
+     *
      * @return
      */
     @Override
     public double countMoney() {
         List<payMoneyVo> list = paymoneyVoMapper.selectAllMoney();
         int a = paymoneyVoMapper.countMoney();
-        double money=0;
-        for (int i=0;i<a;i++){
-            money=money+list.get(i).getPaymoneyMoney();
+        double money = 0;
+        for (int i = 0; i < a; i++) {
+            money = money + list.get(i).getPaymoneyMoney();
         }
         return money;
     }
 
     /**
      * 根据状态查询金额
+     *
      * @return
      */
     @Override
@@ -76,8 +78,8 @@ public class PaymoneyVoServiceImpl extends ServiceImpl<PaymoneyVoMapper, payMone
         List<payMoneyVo> list = paymoneyVoMapper.selectAllByState();
         int a = paymoneyVoMapper.countMoneyByState();
         double money = 0;
-        for(int i = 0;i<a;i++){
-            money = money+list.get(i).getPaymoneyMoney();
+        for (int i = 0; i < a; i++) {
+            money = money + list.get(i).getPaymoneyMoney();
         }
         return money;
     }
@@ -87,13 +89,11 @@ public class PaymoneyVoServiceImpl extends ServiceImpl<PaymoneyVoMapper, payMone
         List<payMoneyVo> list = paymoneyVoMapper.selectAllByState2();
         int a = paymoneyVoMapper.countMoneyByState2();
         double money = 0;
-        for(int i = 0;i<a;i++){
-            money = money+list.get(i).getPaymoneyMoney();
+        for (int i = 0; i < a; i++) {
+            money = money + list.get(i).getPaymoneyMoney();
         }
         return money;
     }
-
-
 
 
 }

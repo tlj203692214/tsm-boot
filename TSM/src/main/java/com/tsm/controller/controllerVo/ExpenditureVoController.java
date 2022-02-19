@@ -22,11 +22,21 @@ public class ExpenditureVoController {
     @Autowired
     private IExpenditureVoService iExpenditureVoService;
 
+    /**
+     * 查询校务支出的数据
+     * @param page
+     * @param pageInfo
+     * @return
+     */
     @GetMapping("/selectExpenditureVo")
     public IPage<ExpenditureVo> selectExpenditure(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
         IPage<ExpenditureVo> expenditureIPage = iExpenditureVoService.selectExpenditurePage(page, pageInfo);
         return expenditureIPage;
     }
+
+    /**
+     * 统计校务支出的金额
+     */
 
 
 }

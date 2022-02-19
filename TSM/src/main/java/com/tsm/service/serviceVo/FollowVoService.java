@@ -14,6 +14,10 @@ public interface FollowVoService extends IService<FollowVo> {
     //模糊分页查询有时间、学生姓名
     public IPage<FollowVo> selectmohufollowvo(int page,int size,String name,String qkzt,String lyqd,String yxkc) throws ParseException;
 
+    //新生报名模糊分页查询有时间、学生姓名
+    public IPage<FollowVo> selectxsmohufollowvo(int page,int size,String name,String qkzt,String lyqd,String yxkc,String sfbm) throws ParseException;
+
+
     //模糊分页查询没有时间有学生姓名
     public IPage<FollowVo> selectmohufollowvo1(int page,int size,String name,String qkzt,String lyqd,String yxkc);
 

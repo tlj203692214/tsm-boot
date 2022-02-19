@@ -12,6 +12,5 @@ import com.tsm.entity.Income;
  * @since 2021-12-09
  */
 public interface IIncomeService extends IService<Income> {
-        public int updateState(int id);
         public Long IncomeCount(int zt);
 }

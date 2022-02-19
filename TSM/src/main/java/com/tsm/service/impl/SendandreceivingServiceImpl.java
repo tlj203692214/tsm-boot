@@ -34,10 +34,9 @@ public class SendandreceivingServiceImpl extends ServiceImpl<SendandreceivingMap
     }
 
     @Override
-    public List<Sendandreceiving> findAllsandr(int id) {
+    public List<Sendandreceiving> findAllsandr(Long id) {
         QueryWrapper<Sendandreceiving> wrapper=new QueryWrapper<>();
-        wrapper.eq("SEND_ID",id)
-                .orderByDesc("SANDR_ID");
+        wrapper.eq("SEND_ID",id);
         List<Sendandreceiving> list=sendandreceivingMapper.selectList(wrapper);
         return list;
     }

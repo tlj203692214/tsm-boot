@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerIntercept
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -19,7 +18,7 @@ import org.springframework.web.filter.CorsFilter;
  * @version 1.0
  */
 @Configuration
-@EnableTransactionManagement
+//@EnableTransactionManagement
 @Slf4j
 public class staffConfig {
     private CorsConfiguration buildConfig() {
@@ -61,5 +60,7 @@ public class staffConfig {
     public OracleKeyGenerator oracleKeyGenerator(){
         return new OracleKeyGenerator();
     }
+
+
 
 }

@@ -26,7 +26,7 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
 
     @Override
     public Staff selectStaff(String staffName, String staffPass) {
-        QueryWrapper<Staff> queryWrapper = new QueryWrapper();
+        QueryWrapper<Staff> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("STAFF_NAME",staffName)
                 .eq("STAFF_PASS",staffPass);
         Staff staff = staffMapper.selectOne(queryWrapper);
@@ -52,12 +52,6 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
         }
         int update = staffMapper.updateById(s1);
         return update;
-    }
-
-    @Override
-    public int updatePass(Staff staff) {
-        int a=staffMapper.updateById(staff);
-        return a;
     }
 
 

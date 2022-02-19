@@ -28,21 +28,21 @@ public class OpinionController {
         IPage<Opinion> sendIPage =iOpinionService.opinion(page, size, zt,staffName);
         return sendIPage;
     }
-    @PostMapping("/addOpinion")  //添加意见
+    @PostMapping("/addOpinion")
     public int addOpinion(@RequestBody Opinion opinion) {
 
         int  a =iOpinionService.addOpinion(opinion);
         return a;
     }
-    @PostMapping("/updateOpinion") //修改意见
+    @PostMapping("/updateOpinion")
     public int updateOpinion(@RequestBody Opinion opinion) {
 
         int  a =iOpinionService.updateOpinion(opinion);
         return a;
     }
-    @PostMapping("/delectOpinion")   //删除意见
-    public int delectOpinion(@RequestBody Opinion opinion) {
-        int  a =iOpinionService.delectOpinion(opinion);
+    @PostMapping("/delectOpinion/{opinionId}")
+    public int delectOpinion(@PathVariable("opinionId") int opinionId) {
+        int  a =iOpinionService.delectOpinion(opinionId);
         return a;
     }
     @GetMapping("/selectOpinion")   //根据条件分页模糊查询公告箱
@@ -51,7 +51,7 @@ public class OpinionController {
         IPage<Opinion> sendIPage =iOpinionService.selectOpinion(page, size, zt,staffId);
         return sendIPage;
     }
-    @PostMapping("/replyOpinion")  //回复意见
+    @PostMapping("/replyOpinion")
     public int replyOpinion(@RequestBody Opinion opinion) {
 
         int  a =iOpinionService.replyOpinion(opinion);

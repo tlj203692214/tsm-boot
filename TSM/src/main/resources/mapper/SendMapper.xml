@@ -8,14 +8,15 @@
         <result column="SEND_TITLE" property="sendTitle" />
         <result column="SEND_CONTENT" property="sendContent" />
         <result column="SEND_DATE" property="sendDate" />
-        <result column="STAFF_ID1" property="staffName1" />
-        <result column="STAFF_ID2" property="staffName2" />
+        <result column="SENDS_STATE" property="sendsState"/>
+        <result column="STAFF_NAME1" property="staffName1" />
+        <result column="STAFF_NAME2" property="staffName2" />
         <result column="DELETED" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        SEND_ID, SEND_TITLE, SEND_CONTENT, SEND_DATE, STAFF_ID1, STAFF_ID2, DELETED
+        SEND_ID, SEND_TITLE, SEND_CONTENT, SEND_DATE, SENDS_STATE, STAFF_NAME1, STAFF_NAME2, DELETED
     </sql>
 
 </mapper>
