@@ -30,7 +30,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     public IPage<Dept> findDepts(String it, int page, int size) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
         wrapper.eq("DELETED",0);
-        wrapper.eq("DEPT_DID",0);
         wrapper.like("DEPT_NAME",it);
         wrapper.orderByDesc("DEPT_ID");
         Page<Dept> page1 = new Page<>(page,size);
@@ -109,15 +108,5 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }
-
-    @Override
-    public Long selectDeptsl(int staffId) {
-        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
-        wrapper.eq("DEPT_DID",staffId);
-       Long a=deptMapper.selectCount(wrapper);
-
-        return a;
-    }
-
 
 }
