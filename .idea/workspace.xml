@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="部门的修改">
-      <change afterPath="$PROJECT_DIR$/TSM/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50__Changes_.xml" afterDir="false" />
+    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Sendandreceiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Sendandreceiving.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IDeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IDeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645275634800</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="jjjjj">
+      <created>1645432413101</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1645432413101</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +401,7 @@
     <MESSAGE value="角色和菜单的组合" />
     <MESSAGE value="personvo" />
     <MESSAGE value="部门的修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="部门的修改" />
+    <MESSAGE value="jjjjj" />
+    <option name="LAST_COMMIT_MESSAGE" value="jjjjj" />
   </component>
 </project>
