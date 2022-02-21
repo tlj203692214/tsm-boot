@@ -34,7 +34,7 @@ public class Paymoney implements Serializable {
     private double paymoneyMoney;
 
     @TableField("PAYMONEY_DATE")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "YYYY-MM-DD",timezone = "GMT+8")
     private Date paymoneyDate;
 
     @TableField("PAYMONEY_MODE")
