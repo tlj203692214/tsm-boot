@@ -25,6 +25,8 @@ public class StaffController {
     @Autowired
     private IStaffService iStaffService;
 
+    @Autowired
+    private StaffMapper staffMapper;
     /**
      * 登录
      * @param staff
@@ -44,8 +46,25 @@ public class StaffController {
         return list;
     }
 
-    @Autowired
-    private StaffMapper staffMapper;
+    @PostMapping("/upstaffstate/{staffid}")
+    public int upstaffstate(@PathVariable("staffid") int staffid){
+        int update = iStaffService.updateStaff(staffid);
+        return update;
+    }
+
+    @PostMapping("/addstaff")
+    public int addstaff(@RequestBody Staff staff){
+        int add = iStaffService.addStaff(staff);
+        if (add>0){
+            System.out.println("新增成功");
+        }else{
+            System.out.println("新增失败");
+        }
+        int sid = staff.getStaffId();
+        System.out.println("新增的员工id为"+sid);
+        return sid;
+    }
+
     @PostMapping("/cxyh")
     public List<Staff> cxyh(@RequestBody Staff staff){
         int id=staff.getStaffId();

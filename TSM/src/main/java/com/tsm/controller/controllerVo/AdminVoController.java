@@ -18,8 +18,8 @@ public class AdminVoController {
     @Autowired
     private IAdminVoService voService;
     @GetMapping("/findsadminvo")
-    public IPage<AdminVo> findsAdminVo(@RequestParam("select") String st,@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size){
-        IPage<AdminVo> iPage = voService.findsadmins(st, it, page, size);
+    public IPage<AdminVo> findsAdminVo(@RequestParam("radio") String ri,@RequestParam("select") String st,@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size){
+        IPage<AdminVo> iPage = voService.findsadmins(ri, st, it, page, size);
         log.debug(iPage.toString());
         return iPage;
     }

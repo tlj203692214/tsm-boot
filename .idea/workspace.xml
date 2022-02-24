@@ -1,13 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="">
+    <list default="true" id="42b5e857-31a5-49b3-b285-91d4935ee55b" name="Default Changelist" comment="change">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0840928f-63a0-4532-8a2c-887bb3b9556a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0840928f-63a0-4532-8a2c-887bb3b9556a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0840928f-63a0-4532-8a2c-887bb3b9556a/storage_v2/_src_/schema/PROJECT.-dZbGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0840928f-63a0-4532-8a2c-887bb3b9556a/storage_v2/_src_/schema/PROJECT.-dZbGA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23181df7-9b16-4ceb-bada-c47a06085c68.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23181df7-9b16-4ceb-bada-c47a06085c68/storage_v2/_src_/schema/PROJECT.-dZbGA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23181df7-9b16-4ceb-bada-c47a06085c68/storage_v2/_src_/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23181df7-9b16-4ceb-bada-c47a06085c68/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23181df7-9b16-4ceb-bada-c47a06085c68/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/AdminVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/AdminVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/AdministrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/AdministrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/AdminVoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/AdminVoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Administration.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Administration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Personal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/AdministrationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/AdministrationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/AdminVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/AdminVoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IAdministrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IAdministrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/AdministrationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/AdministrationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/PersonalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/PersonalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SatffsignServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/SatffsignServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/AdminVoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/AdminVoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IAdminVoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IAdminVoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/resources/mapper/StaffMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/resources/mapper/StaffMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,18 +78,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/StaffVoServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/test/java/com/tsm/TsmApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/StaffVoController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/StaffVoService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/TsmApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Personal.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IPersonalVoService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/test/java/com/tsm/TsmApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/PersonalController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/PersonalVoController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/TsmApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Personal.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/StaffVoMapper.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IPersonalVoService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/PersonalVoController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/StaffVoService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/StaffVoController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffService.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -78,9 +116,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../项目备份/tsm" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Problems" />
@@ -170,10 +211,13 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="" />
+      <changelist id="42b5e857-31a5-49b3-b285-91d4935ee55b" name="Default Changelist" comment="change" />
       <created>1640262324500</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -221,6 +265,8 @@
       <workItem from="1645173419603" duration="3536000" />
       <workItem from="1645182383670" duration="7640000" />
       <workItem from="1645230719507" duration="18328000" />
+      <workItem from="1645490619097" duration="5291000" />
+      <workItem from="1645510005670" duration="29524000" />
     </task>
     <task id="LOCAL-00001" summary="全体整合">
       <created>1640314337453</created>
@@ -341,11 +387,18 @@
       <option name="project" value="LOCAL" />
       <updated>1645184500982</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="change">
+      <created>1645277642208</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1645277642208</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -381,6 +434,69 @@
     <MESSAGE value="年后推系统模块" />
     <MESSAGE value="角色和菜单的组合" />
     <MESSAGE value="personvo" />
-    <option name="LAST_COMMIT_MESSAGE" value="personvo" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser" timestamp="1645514324948">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1645514324948" />
+    <state x="398" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1645512495147">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="398" y="286" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1645512495147" />
+    <state width="1323" height="211" key="GridCell.Tab.0.bottom" timestamp="1645692043608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1645692043608" />
+    <state width="1323" height="211" key="GridCell.Tab.0.center" timestamp="1645692043608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1645692043608" />
+    <state width="1323" height="211" key="GridCell.Tab.0.left" timestamp="1645692043608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1645692043608" />
+    <state width="1323" height="211" key="GridCell.Tab.0.right" timestamp="1645692043608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1645692043608" />
+    <state width="1323" height="211" key="GridCell.Tab.1.bottom" timestamp="1645692043609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1645692043609" />
+    <state width="1323" height="211" key="GridCell.Tab.1.center" timestamp="1645692043609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1645692043609" />
+    <state width="1323" height="211" key="GridCell.Tab.1.left" timestamp="1645692043608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1645692043608" />
+    <state width="1323" height="211" key="GridCell.Tab.1.right" timestamp="1645692043609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="211" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1645692043609" />
+    <state x="129" y="55" key="MergeDialog" timestamp="1645277481880">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1645277481880" />
+    <state x="318" y="124" key="MultipleFileMergeDialog" timestamp="1645277481901">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="318" y="124" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1645277481901" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1645277671487">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1645277671487" />
+    <state x="263" y="18" key="com.intellij.database.dbimport.ImportDialog" timestamp="1645533709198">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="18" key="com.intellij.database.dbimport.ImportDialog/0.0.1366.728@0.0.1366.728" timestamp="1645533709198" />
+    <state x="386" y="150" key="git4idea.merge.GitPullDialog" timestamp="1645277695639">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="386" y="150" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1645277695639" />
   </component>
 </project>
