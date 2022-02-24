@@ -56,8 +56,11 @@ public class Notepad implements Serializable {
     @TableField("STAFF_ID")
     private int staffId;
 
+    @TableField("NOTEPAD_STATE")
+    private int notepadState;
+
     @TableField("DELETED")
-    @TableLogic
+
     private int deleted;
 
 

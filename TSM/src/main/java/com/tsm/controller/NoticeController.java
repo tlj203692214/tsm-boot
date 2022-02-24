@@ -61,7 +61,7 @@ public class NoticeController {
     @GetMapping("/selectNotice/{deptId}")
     public IPage<Notice> selectNotice(@PathVariable("deptId") String deptId) {
 
-       IPage<Notice>  iPage =iNoticeService.selectNotices(1,5,deptId);
+       IPage<Notice>  iPage =iNoticeService.selectNotices(1,3,deptId);
         return iPage;
     }
 }
