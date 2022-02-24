@@ -41,7 +41,7 @@ public class Paymoney implements Serializable {
     private String paymoneyMode;
 
     @TableField("PAYMONEY_STATE")
-    private int paymoneyState;
+    private int paymoneyState=1;
 
     @TableField("COURSE_ID")
     private int courseId;

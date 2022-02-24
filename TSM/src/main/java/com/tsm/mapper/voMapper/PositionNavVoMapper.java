@@ -23,7 +23,7 @@ public interface PositionNavVoMapper extends BaseMapper<positionNavVo> {
     @Select("select navigation_id from POSITION_NAV pn \n" +
             "left join NAVIGATION n on pn.NAV_ID = n.NAVIGATION_ID \n" +
             "LEFT JOIN POSITION p on pn.POSITION_ID = p.position_id \n" +
-            "where p.POSITION_ID = #{id} ")
+            "where p.POSITION_ID = #{id} and pn.deleted=0")
     public int[] selectNavByPositionId(int id);
 
 }

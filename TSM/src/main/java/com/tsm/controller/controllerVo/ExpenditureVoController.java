@@ -33,10 +33,4 @@ public class ExpenditureVoController {
         IPage<ExpenditureVo> expenditureIPage = iExpenditureVoService.selectExpenditurePage(page, pageInfo);
         return expenditureIPage;
     }
-
-    /**
-     * 统计校务支出的金额
-     */
-
-
 }

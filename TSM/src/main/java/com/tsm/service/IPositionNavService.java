@@ -15,5 +15,6 @@ import java.util.List;
  */
 public interface IPositionNavService extends IService<PositionNav> {
         public int insertPosAndNav(PositionNav positionNav);
+        int deletePosAndNav(int id);
         List<PositionNav> selectPosAndNav();
 }

@@ -27,6 +27,4 @@ public interface IDeptService extends IService<Dept> {
     public List<Dept>  selectDept(int staffId);
     //查询多级部门
     public List<Dept>  selectDeptlj(int staffId);
-    //统计是否包含子部门
-    public Long selectDeptsl(int staffId);
 }

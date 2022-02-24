@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="部门的修改">
-      <change afterPath="$PROJECT_DIR$/TSM/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Draft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Opinion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Receiving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Sendandreceiving.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Sendandreceiving.java" afterDir="false" />
-    </list>
+    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +36,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/StaffVoServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TSM/src/test/java/com/tsm/TsmApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TSM/target/test/java/com/tsm/TsmApplicationTests.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/StaffVoController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TSM/src/main/resources/application.yml" root0="FORCE_HIGHLIGHTING" />
@@ -90,12 +74,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TSM/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TSM/src/main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -106,18 +90,18 @@
       <recent name="com.tsm.service.serviceVo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\learn\tsm\TSM\src\main" />
       <recent name="C:\learn\tsm\TSM\src\main\resources" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\entity" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\service" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\service\impl" />
-      <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\learn\tsm\TSM\src\main" />
+      <recent name="C:\learn\tsm\TSM\target" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\service\impl" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\service" />
       <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\mapper" />
-      <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\entity" />
-      <recent name="C:\learn\tsm\TSM\src\main\java\com\tsm\controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tsm.aspect" />
@@ -127,13 +111,13 @@
       <recent name="com.tsm.controller.controllerVo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TsmApplication">
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tsm.CodeGenerator" />
+  <component name="RunManager" selected="JUnit.TsmApplicationTests.contextLoads">
+    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsm.handler.MD5Utils" />
       <module name="TSM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tsm.*" />
+          <option name="PATTERN" value="com.tsm.handler.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +125,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="generated-requests#24" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="24" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="generated-requests#25" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="25" runType="Run single request">
       <method v="2" />
+    </configuration>
+    <configuration name="All in tsm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tsm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TsmApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TSM" />
@@ -176,9 +165,9 @@
       <list>
         <item itemvalue="Spring Boot.TsmApplication" />
         <item itemvalue="JUnit.TsmApplicationTests.contextLoads" />
+        <item itemvalue="Application.MD5Utils" />
+        <item itemvalue="JUnit.All in tsm" />
         <item itemvalue="HTTP Request.generated-requests#25" />
-        <item itemvalue="HTTP Request.generated-requests#24" />
-        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -236,6 +225,11 @@
       <workItem from="1645344559752" duration="7681000" />
       <workItem from="1645360482801" duration="2509000" />
       <workItem from="1645403408411" duration="8526000" />
+      <workItem from="1645435801524" duration="285000" />
+      <workItem from="1645436118627" duration="4741000" />
+      <workItem from="1645446406924" duration="281000" />
+      <workItem from="1645447440441" duration="2527000" />
+      <workItem from="1645490111543" duration="32425000" />
     </task>
     <task id="LOCAL-00001" summary="全体整合">
       <created>1640314337453</created>
@@ -363,7 +357,28 @@
       <option name="project" value="LOCAL" />
       <updated>1645275634800</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="jjjjj">
+      <created>1645432413101</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1645432413101</updated>
+    </task>
+    <task id="LOCAL-00020" summary="周江永修改部门统计">
+      <created>1645432870251</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1645432870251</updated>
+    </task>
+    <task id="LOCAL-00021" summary="2月24整合后修改3">
+      <created>1645699358013</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645699358013</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +419,9 @@
     <MESSAGE value="角色和菜单的组合" />
     <MESSAGE value="personvo" />
     <MESSAGE value="部门的修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="部门的修改" />
+    <MESSAGE value="jjjjj" />
+    <MESSAGE value="周江永修改部门统计" />
+    <MESSAGE value="2月24整合后修改3" />
+    <option name="LAST_COMMIT_MESSAGE" value="2月24整合后修改3" />
   </component>
 </project>

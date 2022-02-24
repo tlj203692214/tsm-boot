@@ -44,10 +44,6 @@ public class NavigationController {
 
     /**
      * 查询所有权限菜单
-     * @param page
-     * @param size
-     * @param navName
-     * @return
      */
     @GetMapping("/selectNavigationAll")
     public IPage<Navigation> selectNavAll(@RequestParam("currentPage")int page,
@@ -89,7 +85,6 @@ public class NavigationController {
 
     /**
      * 查询全部权限信息（用户角色授权查询）
-     * @return
      */
     @GetMapping("/selectNav")
     public List<Navigation> selectNav(){
@@ -97,5 +92,23 @@ public class NavigationController {
         queryWrapper
                 .orderByAsc("NAVIGATION_ID");
         return navigationService.list(queryWrapper);
+    }
+
+//    权限菜单查询
+    @GetMapping("/selectNavigation2")
+    public List<Navigation> selectAll2(){
+        List<Navigation> list = navigationService.list();
+        List<Navigation> list1=new ArrayList<>();
+        for (Navigation navigation : list) {
+            for (Navigation n : list) {
+                if(n.getNavigationPid()==navigation.getNavigationId()){
+                    navigation.getChildern().add(n);
+                }
+            }
+            if (navigation.getNavigationPid()==0){
+                list1.add(navigation);
+            }
+        }
+        return list1;
     }
 }
