@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/handler/MD5Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/NavigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/NavigationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/PositionNavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/PositionNavController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/ExpenditureVoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/ExpenditureVoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/PositionNavVoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/PositionNavVoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Notepad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Paymoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/PositionNavVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/PositionNavVoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IPositionNavService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IPositionNavService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/PositionNavServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/PositionNavServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TSM/src/test/java/com/tsm/TsmApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +229,7 @@
       <workItem from="1645436118627" duration="4741000" />
       <workItem from="1645446406924" duration="281000" />
       <workItem from="1645447440441" duration="2527000" />
-      <workItem from="1645490111543" duration="32016000" />
+      <workItem from="1645490111543" duration="32425000" />
     </task>
     <task id="LOCAL-00001" summary="全体整合">
       <created>1640314337453</created>
@@ -388,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645432870251</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="2月24整合后修改3">
+      <created>1645699358013</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645699358013</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +421,7 @@
     <MESSAGE value="部门的修改" />
     <MESSAGE value="jjjjj" />
     <MESSAGE value="周江永修改部门统计" />
-    <option name="LAST_COMMIT_MESSAGE" value="周江永修改部门统计" />
+    <MESSAGE value="2月24整合后修改3" />
+    <option name="LAST_COMMIT_MESSAGE" value="2月24整合后修改3" />
   </component>
 </project>
