@@ -33,10 +33,8 @@ public class SendServiceImpl extends ServiceImpl<SendMapper, Send> implements IS
     @Override
     public Send addsend(Send send) {
         sendMapper.insert(send);
-        int id=send.getSendId();
-        System.out.println(id);
-        Send send1=sendMapper.selectById(id);
-        return send1;
+
+        return send;
     }
 
     @Override

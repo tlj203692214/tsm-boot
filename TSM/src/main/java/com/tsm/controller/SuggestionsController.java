@@ -50,7 +50,7 @@ public class SuggestionsController {
         List<Suggestions> list =iSuggestionsService.selectSuggestionss();
         return  list;
     }
-    @PostMapping("selectStaffId/{suggestionsId}")              //查询管理员编号
+    @PostMapping("/selectStaffId/{suggestionsId}")              //查询管理员编号
     public List<Suggestions> selectStaffId(@PathVariable("suggestionsId") int suggestionsId){
         List<Suggestions> list =iSuggestionsService.selectStaffId(suggestionsId);
         return  list;

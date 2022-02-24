@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 public interface IDeptService extends IService<Dept> {
-    public IPage<Dept> findDepts(String it, int page, int size);
+    public IPage<Dept> findDepts(String it, int page, int size,int pid);
     public List<Dept> updateDept(@RequestBody Dept dept);
     public int delDept(int deptid);
     public int upDept(@RequestBody Dept dept);
@@ -27,6 +27,4 @@ public interface IDeptService extends IService<Dept> {
     public List<Dept>  selectDept(int staffId);
     //查询多级部门
     public List<Dept>  selectDeptlj(int staffId);
-    //统计是否包含子部门
-    public Long selectDeptsl(int staffId);
 }

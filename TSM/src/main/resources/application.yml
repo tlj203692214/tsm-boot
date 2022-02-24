@@ -4,9 +4,9 @@ server:
     context-path: /TSM
 spring:
   datasource:
-    url: jdbc:oracle:thin:@127.0.0.1:1521:xe
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
     username: project
-    password: '123456'
+    password: 123456
     driver-class-name: oracle.jdbc.driver.OracleDriver
     #mysql?????
     #url: jdbc:mysql://127.0.0.1:3308/mydb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8

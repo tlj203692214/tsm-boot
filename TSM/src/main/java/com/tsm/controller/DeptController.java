@@ -26,8 +26,8 @@ public class DeptController {
     @Autowired
     private IDeptService service;
     @GetMapping("/depts")
-    public IPage<Dept> findDepts(@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size){
-        IPage<Dept> iPage = service.findDepts(it, page, size);
+    public IPage<Dept> findDepts(@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size,@RequestParam("pid") int pid){
+        IPage<Dept> iPage = service.findDepts(it, page, size,pid);
         log.debug(iPage.toString());
         return iPage;
     }
@@ -70,10 +70,5 @@ public class DeptController {
     public List<Dept> selectDeptjl(@PathVariable("staffId") int id){
             List<Dept> list=service.selectDeptlj(id);
         return list;
-    }
-    @PostMapping("/selectDeptsl/{staffId}")   //统计下一级是否还包含部门
-    public Long selectDeptsl(@PathVariable("staffId") int id){
-       Long a=service.selectDeptsl(id);
-        return a;
     }
 }

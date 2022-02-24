@@ -27,10 +27,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Autowired
     private DeptMapper deptMapper;
     @Override
-    public IPage<Dept> findDepts(String it, int page, int size) {
+    public IPage<Dept> findDepts(String it, int page, int size,int pid) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
         wrapper.eq("DELETED",0);
-        wrapper.eq("DEPT_DID",0);
+        wrapper.eq("DEPT_DID",pid);
         wrapper.like("DEPT_NAME",it);
         wrapper.orderByDesc("DEPT_ID");
         Page<Dept> page1 = new Page<>(page,size);
@@ -40,7 +40,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public List<Dept> updateDept(Dept dept) {
-        List<Dept> list = deptMapper.selectList(null);
+        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
+        List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }
 
@@ -105,19 +107,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     public List<Dept> selectDeptlj(int staffId) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
-        wrapper.eq("DEPT_DID", staffId);
+        wrapper.eq("DEPT_DID", staffId)
+                .eq("DELETED",0);
         List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }
-
-    @Override
-    public Long selectDeptsl(int staffId) {
-        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
-        wrapper.eq("DEPT_DID",staffId);
-       Long a=deptMapper.selectCount(wrapper);
-
-        return a;
-    }
-
 
 }
