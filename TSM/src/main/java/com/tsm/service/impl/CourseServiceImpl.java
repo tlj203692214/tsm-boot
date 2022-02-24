@@ -35,6 +35,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     public IPage<Course> fyselectcourse(int page, int size) {
         Page<Course> page1=new Page<>(page,size);
         QueryWrapper<Course> wrapper=new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
         wrapper.orderByDesc("COURSE_ID");
         IPage<Course> iPage=courseMapper.selectPage(page1,wrapper);
         return iPage;
@@ -47,5 +48,23 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         wrapper.like("COURSE_NAME",name);
         IPage<Course> iPage=courseMapper.selectPage(page1,wrapper);
         return iPage;
+    }
+
+    @Override
+    public int addcourse(Course course) {
+        int a=courseMapper.insert(course);
+        return a;
+    }
+
+    @Override
+    public int updatacourse(Course course) {
+        int a=courseMapper.updateById(course);
+        return a;
+    }
+
+    @Override
+    public int updatacoursezt(Course course) {
+        int a=courseMapper.updatezt(course);
+        return a;
     }
 }

@@ -43,7 +43,7 @@ public class Sendandreceiving implements Serializable {
     private String sandrState="未读";
 
     @TableField(value="SANDR_DATE",fill = FieldFill.UPDATE)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date sandrDate;
 
     @TableField("SEND_ID")

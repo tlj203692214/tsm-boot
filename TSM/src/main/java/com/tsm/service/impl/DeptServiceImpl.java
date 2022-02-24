@@ -40,7 +40,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public List<Dept> updateDept(Dept dept) {
-        List<Dept> list = deptMapper.selectList(null);
+        QueryWrapper<Dept> wrapper=new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
+        List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }
 
@@ -105,7 +107,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     public List<Dept> selectDeptlj(int staffId) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
-        wrapper.eq("DEPT_DID", staffId);
+        wrapper.eq("DEPT_DID", staffId)
+                .eq("DELETED",0);
         List<Dept> list = deptMapper.selectList(wrapper);
         return list;
     }

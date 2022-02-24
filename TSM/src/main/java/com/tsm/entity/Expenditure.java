@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -33,6 +34,7 @@ public class Expenditure implements Serializable {
     private Double expenditureMoney;
 
     @TableField("EXPENDITURE_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date expenditureDate;
 
     @TableField("PURCHASE_ID")

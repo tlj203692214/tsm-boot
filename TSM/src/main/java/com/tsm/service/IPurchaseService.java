@@ -12,5 +12,5 @@ import com.tsm.entity.Purchase;
  * @since 2021-12-09
  */
 public interface IPurchaseService extends IService<Purchase> {
-
+    public int interpur(Purchase purchase);
 }
