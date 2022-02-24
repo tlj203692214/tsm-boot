@@ -17,5 +17,4 @@
     <sql id="Base_Column_List">
         COURSE_ID, COURSE_NAME, COURSE_MONEY, COURSE_HOUR, COURSE_PRICE, BOOK_FEE, DELETED
     </sql>
-
 </mapper>

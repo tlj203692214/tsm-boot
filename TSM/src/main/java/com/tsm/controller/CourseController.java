@@ -46,4 +46,16 @@ public List<Course> selectcourse1(){
         int a=courseService.addcourse(course);
         return a;
     }
+
+    @PostMapping("/updatacourse")
+    public int updatacourse(@RequestBody Course course){
+        int a=courseService.updatacourse(course);
+        return a;
+    }
+
+    @PostMapping("/updatazt")
+    public int updatazt(@RequestBody Course course){
+    int a=courseService.updatacoursezt(course);
+    return a;
+    }
 }

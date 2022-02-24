@@ -15,4 +15,6 @@ import com.tsm.entity.Expenditure;
 public interface IExpenditureService extends IService<Expenditure> {
         public IPage<Expenditure> selectExpenditurePage(int page, int size);
 
+        //添加校务支出表
+        public int addexpenditure(Expenditure expenditure);
 }

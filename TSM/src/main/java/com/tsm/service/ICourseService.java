@@ -25,4 +25,8 @@ public List<Course> selectcorse();
 
     //添加课程
     public int addcourse(Course course);
+    //修改课程
+    public int updatacourse(Course course);
+    //修改课程状态
+    public int updatacoursezt(Course course);
 }
