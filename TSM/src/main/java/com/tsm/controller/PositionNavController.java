@@ -26,18 +26,31 @@ public class PositionNavController {
     @Autowired
     private PositionNavVoService positionNavVoService;
 
-    @PostMapping("/insertPosAndNav")
-    public int insertPosAndNav(@RequestBody PositionNav positionNav) {
-        System.out.println(positionNav + "数据");
-        int[] ints = positionNavVoService.selectPosById(positionNav.getPositionId());
+//    @PostMapping("/insertPosAndNav")
+//    public int insertPosAndNav(@RequestBody PositionNav positionNav) {
+//        System.out.println(positionNav.getPositionmenuId() + "数据");
+//        int[] ints = positionNavVoService.selectPosById(positionNav.getPositionId());
+//        for (int aa : ints) {
+//            if (positionNav.getNavId() == aa) {
+//                return 0;
+//            }
+//        }
+//        return positionNavService.insertPosAndNav(positionNav);
+//    }
 
-        for (int aa : ints) {
-            if (positionNav.getNavId() == aa) {
-                System.out.println(aa+"数组数据");
-                return 0;
-            }
-        }
-        return positionNavService.insertPosAndNav(positionNav);
+    @PostMapping("/insertPosAndNav/{navId}")
+    public int insertPosAndNav(@PathVariable int navId,@RequestBody List<Integer> ids) {
+        System.out.println(navId + "角色id");
+        positionNavService.deletePosAndNav(navId);
+        PositionNav positionNav = new PositionNav();
+        ids.forEach(e->{
+            positionNav.setNavId(e);
+            positionNav.setPositionId(navId);
+            positionNavService.save(positionNav);
+        });
+            return 1;
     }
+
+
 
 }

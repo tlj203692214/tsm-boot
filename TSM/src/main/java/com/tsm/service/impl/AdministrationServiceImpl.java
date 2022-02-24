@@ -33,4 +33,10 @@ public class AdministrationServiceImpl extends ServiceImpl<AdministrationMapper,
         int update = mapper.updateById(admin);
         return update;
     }
+
+    @Override
+    public int addAdmin(Administration administration) {
+        int add = mapper.insert(administration);
+        return add;
+    }
 }

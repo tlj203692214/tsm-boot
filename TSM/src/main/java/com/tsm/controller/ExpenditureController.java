@@ -24,10 +24,10 @@ public class ExpenditureController {
     @Autowired
     private IExpenditureService expenditureService;
 
-    @PostMapping("/interexpenditure")
-    public int interexpenditure(@RequestBody Expenditure expenditure){
-        int a=expenditureService.addexpenditure(expenditure);
-        return a;
-    }
+//    @PostMapping("/interexpenditure")
+//    public int interexpenditure(@RequestBody Expenditure expenditure){
+//        int a=expenditureService.addexpenditure(expenditure);
+//        return a;
+//    }
 
 }

@@ -34,14 +34,14 @@ public class Paymoney implements Serializable {
     private double paymoneyMoney;
 
     @TableField("PAYMONEY_DATE")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "YYYY-MM-DD",timezone = "GMT+8")
     private Date paymoneyDate;
 
     @TableField("PAYMONEY_MODE")
     private String paymoneyMode;
 
     @TableField("PAYMONEY_STATE")
-    private int paymoneyState;
+    private int paymoneyState=1;
 
     @TableField("COURSE_ID")
     private int courseId;

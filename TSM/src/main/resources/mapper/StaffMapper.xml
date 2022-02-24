@@ -7,12 +7,13 @@
         <id column="STAFF_ID" property="staffId" />
         <result column="STAFF_NAME" property="staffName" />
         <result column="STAFF_PASS" property="staffPass" />
+        <result column="STAFF_STATE" property="staffState" />
         <result column="DELETED" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        STAFF_ID, STAFF_NAME, STAFF_PASS, DELETED
+        STAFF_ID, STAFF_NAME, STAFF_PASS, STAFF_STATE, DELETED
     </sql>
 
 </mapper>

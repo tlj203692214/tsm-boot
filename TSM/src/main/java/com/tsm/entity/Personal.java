@@ -63,7 +63,6 @@ public class Personal implements Serializable {
     private int staffId;
 
     @TableField("DELETED")
-    @TableLogic
     private int deleted;
 
 
