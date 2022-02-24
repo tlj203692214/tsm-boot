@@ -42,7 +42,9 @@ public class PersonalServiceImpl extends ServiceImpl<PersonalMapper, Personal> i
     public IPage<Personal> findPersonals(String it, int page, int size) {
         QueryWrapper<Personal> wrapper = new QueryWrapper<>();
         wrapper.eq("PERSONAL_STATE",0);//0未入职
+        wrapper.eq("DELETED",0);//0可用，1不可用
         wrapper.like("PERSONAL_NAME",it);
+        wrapper.orderByDesc("PERSONAL_ID");
         Page<Personal> page1 = new Page<>(page,size);
         IPage<Personal> iPage = personalMapper.selectPage(page1,wrapper);
 //        IPage<Personal> iPage = personalMapper.personalPage(null,it,page1);

@@ -1,13 +1,11 @@
 package com.tsm.controller;
 
 
+import com.tsm.entity.Administration;
 import com.tsm.service.IAdministrationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -32,5 +30,16 @@ public class AdministrationController {
             log.debug("修改失败！");
         }
         return upadmin;
+    }
+
+    @PostMapping("/addAdministration")
+    public int addAdmin(@RequestBody Administration administration){
+        int addadmin = service.addAdmin(administration);
+        if (addadmin>0){
+            log.debug("员工管理新增成功！");
+        }else{
+            log.debug("新增失败！");
+        }
+        return addadmin;
     }
 }

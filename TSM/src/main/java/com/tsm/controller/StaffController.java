@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * <p>
- * 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author 军
@@ -28,9 +28,10 @@ public class StaffController {
     @Autowired
     private IStaffService iStaffService;
 
+    @Autowired
+    private StaffMapper staffMapper;
     /**
      * 登录
-     *
      * @param staff
      * @return
      */
@@ -52,6 +53,20 @@ public class StaffController {
         return list;
     }
 
+
+    @PostMapping("/addstaff")
+    public int addstaff(@RequestBody Staff staff){
+        int add = iStaffService.addStaff(staff);
+        if (add>0){
+            System.out.println("新增成功");
+        }else{
+            System.out.println("新增失败");
+        }
+        int sid = staff.getStaffId();
+        System.out.println("新增的员工id为"+sid);
+        return sid;
+    }
+
     /**
      * 修改用户状态
      * @param staffid
@@ -62,9 +77,6 @@ public class StaffController {
         int update = iStaffService.updateStaff(staffid);
         return update;
     }
-
-    @Autowired
-    private StaffMapper staffMapper;
 
     @PostMapping("/cxyh")
     public List<Staff> cxyh(@RequestBody Staff staff) {
@@ -82,6 +94,5 @@ public class StaffController {
         }
 
     }
-
 
 }

@@ -26,7 +26,7 @@ public class Administration implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value="ADMINISTRATION_ID",type= IdType.INPUT)
+    @TableId(value = "ADMINISTRATION_ID",type = IdType.INPUT)
     private int administrationId;
 
     @TableField("ADMINISTRATION_STATE")

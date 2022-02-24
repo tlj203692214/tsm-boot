@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <p>
- * 服务实现类
+ *  服务实现类
  * </p>
  *
  * @author 军
@@ -27,8 +27,8 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
     @Override
     public Staff selectStaff(String staffName, String staffPass) {
         QueryWrapper<Staff> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("STAFF_NAME", staffName)
-                .eq("STAFF_PASS", staffPass);
+        queryWrapper.eq("STAFF_NAME",staffName)
+                .eq("STAFF_PASS",staffPass);
         Staff staff = staffMapper.selectOne(queryWrapper);
         return staff;
     }
@@ -42,16 +42,22 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
     @Override
     public int updateStaff(int staffid) {
         Staff s1 = staffMapper.selectById(staffid);
-        System.out.println("状态1111" + s1.getStaffState());
-        if (s1.getStaffState() == 0) {
+        System.out.println("状态1111"+s1.getStaffState());
+        if (s1.getStaffState()==0){
             s1.setStaffState(1);
             log.debug("员工辞退成功");
-        } else {
+        }else{
             s1.setStaffState(0);
             log.debug("员工恢复成功");
         }
         int update = staffMapper.updateById(s1);
         return update;
+    }
+
+    @Override
+    public int addStaff(Staff staff) {
+        int add = staffMapper.insert(staff);
+        return add;
     }
 
 
