@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,9 +37,11 @@ public class Notepad implements Serializable {
     private int notepadType;
 
     @TableField("BEGIN_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date beginTime;
 
     @TableField("END_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date endTime;
 
     @TableField("NOTEPAD_PLACE")
@@ -50,8 +53,11 @@ public class Notepad implements Serializable {
     @TableField("STAFF_ID")
     private int staffId;
 
+    @TableField("NOTEPAD_STATE")
+    private int notepadState;
+
     @TableField("DELETED")
-    @TableLogic
+
     private int deleted;
 
 

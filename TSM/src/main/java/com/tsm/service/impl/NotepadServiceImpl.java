@@ -45,6 +45,7 @@ private  NotepadMapper notepadMapper;
 
     @Override
     public int delectNotepad(Notepad notepad) {
+
         int a=notepadMapper.updateById(notepad);
         return a;
     }

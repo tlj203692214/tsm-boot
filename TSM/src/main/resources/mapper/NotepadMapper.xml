@@ -12,6 +12,7 @@
         <result column="NOTEPAD_PLACE" property="notepadPlace" />
         <result column="NOTEPAD_CONTENT" property="notepadContent" />
         <result column="STAFF_ID" property="staffId" />
+        <result column="NOTEPAD_STATE" property="notepadState" />
         <result column="DELETED" property="deleted" />
     </resultMap>
 

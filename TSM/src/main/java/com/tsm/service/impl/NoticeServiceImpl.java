@@ -97,7 +97,7 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
     public IPage<Notice> selectNotices(int page, int size, String deptId) {
         System.out.println("ssssssssssssssssssssssssssssssss");
         QueryWrapper<Notice> wrapper = new QueryWrapper<>();
-        wrapper.inSql("DEPT_NAME", "select DEPT_NAME from NOTICE where DEPT_NAME like '%0%' or DEPT_NAME like '%" + deptId + "%'")
+        wrapper.inSql("DEPT_NAME", "select DEPT_NAME from NOTICE where DEPT_NAME like '%,0,%' or DEPT_NAME like '%" + ","+deptId +","+ "%'")
                 .eq("NOTICE_STATE", 1)
                 .eq("DELETED", 0);
         Page<Notice> page1 = new Page<>(page, size);
