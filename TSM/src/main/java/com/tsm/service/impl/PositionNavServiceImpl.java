@@ -1,5 +1,6 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.PositionNav;
 import com.tsm.mapper.PositionNavMapper;
@@ -26,6 +27,12 @@ public class PositionNavServiceImpl extends ServiceImpl<PositionNavMapper, Posit
     public int insertPosAndNav(PositionNav positionNav) {
         return positionNavMapper.insert(positionNav);
     }
+
+    @Override
+    public int deletePosAndNav(int id) {
+        return positionNavMapper.delete(new QueryWrapper<PositionNav>().eq("POSITION_ID",id));
+    }
+
     //    查询角色权限表的所有的数据
     @Override
     public List<PositionNav> selectPosAndNav() {

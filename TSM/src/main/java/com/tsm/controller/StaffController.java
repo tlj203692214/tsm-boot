@@ -42,10 +42,25 @@ public class StaffController {
         return staff2;
     }
 
+    /**
+     * 查询渠道
+     * @return
+     */
     @GetMapping("/selectstaffqudao")
     public List<Staff> selectstaffqudao1() {
         List<Staff> list = iStaffService.selectstaffqudao();
         return list;
+    }
+
+    /**
+     * 修改用户状态
+     * @param staffid
+     * @return
+     */
+    @PostMapping("/upstaffstate/{staffid}")
+    public int upstaffstate(@PathVariable("staffid") int staffid){
+        int update = iStaffService.updateStaff(staffid);
+        return update;
     }
 
     @Autowired

@@ -34,11 +34,9 @@ public class StaffPositionController {
     //    添加用户权限关联表
     @PostMapping("/insertStaffPosition")
     public int insertStaffPos(@RequestBody StaffPosition staffPosition) {
-        System.out.println("数据" + staffPosition);
         int[] ints = staffVoService.selectPosByStaffId(staffPosition.getStaffId());
         for (int id : ints) {
             if (staffPosition.getPositionId() == id) {
-                System.out.println("数组数据" + id);
                 return 0;
             }
         }
