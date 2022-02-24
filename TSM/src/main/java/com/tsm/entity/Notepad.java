@@ -50,11 +50,11 @@ public class Notepad implements Serializable {
     @TableField("NOTEPAD_CONTENT")
     private String notepadContent;
 
-    @TableField("STAFF_ID")
-    private int staffId;
-
     @TableField("NOTEPAD_STATE")
     private int notepadState;
+
+    @TableField("STAFF_ID")
+    private int staffId;
 
     @TableField("DELETED")
 

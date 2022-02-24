@@ -40,7 +40,7 @@ public class Receiving implements Serializable {
     private String receivingsContent;
 
     @TableField(value="RECEIVINGS_DATE", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date receivingsDate;
 
     @TableField("RECEIVINGS_STATE")

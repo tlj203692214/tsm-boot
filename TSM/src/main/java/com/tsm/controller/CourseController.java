@@ -40,4 +40,22 @@ public List<Course> selectcourse1(){
         IPage<Course> iPage=courseService.mohuselect(page,size,name);
         return iPage;
     }
+
+    @PostMapping("/addcourse")
+    public int addcourse(@RequestBody Course course){
+        int a=courseService.addcourse(course);
+        return a;
+    }
+
+    @PostMapping("/updatacourse")
+    public int updatacourse(@RequestBody Course course){
+        int a=courseService.updatacourse(course);
+        return a;
+    }
+
+    @PostMapping("/updatazt")
+    public int updatazt(@RequestBody Course course){
+    int a=courseService.updatacoursezt(course);
+    return a;
+    }
 }

@@ -31,10 +31,16 @@ public class SatffsignServiceImpl extends ServiceImpl<SatffsignMapper, Satffsign
     @Transactional
     public int updateStaffsign(Satffsign satffsign) {
         int id = satffsign.getStaffId();
+        int state = satffsign.getSignState();
         Satffsign s1=mapper.selectById(id);
         System.out.println("iddiididididi"+id);
-        s1.setSignState(1);
-        s1.setSignDate(new Date());
+        if (state==0){
+            s1.setSignState(1);
+            s1.setSignDate(new Date());
+        }else if(state==1){
+            s1.setSignState(2);
+            s1.setSignDate(new Date());
+        }
         int update = mapper.updateById(s1);
         if (update>0){
             System.out.println("打卡成功！");

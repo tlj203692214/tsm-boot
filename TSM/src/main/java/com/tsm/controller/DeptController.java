@@ -71,9 +71,4 @@ public class DeptController {
             List<Dept> list=service.selectDeptlj(id);
         return list;
     }
-    @PostMapping("/selectDeptsl/{staffId}")   //统计下一级是否还包含部门
-    public Long selectDeptsl(@PathVariable("staffId") int id){
-       Long a=service.selectDeptsl(id);
-        return a;
-    }
 }

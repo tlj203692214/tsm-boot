@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class OpinionController {
   @Autowired
     private IOpinionService iOpinionService;
-    @GetMapping("/opinion")   //根据条件分页模糊查询公告箱
+    @GetMapping("/opinion")   //根据条件分页模糊查询
     public IPage<Opinion> opinion(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("zt") String zt,@RequestParam("staffName") String staffName) {
 
         IPage<Opinion> sendIPage =iOpinionService.opinion(page, size, zt,staffName);
@@ -45,7 +45,7 @@ public class OpinionController {
         int  a =iOpinionService.delectOpinion(opinionId);
         return a;
     }
-    @GetMapping("/selectOpinion")   //根据条件分页模糊查询公告箱
+    @GetMapping("/selectOpinion")   //根据条件分页模糊查询
     public IPage<Opinion> selectOpinion(@RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("zt") String zt,@RequestParam("staffId") int staffId) {
 
         IPage<Opinion> sendIPage =iOpinionService.selectOpinion(page, size, zt,staffId);

@@ -16,6 +16,7 @@ public class PositionNavVoController {
     //    根据角色id查询权限
     @PostMapping("/selectPosById")
     public int[] selectPosById(@RequestBody positionNavVo positionNavVo) {
+        System.out.println(positionNavVo+"数据");
         return positionNavService.selectPosById(positionNavVo.getPositionId());
     }
 }

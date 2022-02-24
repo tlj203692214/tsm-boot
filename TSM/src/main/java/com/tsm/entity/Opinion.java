@@ -52,7 +52,7 @@ public class Opinion implements Serializable {
     private String publisher;
 
     @TableField(value="PUBLICATION_TIME",fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd-HH-mm-ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date publicationTime;
 
     @TableField("RESPONDENT")

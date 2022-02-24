@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -48,6 +49,7 @@ public class Purchase implements Serializable {
     private int courseId;
 
     @TableField("PURCHASE_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date purchaseDate;
 
     @TableField("DELETED")

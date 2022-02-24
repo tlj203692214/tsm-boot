@@ -39,6 +39,11 @@ public class ExpenditureServiceImpl extends ServiceImpl<ExpenditureMapper, Expen
         return expenditureIPage;
     }
 
+//    @Override
+//    public int addexpenditure(Expenditure expenditure) {
+//        int a=expenditureMapper.addexpenditure(expenditure);
+//        return a;
+//    }
 
 
 }
