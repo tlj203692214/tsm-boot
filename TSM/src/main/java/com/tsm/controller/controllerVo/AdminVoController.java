@@ -6,10 +6,7 @@ import com.tsm.service.serviceVo.IAdminVoService;
 import com.tsm.vo.AdminVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -22,5 +19,12 @@ public class AdminVoController {
         IPage<AdminVo> iPage = voService.findsadmins(ri, st, it, page, size);
         log.debug(iPage.toString());
         return iPage;
+    }
+
+    @GetMapping("/admins/{aid}")
+    public AdminVo adminVo(@PathVariable("aid") int aid){
+        AdminVo adminVo = voService.admins(aid);
+        log.debug("员工详情"+adminVo.toString());
+        return adminVo;
     }
 }

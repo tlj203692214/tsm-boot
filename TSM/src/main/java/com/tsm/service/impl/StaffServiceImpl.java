@@ -3,6 +3,7 @@ package com.tsm.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Staff;
+import com.tsm.handler.MD5Utils;
 import com.tsm.mapper.StaffMapper;
 import com.tsm.service.IStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,14 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
 
     @Autowired
     private StaffMapper staffMapper;
-
+    @Autowired
+    private MD5Utils md5Utils;
     @Override
     public Staff selectStaff(String staffName, String staffPass) {
+        String Pass = md5Utils.md5(staffPass);
         QueryWrapper<Staff> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("STAFF_NAME",staffName)
-                .eq("STAFF_PASS",staffPass);
+                .eq("STAFF_PASS",Pass);
         Staff staff = staffMapper.selectOne(queryWrapper);
         return staff;
     }
@@ -56,9 +59,18 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
 
     @Override
     public int addStaff(Staff staff) {
+        String pass = md5Utils.md5(staff.getStaffPass());
+        staff.setStaffPass(pass);
         int add = staffMapper.insert(staff);
         return add;
     }
 
+    @Override
+    public long staffCount() {
+        QueryWrapper<Staff> wrapper = new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
+        Long count = staffMapper.selectCount(wrapper);
+        return count;
+    }
 
 }

@@ -8,6 +8,7 @@ import com.tsm.mapper.StaffMapper;
 import com.tsm.service.IPositionService;
 import com.tsm.service.IStaffPositionService;
 import com.tsm.service.IStaffService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * @author 军
  * @since 2021-12-09
  */
+@Slf4j
 @RestController
 @CrossOrigin(maxAge = 60)
 @RequestMapping("/staff")
@@ -95,4 +97,10 @@ public class StaffController {
 
     }
 
+    @GetMapping("/staffCount")
+    public Long staffCount(){
+        long count = iStaffService.staffCount();
+        log.debug("应到员工"+count);
+        return count;
+    }
 }

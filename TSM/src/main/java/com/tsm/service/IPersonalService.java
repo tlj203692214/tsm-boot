@@ -19,4 +19,5 @@ public interface IPersonalService extends IService<Personal> {
     public IPage<Personal> findPersonals(String it, int page, int size);
     public List<Personal> findPersonals();
     public int updatePersonal(Personal personal);
+    public int UpstatePersonal(int pid);
 }

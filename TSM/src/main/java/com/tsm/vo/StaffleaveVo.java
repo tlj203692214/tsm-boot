@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class StaffleaveVo {
     private int leaveId;
+    private int personalId;
     private String personalName;
     private String leaveContent;
     @JsonFormat(pattern="yyyy-MM-dd")

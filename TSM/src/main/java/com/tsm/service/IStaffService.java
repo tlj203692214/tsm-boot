@@ -25,4 +25,7 @@ public interface IStaffService extends IService<Staff> {
         //员工转正添加员工账号
         public int addStaff(Staff staff);
 
+        //查询所有员工工作台
+        public long staffCount();
+
 }

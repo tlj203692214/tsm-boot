@@ -51,7 +51,6 @@ public class Staffbusiness implements Serializable {
     private int staffId2;
 
     @TableField("DELETED")
-    @TableLogic
     private int deleted;
 
 
