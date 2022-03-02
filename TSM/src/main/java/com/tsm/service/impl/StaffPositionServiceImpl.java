@@ -1,5 +1,6 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.StaffPosition;
 import com.tsm.mapper.StaffPositionMapper;
@@ -28,5 +29,10 @@ public class StaffPositionServiceImpl extends ServiceImpl<StaffPositionMapper, S
     @Override
     public int[] selectPositionById(int id) {
         return staffPositionMapper.selectPositionByStaffId(id);
+    }
+
+    @Override
+    public int deletedStaffAndPos(int id) {
+        return staffPositionMapper.delete(new QueryWrapper<StaffPosition>().eq("STAFF_ID",id));
     }
 }

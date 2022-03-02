@@ -18,7 +18,7 @@ public class IncomeVo {
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
     private Date paymoneyDate;
     private String paymoneyMode;
-    private String staffName;
     private String studentfilesName;
+    private String staffName;
     private BigDecimal deleted;
 }

@@ -5,12 +5,13 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class RefundVo {
     private int refundId;
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private LocalDateTime refundDate;
+    private Date refundDate;
     private Double refundMoney;
     private int refundState;
     private String classesName;
@@ -20,7 +21,8 @@ public class RefundVo {
     private Double courseHour;
     private Double coursePrice;
     private Double bookFee;
+    private int staffId;
     private String staffName;
     @TableLogic
-    private BigDecimal deleted;
+    private int deleted;
 }

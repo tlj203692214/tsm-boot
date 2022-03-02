@@ -33,8 +33,8 @@ public class Expenditure implements Serializable {
     @TableField("EXPENDITURE_MONEY")
     private Double expenditureMoney;
 
-    @TableField("EXPENDITURE_DATE")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @TableField(value = "EXPENDITURE_DATE",fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date expenditureDate;
 
     @TableField("PURCHASE_ID")
@@ -42,6 +42,12 @@ public class Expenditure implements Serializable {
 
     @TableField("REFUND_ID")
     private int refundId;
+
+    @TableField("EXPENDITURE_STATE")
+    private int expenditureState;
+
+    @TableField("STAFF_ID")
+    private int staffId;
 
     @TableField("DELETED")
     @TableLogic

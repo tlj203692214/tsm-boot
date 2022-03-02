@@ -11,7 +11,9 @@ import java.util.Date;
 @NoArgsConstructor
 public class StaffVo {
     private int staffpositionId;
+    private int deptId;
     private String deptName;
+    private int spDel;
 
     private int staffId;
     private String staffName;
@@ -19,7 +21,6 @@ public class StaffVo {
 
     private int positionId;
     private String positionName;
-    private String positionCode;
     private String positionRemark;
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date positionCreated;

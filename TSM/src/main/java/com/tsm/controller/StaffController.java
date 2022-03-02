@@ -4,6 +4,7 @@ package com.tsm.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tsm.entity.Position;
 import com.tsm.entity.Staff;
+import com.tsm.handler.MD5Utils;
 import com.tsm.mapper.StaffMapper;
 import com.tsm.service.IPositionService;
 import com.tsm.service.IStaffPositionService;
@@ -30,6 +31,8 @@ public class StaffController {
 
     @Autowired
     private StaffMapper staffMapper;
+    @Autowired
+    private MD5Utils md5Utils;
     /**
      * 登录
      * @param staff
@@ -39,7 +42,8 @@ public class StaffController {
     public Staff selectStaff(@RequestBody Staff staff) {
         String name = staff.getStaffName();
         String pass = staff.getStaffPass();
-        Staff staff2 = iStaffService.selectStaff(name, pass);
+        String s = md5Utils.md5(pass);
+        Staff staff2 = iStaffService.selectStaff(name, s);
         return staff2;
     }
 

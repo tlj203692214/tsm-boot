@@ -8,9 +8,11 @@ import com.tsm.vo.ExpenditureVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author 军
@@ -24,13 +26,27 @@ public class ExpenditureVoController {
 
     /**
      * 查询校务支出的数据
+     *
      * @param page
      * @param pageInfo
      * @return
      */
     @GetMapping("/selectExpenditureVo")
-    public IPage<ExpenditureVo> selectExpenditure(@RequestParam("currentPage")int page, @RequestParam("pagesize") int pageInfo){
+    public IPage<ExpenditureVo> selectExpenditure(@RequestParam("currentPage") int page, @RequestParam("pagesize") int pageInfo) {
+
         IPage<ExpenditureVo> expenditureIPage = iExpenditureVoService.selectExpenditurePage(page, pageInfo);
         return expenditureIPage;
+    }
+
+
+
+    /**
+     * 根据时间查询校务支出
+     */
+    @GetMapping("/selectExpendByDate")
+    public IPage<ExpenditureVo> selectExpendByDate(@RequestParam("currentPage") int page, @RequestParam("pagesize") int pageInfo,
+            @RequestParam("startTime") String startTime, @RequestParam("endTime") String endTime)throws Exception {
+        IPage<ExpenditureVo> expenditureVoIPage = iExpenditureVoService.selectExpendByDate(page, pageInfo, startTime, endTime);
+        return expenditureVoIPage;
     }
 }

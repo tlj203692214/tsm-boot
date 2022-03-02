@@ -10,6 +10,8 @@ import com.tsm.service.IExpenditureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * <p>
  *  服务实现类
@@ -25,6 +27,11 @@ public class ExpenditureServiceImpl extends ServiceImpl<ExpenditureMapper, Expen
     @Autowired
     private ExpenditureMapper expenditureMapper;
 
+    @Override
+    public Date selectMinDate() {
+        return expenditureMapper.selectMinDate();
+    }
+
     /**
      * 校务支出多表分页查询
      * @param page
@@ -37,6 +44,13 @@ public class ExpenditureServiceImpl extends ServiceImpl<ExpenditureMapper, Expen
         Page<Expenditure> page1 = new Page<>(page,size);
         IPage<Expenditure> expenditureIPage = expenditureMapper.selectAll(page1, null);
         return expenditureIPage;
+    }
+
+    @Override
+    public int insertExpendForRefund(Expenditure expenditure) {
+        int id = expenditureMapper.selectid();
+        expenditure.setExpenditureId(id);
+        return expenditureMapper.insertExpendRefund(expenditure);
     }
 
 //    @Override

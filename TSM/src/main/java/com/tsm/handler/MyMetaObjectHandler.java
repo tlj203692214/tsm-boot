@@ -24,6 +24,7 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
         this.setFieldValByName("positionCreated",new Date(),metaObject);
         this.setFieldValByName("positionUpdated",new Date(),metaObject);
         this.setFieldValByName("studententrance",new Date(),metaObject);
+        this.setFieldValByName("expenditureDate",new Date(),metaObject);
 
     }
 //更新时的填充策略
@@ -34,6 +35,7 @@ this.setFieldValByName("sendDate",new Date(),metaObject);
     this.setFieldValByName("noticeDate",new Date(),metaObject);
     this.setFieldValByName("positionCreated",new Date(),metaObject);
     this.setFieldValByName("positionUpdated",new Date(),metaObject);
+    this.setFieldValByName("expenditureDate",new Date(),metaObject);
 
 }
 }
