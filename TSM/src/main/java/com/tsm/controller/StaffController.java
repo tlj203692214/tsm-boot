@@ -94,5 +94,14 @@ public class StaffController {
         }
 
     }
-
+    @PostMapping("/updatePass")
+    public int updatePass(@RequestBody Staff staff) {
+        int a=iStaffService.updatePass(staff);
+        return a;
+    }
+    @PostMapping("/md5/{staffPass}")
+    public String md5(@PathVariable("staffPass") String staffPass) {
+        String Pass=iStaffService.md5(staffPass);
+        return Pass;
+    }
 }

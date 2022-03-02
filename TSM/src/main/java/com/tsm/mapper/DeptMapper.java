@@ -24,5 +24,6 @@ public interface DeptMapper extends BaseMapper<Dept> {
     @Select(
             "select * from DEPT d left join POSITION p on d.DEPT_ID=p.DEPT_ID left join STAFF_POSITION s_p on s_p.POSITION_ID=p.POSITION_ID LEFT JOIN STAFF s on s_p.staff_id=s.staff_id where s.staff_Id=#{id}"
     )
+//     "select * from DEPT d left join ADMINISTRATION a on d.DEPT_ID=a.DEPT_ID  LEFT JOIN STAFF s on a.staff_id=s.staff_id
     public List<Dept> selectDept(@Param("id") int staffId);
 }

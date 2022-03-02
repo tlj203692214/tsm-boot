@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * <p>
  * 服务实现类
@@ -40,5 +42,11 @@ public class StaffVoServiceImpl extends ServiceImpl<StaffVoMapper, StaffVo> impl
     @Override
     public int[] selectPosByStaffId(int id) {
         return staffVoMapper.selectPositionByStaffId(id);
+    }
+
+    @Override
+    public List<StaffVo> selectPosition(int staffId) {
+        List<StaffVo> list=staffVoMapper.selectPosition(staffId);
+        return  list;
     }
 }

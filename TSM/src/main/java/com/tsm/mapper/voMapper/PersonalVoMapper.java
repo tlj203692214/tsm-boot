@@ -21,6 +21,7 @@ public interface PersonalVoMapper extends BaseMapper<personalVo> {
     @Select("select por.PORTRAIT_URL from personal per left join PORTRAIT por on per.PORTRAIT_ID=por.PORTRAIT_ID left join staff s on per.staff_id = s.staff_id where s.staff_id=#{id}")
     public personalVo selectPicture(int id);
 
+    //查询个人资料
     @Select(
             "select * from PORTRAIT  p left join PERSONAL e on p.PORTRAIT_ID=e.PORTRAIT_ID left join STAFF s on s.STAFF_ID=e.STAFF_ID where s.staff_id=#{id}"
     )

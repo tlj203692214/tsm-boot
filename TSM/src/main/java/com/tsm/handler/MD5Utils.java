@@ -1,9 +1,11 @@
 package com.tsm.handler;
 
+import org.springframework.stereotype.Repository;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
+@Repository
 public class MD5Utils {
 	/**
 	 * 使用md5的算法进行加密
@@ -25,6 +27,7 @@ public class MD5Utils {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(md5("123"));
+		System.out.println(md5("123456"));
+
 	}
 }

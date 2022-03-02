@@ -54,5 +54,14 @@ public class StaffVoController {
     public int[] selectPosById(@RequestBody StaffVo staffVo){
         return staffVoService.selectPosByStaffId(staffVo.getStaffId());
     }
+    /**
+     * 根据员工id查询岗位职责
+     */
+    @GetMapping("/selectPosition/{staffId}")
+    public List<StaffVo> selectposition(@PathVariable("staffId") int staffId){
+        List<StaffVo> list=staffVoService.selectPosition(staffId);
+        return list;
+
+    }
 
 }
