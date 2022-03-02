@@ -3,6 +3,7 @@ package com.tsm.mapper.voMapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.tsm.entity.Dept;
 import com.tsm.vo.StaffVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -34,4 +35,9 @@ public interface StaffVoMapper extends BaseMapper<StaffVo> {
             "where s.STAFF_ID = #{id} and sp.deleted=0")
     public int[] selectPositionByStaffId(int id);
 
+    //查询个人岗位职责
+    @Select(
+            "select * from DEPT d left join POSITION p on d.DEPT_ID=p.DEPT_ID left join STAFF_POSITION s_p on s_p.POSITION_ID=p.POSITION_ID LEFT JOIN STAFF s on s_p.staff_id=s.staff_id where s.staff_Id=#{id}"
+    )
+    public List<StaffVo> selectPosition(@Param("id") int staffId);
 }

@@ -20,4 +20,6 @@ public interface StaffVoService extends IService<StaffVo> {
         int updateStaffVo(StaffVo staffVo);
 //        根据用户id查询角色
         public int[] selectPosByStaffId(int id);
+        //查询个人岗位职责
+        public List<StaffVo> selectPosition(int staffId);
 }

@@ -25,4 +25,10 @@ public interface IStaffService extends IService<Staff> {
         //员工转正添加员工账号
         public int addStaff(Staff staff);
 
+        //员工修改密码
+        public  int updatePass(Staff staff);
+
+        //将密码加密
+        public  String md5(String staffPass);
+
 }
