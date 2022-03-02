@@ -32,15 +32,29 @@ public class StaffPositionController {
     private StaffVoService staffVoService;
 
     //    添加用户权限关联表
-    @PostMapping("/insertStaffPosition")
-    public int insertStaffPos(@RequestBody StaffPosition staffPosition) {
-        int[] ints = staffVoService.selectPosByStaffId(staffPosition.getStaffId());
-        for (int id : ints) {
-            if (staffPosition.getPositionId() == id) {
-                return 0;
-            }
+    @PostMapping("/insertStaffPosition/{userId}")
+    public int insertStaffPos(@PathVariable int userId,@RequestBody List<Integer> ids) {
+        System.out.println(userId+"用户id");
+        System.out.println(ids+"角色id");
+        StaffPosition staffPosition = new StaffPosition();
+        if(ids.size()<=0){
+            staffPositionService.deletedStaffAndPos(userId);
+                staffPosition.setPositionId(5);
+                staffPosition.setStaffId(userId);
+
+                staffPositionService.insertStaffPos(staffPosition);
+                return 1;
+        }else {
+            staffPositionService.deletedStaffAndPos(userId);
+            ids.forEach(e -> {
+                staffPosition.setPositionId(e);
+                staffPosition.setStaffId(userId);
+                staffPositionService.insertStaffPos(staffPosition);
+            });
+            return 1;
         }
-        return staffPositionService.insertStaffPos(staffPosition);
+
+
     }
 
     /*

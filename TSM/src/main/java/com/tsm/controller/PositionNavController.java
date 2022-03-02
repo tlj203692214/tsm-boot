@@ -23,20 +23,6 @@ import java.util.List;
 public class PositionNavController {
     @Autowired
     private IPositionNavService positionNavService;
-    @Autowired
-    private PositionNavVoService positionNavVoService;
-
-//    @PostMapping("/insertPosAndNav")
-//    public int insertPosAndNav(@RequestBody PositionNav positionNav) {
-//        System.out.println(positionNav.getPositionmenuId() + "数据");
-//        int[] ints = positionNavVoService.selectPosById(positionNav.getPositionId());
-//        for (int aa : ints) {
-//            if (positionNav.getNavId() == aa) {
-//                return 0;
-//            }
-//        }
-//        return positionNavService.insertPosAndNav(positionNav);
-//    }
 
     @PostMapping("/insertPosAndNav/{navId}")
     public int insertPosAndNav(@PathVariable int navId,@RequestBody List<Integer> ids) {

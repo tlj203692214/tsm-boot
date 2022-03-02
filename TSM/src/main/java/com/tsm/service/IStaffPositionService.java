@@ -17,4 +17,7 @@ public interface IStaffPositionService extends IService<StaffPosition> {
 
     int[] selectPositionById(int id);
 
+//    删除授权前选择的角色
+    int deletedStaffAndPos(int id);
+
 }

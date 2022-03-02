@@ -29,9 +29,9 @@ public class IncomeVoServiceImpl extends ServiceImpl<IncomeVoMapper, IncomeVo> i
     public IPage<IncomeVo> selectIncomeVo(int page, int size,String name,String payMode) {
         Page<IncomeVo> page1 = new Page<>(page,size);
         if(payMode.equals("全部支付")){
-            return incomeVoMapper.selectIncomeVo(page1, name);
+            return incomeVoMapper.selectIncomeVo(page1,null, name);
         }else{
-            return incomeVoMapper.selectIncomeVoByPayMode(page1,name,payMode);
+            return incomeVoMapper.selectIncomeVoByPayMode(page1,null,name,payMode);
         }
 
 

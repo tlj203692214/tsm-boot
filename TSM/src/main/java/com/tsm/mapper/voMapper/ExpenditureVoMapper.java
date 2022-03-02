@@ -12,10 +12,13 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
 public interface ExpenditureVoMapper extends BaseMapper<ExpenditureVo> {
+
+
     /**
      * 查询所有校务支出的数据
      */
@@ -27,8 +30,8 @@ public interface ExpenditureVoMapper extends BaseMapper<ExpenditureVo> {
             "left join staff s on p.staff_id=s.staff_id \n" +
             "left join COURSE c on p.course_id=c.course_id \n" +
             "left join LEAVESCHOOL l on r.LEAVESCHOOL_id = l.LEAVESCHOOL_id\n" +
-            "left join STUDENT t on l.student_id=t.student_id order by e.expenditure_id desc")
-    IPage<ExpenditureVo> sel(Page<ExpenditureVo> page, QueryWrapper<ExpenditureVo> queryWrapper);
+            "left join STUDENT t on l.student_id=t.student_id" + " ${ew.customSqlSegment}")
+    IPage<ExpenditureVo> sel(Page<ExpenditureVo> page, @Param(Constants.WRAPPER) QueryWrapper<ExpenditureVo> queryWrapper);
 
     /**
      * 统计所有校务支出的数据
