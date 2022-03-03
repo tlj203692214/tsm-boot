@@ -26,7 +26,7 @@ public class PositionNavController {
 
     @PostMapping("/insertPosAndNav/{navId}")
     public int insertPosAndNav(@PathVariable int navId,@RequestBody List<Integer> ids) {
-        System.out.println(navId + "角色id");
+        System.out.println(navId + "角色id"+ids);
         positionNavService.deletePosAndNav(navId);
         PositionNav positionNav = new PositionNav();
         ids.forEach(e->{

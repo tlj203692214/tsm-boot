@@ -41,11 +41,12 @@ public class StaffPositionController {
             staffPositionService.deletedStaffAndPos(userId);
                 staffPosition.setPositionId(5);
                 staffPosition.setStaffId(userId);
-
+            System.out.println("aaaa");
                 staffPositionService.insertStaffPos(staffPosition);
                 return 1;
         }else {
             staffPositionService.deletedStaffAndPos(userId);
+            System.out.println("bbbb");
             ids.forEach(e -> {
                 staffPosition.setPositionId(e);
                 staffPosition.setStaffId(userId);

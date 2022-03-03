@@ -5,7 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93d3b53d-d807-462b-8443-70b35860a34d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0840928f-63a0-4532-8a2c-887bb3b9556a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cda69753-dab8-42d0-813d-4c4d432310a6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_15_59_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_15_59__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_16_02_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_16_02__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_2_19_20_50__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/ExpenditureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/ExpenditureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/PositionNavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/PositionNavController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/StaffPositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/ExpenditureVoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/controller/controllerVo/ExpenditureVoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Expenditure.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/entity/Expenditure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/handler/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/handler/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/ExpenditureMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/ExpenditureMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/ExpenditureVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/ExpenditureVoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/IncomeVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/IncomeVoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/StaffVoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/mapper/voMapper/StaffVoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IDeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IDeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IExpenditureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IExpenditureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffPositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/IStaffPositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/ExpenditureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/ExpenditureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffPositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/StaffPositionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/ExpenditureVoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/ExpenditureVoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/IncomeVoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/impl/implVo/IncomeVoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IExpenditureVoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/service/serviceVo/IExpenditureVoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/ExpenditureVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/ExpenditureVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/IncomeVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/IncomeVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/RefundVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/RefundVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/StaffVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TSM/src/main/java/com/tsm/vo/StaffVo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +56,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -237,7 +279,7 @@
       <workItem from="1646008060517" duration="8746000" />
       <workItem from="1646017960569" duration="12407000" />
       <workItem from="1646131014343" duration="8867000" />
-      <workItem from="1646200304265" duration="1953000" />
+      <workItem from="1646200304265" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="全体整合">
       <created>1640314337453</created>
@@ -393,14 +435,7 @@
       <option name="project" value="LOCAL" />
       <updated>1645701039583</updated>
     </task>
-    <task id="LOCAL-00023" summary="财务模块的校务支持更新">
-      <created>1646201523481</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1646201523481</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +481,7 @@
     <MESSAGE value="2月24整合后修改3" />
     <MESSAGE value="不知名的修改" />
     <MESSAGE value="修改整合后" />
-    <MESSAGE value="财务模块的校务支持更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改整合后" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
