@@ -27,7 +27,7 @@ public class Expenditure implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "EXPENDITURE_ID",type = IdType.INPUT)
+    @TableId(value = "EXPENDITURE_ID",type = IdType.AUTO)
     private int expenditureId;
 
     @TableField("EXPENDITURE_MONEY")

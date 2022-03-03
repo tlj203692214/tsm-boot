@@ -1,8 +1,11 @@
 package com.tsm.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tsm.entity.Teaching;
+import com.tsm.service.ITeachingService;
+import com.tsm.service.impl.TeachingServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -15,5 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/teaching")
 public class TeachingController {
-
+@Autowired
+    private ITeachingService service;
+@PostMapping("/addteaching")
+    public int addteaching(@RequestBody Teaching teaching){
+    int a=service.addteaching(teaching);
+    return a;
+}
+@GetMapping("/selectid")
+    public int selectid(){
+    int a=service.selectmax();
+    return a;
+    }
 }

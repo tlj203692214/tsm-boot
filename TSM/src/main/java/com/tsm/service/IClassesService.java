@@ -20,6 +20,9 @@ public interface IClassesService extends IService<Classes> {
     //查询班级
     public List<Classes> cx();
 
+    //根据课程查询班级
+    public List<Classes> cxid(int id);
+
     //添加班级
     public int addclasses(Classes classes);
 

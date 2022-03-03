@@ -35,6 +35,9 @@ public class Teaching implements Serializable {
     @TableField("END_TIME")
     private Date endTime;
 
+    @TableField("CLASSES_ID")
+    private int classesId;
+
     @TableField("DELETED")
     @TableLogic
     private int deleted;

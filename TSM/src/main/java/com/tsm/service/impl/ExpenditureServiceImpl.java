@@ -1,9 +1,12 @@
 package com.tsm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tsm.entity.Expenditure;
+import com.tsm.entity.Student;
 import com.tsm.mapper.ExpenditureMapper;
 import com.tsm.mapper.RefundMapper;
 import com.tsm.service.IExpenditureService;
@@ -53,11 +56,30 @@ public class ExpenditureServiceImpl extends ServiceImpl<ExpenditureMapper, Expen
         return expenditureMapper.insertExpendRefund(expenditure);
     }
 
-//    @Override
-//    public int addexpenditure(Expenditure expenditure) {
-//        int a=expenditureMapper.addexpenditure(expenditure);
-//        return a;
-//    }
+    @Override
+    public int addexpenditure(Expenditure expenditure) {
+        int bh=expenditureMapper.selectid();
+        expenditure.setExpenditureId(bh);
+        int a=expenditureMapper.addexpenditure(expenditure);
+        return a;
+    }
+
+    @Override
+    public int addexpend(Expenditure expenditure) {
+        int bh=expenditureMapper.selectid();
+        expenditure.setExpenditureId(bh);
+        int a=expenditureMapper.addexpend(expenditure);
+        return a;
+    }
+
+    @Override
+    public int updateexpend(Expenditure expenditure) {
+        int bh=expenditureMapper.selectid();
+        expenditure.setExpenditureId(bh);
+       expenditure.setExpenditureDate(new Date());
+        int a = expenditureMapper.addexpenditure(expenditure);
+        return a;
+    }
 
 
 }

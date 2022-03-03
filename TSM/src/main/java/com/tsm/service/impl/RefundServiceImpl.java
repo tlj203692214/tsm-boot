@@ -50,5 +50,17 @@ public class RefundServiceImpl extends ServiceImpl<RefundMapper, Refund> impleme
         return i;
     }
 
+    @Override
+    public int udatezt(Refund refund) {
+        int a=refundMapper.updatezt(refund);
+        return a;
+    }
+
+    @Override
+    public int addrefund(Refund refund) {
+        int a=refundMapper.insert(refund);
+        return a;
+    }
+
 
 }

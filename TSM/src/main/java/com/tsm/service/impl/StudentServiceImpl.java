@@ -83,9 +83,9 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     public int updatastudentbjkc1(Student student) {
 
         UpdateWrapper<Student> wrapper=new UpdateWrapper<>();
-        wrapper.eq("COURSE_ID", student.getCourseid());
+      //  wrapper.eq("COURSE_ID", student.getCourseid());
         wrapper.eq("CLASSES_ID", student.getClassesId());
-        int  a=mapper.updateSysRoleById(student,wrapper,student.getClassesId(),student.getCourseid(),student.getStudentId());
+        int  a=mapper.updateSysRoleById(student,wrapper,student.getClassesId(),student.getStudentId());
         return a;
     }
 
@@ -99,6 +99,8 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
 
     @Override
     public int updatastudentzt(Student student) {
+//        UpdateWrapper<Student> wrapper=new UpdateWrapper<>();
+//          wrapper.eq("COURSE_ID", student.getCourseid());
         int a =mapper.updatestudent(student);
         return a;
     }

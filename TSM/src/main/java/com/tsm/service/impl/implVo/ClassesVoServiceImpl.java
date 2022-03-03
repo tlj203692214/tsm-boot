@@ -60,6 +60,7 @@ public class ClassesVoServiceImpl extends ServiceImpl<ClassesVoMapper, ClassesVo
         Page<ClassesVo> page1=new Page<>(page,size);
         QueryWrapper<ClassesVo> wrapper=new QueryWrapper<>();
         wrapper.eq("cla.CLASSES_ID",id);
+        wrapper.eq("sta.DELETED",0);
         wrapper.orderByDesc("sta.STUDENT_ID");
         IPage<ClassesVo> iPage=mapper.selectstudentVo(page1,wrapper);
         return iPage;

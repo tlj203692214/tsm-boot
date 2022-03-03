@@ -28,4 +28,10 @@ public class GraduationController {
         int a=service.addgraduation(graduation);
         return a;
     }
+
+    @PostMapping("/updatezt")
+    public int updatezt(@RequestBody Graduation graduation){
+        int a=service.updatazt(graduation);
+        return a;
+    }
 }

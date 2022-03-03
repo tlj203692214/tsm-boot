@@ -47,4 +47,17 @@ public class PurchaseVoServiceImpl extends ServiceImpl<PurchaseVoMapper, Purchas
         return iPage;
     }
 
+    @Override
+    public IPage<PurchaseVo> selectWarehouse(int page, int size, String name) {
+        Page<PurchaseVo> page1 = new Page<>(page, size);
+        QueryWrapper<PurchaseVo> wrapper=new QueryWrapper<>();
+        wrapper.eq("ou.DELETED", 0);
+        if(name!=null&&name.length()!=0){
+            wrapper.like("pur.PURCHASE_NAME",name);
+        }
+        wrapper.orderByDesc("ou.OUTWAREHOUSE_ID");
+        IPage<PurchaseVo> iPage=mapper.selectoutWarehouse(page1,wrapper);
+        return iPage;
+    }
+
 }

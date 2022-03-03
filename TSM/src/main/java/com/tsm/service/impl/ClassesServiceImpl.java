@@ -39,6 +39,14 @@ public class ClassesServiceImpl extends ServiceImpl<ClassesMapper, Classes> impl
     }
 
     @Override
+    public List<Classes> cxid(int id) {
+        QueryWrapper<Classes> wrapper=new QueryWrapper<>();
+        wrapper.eq("CLASSES_ID",id);
+        List<Classes> list=mapper.selectList(wrapper);
+        return list;
+    }
+
+    @Override
     public int addclasses(Classes classes) {
         int a=mapper.insert(classes);
         return a;

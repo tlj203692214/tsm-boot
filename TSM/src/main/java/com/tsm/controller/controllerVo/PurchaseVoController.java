@@ -26,4 +26,10 @@ public class PurchaseVoController {
         IPage<PurchaseVo> iPage=service.selectmhPurchase(page, size, name, jcmc);
         return iPage;
     }
+    //分页查询
+    @GetMapping("/selectWarehouse")
+    public IPage<PurchaseVo> selectWarehouse(@RequestParam("currentPage") int page,@RequestParam("size") int size,@RequestParam("name") String name){
+        IPage<PurchaseVo> iPage=service.selectWarehouse(page, size, name);
+        return iPage;
+    }
 }

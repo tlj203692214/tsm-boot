@@ -23,8 +23,13 @@ public interface IExpenditureService extends IService<Expenditure> {
         public IPage<Expenditure> selectExpenditurePage(int page, int size);
 
         //添加校务支出表
-//        public int addexpenditure(Expenditure expenditure);
+        public int addexpenditure(Expenditure expenditure);
 
 //        校务支出退费添加
         public int insertExpendForRefund(Expenditure expenditure);
+
+        //退学添加支出表
+        public int addexpend(Expenditure expenditure);
+        //修改支出表价格
+        public int updateexpend(Expenditure expenditure);
 }

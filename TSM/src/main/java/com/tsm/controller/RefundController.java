@@ -46,4 +46,16 @@ public class RefundController {
         return iRefundService.deleteById(refund.getRefundId());
     }
 
+    //逻辑输出
+    @PostMapping("/updatezt")
+    public int updatezt(@RequestBody Refund refund){
+        int a=iRefundService.udatezt(refund);
+        return a;
+    }
+
+    @PostMapping("/addrefund")
+    public int addrefund(@RequestBody Refund refund){
+        int a=iRefundService.addrefund(refund);
+        return a;
+    }
 }

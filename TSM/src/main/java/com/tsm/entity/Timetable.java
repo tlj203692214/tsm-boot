@@ -1,6 +1,7 @@
 package com.tsm.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,15 +37,19 @@ public class Timetable implements Serializable {
     private String timetableAfternoon;
 
     @TableField("TIMETABLE_TIME")
+    @JsonFormat(pattern="HH:MM", timezone="GMT+8")
     private Date timetableTime;
 
     @TableField("TIMETABLE_MORNINGEND")
+    @JsonFormat(pattern="HH:MM", timezone="GMT+8")
     private Date timetableMorningend;
 
     @TableField("TIMETABLE_AFTERNOONSTART")
+    @JsonFormat(pattern="HH:MM", timezone="GMT+8")
     private Date timetableAfternoonstart;
 
     @TableField("TIMETABLE_AFTERNOONEND")
+    @JsonFormat(pattern="HH:MM", timezone="GMT+8")
     private Date timetableAfternoonend;
 
     @TableField("TIMETABLE_DATE")
