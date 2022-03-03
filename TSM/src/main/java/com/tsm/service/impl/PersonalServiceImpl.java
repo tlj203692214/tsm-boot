@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,7 @@ public class PersonalServiceImpl extends ServiceImpl<PersonalMapper, Personal> i
     private PersonalMapper personalMapper;
     @Override
     public int addpersonal(Personal personal) {
+        personal.setEntryTime(new Date());
         int add = personalMapper.insert(personal);
         if (add>0){
             log.debug("新增成功");
@@ -61,6 +63,14 @@ public class PersonalServiceImpl extends ServiceImpl<PersonalMapper, Personal> i
     @Override
     public int updatePersonal(Personal personal) {
         return personalMapper.updateById(personal);
+    }
+
+    @Override
+    public int UpstatePersonal(int pid) {
+        Personal personal = personalMapper.selectById(pid);
+        personal.setPersonalState(2);//员工状态2休假中
+        int update = personalMapper.updateById(personal);
+        return update;
     }
 
 

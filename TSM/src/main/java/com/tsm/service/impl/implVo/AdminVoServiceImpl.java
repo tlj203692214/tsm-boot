@@ -32,7 +32,14 @@ public class AdminVoServiceImpl extends ServiceImpl<AdminVoMapper, AdminVo> impl
         }else if (st.equals("3")){
             wrapper.like("pos.POSITION_NAME",it);
         }
+        wrapper.orderByDesc("ad.ADMINISTRATION_ID");
         IPage<AdminVo> iPage = voMapper.findsAdmins(page1,wrapper);
         return iPage;
+    }
+
+    @Override
+    public AdminVo admins(int aid) {
+        AdminVo adminVo = voMapper.Admins(aid);
+        return adminVo;
     }
 }

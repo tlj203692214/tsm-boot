@@ -19,4 +19,7 @@ import java.util.List;
 public interface ISatffsignService extends IService<Satffsign> {
     public int updateStaffsign(@RequestBody Satffsign satffsign);
     public List<Satffsign> StaffsignList();
+    public int addStaffsign(Satffsign satffsign);
+    //员工出勤工作台页面刷新调用
+    public Long StaffSignCount();
 }

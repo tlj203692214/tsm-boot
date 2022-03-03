@@ -52,4 +52,15 @@ public class PersonalController {
         return service.updatePersonal(personal);
     }
 
+    //修改员工状态为休假中
+    @PostMapping("/upstatePersonal/{pid}")
+    public int upstatePersonal(@PathVariable("pid") int pid){
+        int update = service.UpstatePersonal(pid);
+        if (update>0){
+            log.debug("员工状态修改成功，休假中。。。"+update);
+        }else{
+            log.debug("员工状态修改失败");
+        }
+        return update;
+    }
 }

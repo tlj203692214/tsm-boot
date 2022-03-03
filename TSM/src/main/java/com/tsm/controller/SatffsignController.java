@@ -36,4 +36,24 @@ public class SatffsignController {
         List<Satffsign> list = service.StaffsignList();
         return list;
     }
+
+    //员工转正新增员工打卡
+    @PostMapping("/addstaffsign")
+    public int addstaffsign(@RequestBody Satffsign satffsign){
+        int add = service.addStaffsign(satffsign);
+        if (add>0){
+            log.debug("新增成功");
+        }else{
+            log.debug("新增失败");
+        }
+        return add;
+    }
+
+    //统计员工出勤人数
+    @GetMapping("/staffsignCount")
+    public Long staffsignCount(){
+        long count = service.StaffSignCount();
+        log.debug("出勤员工"+count);
+        return count;
+    }
 }

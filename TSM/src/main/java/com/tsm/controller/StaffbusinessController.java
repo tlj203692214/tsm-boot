@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -30,10 +32,37 @@ public class StaffbusinessController {
         log.debug(iPage.toString());
         return iPage;
     }
-    @PostMapping("insertbusiness")
+    @PostMapping("/insertbusiness")
     public int Insertbusiness(@RequestBody Staffbusiness staffbusiness){
         int add = service.addstaffbusiness(staffbusiness);
         log.debug("新增成功"+add+"条数据");
         return add;
+    }
+    @GetMapping("/listbusiness")
+    public List<Staffbusiness> listStaffleave(){
+        List<Staffbusiness> list = service.listStaffbusiness();
+        return list;
+    }
+    //员工出差审批
+    @PostMapping("/upstaffbusiness")
+    public int Upstaffbusiness(@RequestBody Staffbusiness staffbusiness){
+        int update = service.upStaffbusiness(staffbusiness);
+        if (update>0){
+            log.debug("请假成功"+update);
+        }else{
+            log.debug("请假失败");
+        }
+        return update;
+    }
+    //员工过期出差删除
+    @PostMapping("/delstaffbusiness/{sid}")
+    public int delstaffbusiness(@PathVariable("sid") int bid){
+        int del = service.delstaffbusiness(bid);
+        if (del>0){
+            log.debug("删除成功"+del);
+        }else{
+            log.debug("删除失败");
+        }
+        return del;
     }
 }

@@ -30,7 +30,6 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
     public Staff selectStaff(String staffName, String staffPass) {
         String Pass=md5Utils.md5(staffPass);
         QueryWrapper<Staff> queryWrapper = new QueryWrapper<>();
-
         queryWrapper.eq("STAFF_NAME",staffName)
                 .eq("STAFF_PASS",Pass);
         Staff staff = staffMapper.selectOne(queryWrapper);
@@ -60,10 +59,19 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
 
     @Override
     public int addStaff(Staff staff) {
+        String pass = md5Utils.md5(staff.getStaffPass());
+        staff.setStaffPass(pass);
         int add = staffMapper.insert(staff);
         return add;
     }
 
+    @Override
+    public long staffCount() {
+        QueryWrapper<Staff> wrapper = new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
+        Long count = staffMapper.selectCount(wrapper);
+        return count;
+    }
     @Override
     public int updatePass(Staff staff) {
         int a=staffMapper.updateById(staff);

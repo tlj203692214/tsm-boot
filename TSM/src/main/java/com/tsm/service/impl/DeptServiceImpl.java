@@ -27,10 +27,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Autowired
     private DeptMapper deptMapper;
     @Override
-    public IPage<Dept> findDepts(String it, int page, int size) {
+    public IPage<Dept> findDepts(String it, int page, int size, int tid) {
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
         wrapper.eq("DELETED",0);
-        wrapper.eq("DEPT_DID",0);
+        wrapper.eq("DEPT_DID",tid);
         wrapper.like("DEPT_NAME",it);
         wrapper.orderByDesc("DEPT_ID");
         Page<Dept> page1 = new Page<>(page,size);

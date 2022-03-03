@@ -10,9 +10,14 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface StaffleaveVoMapper extends BaseMapper<StaffleaveVo> {
     @Select("select * from staffleave sl left join personal ps on sl.STAFF_ID1 = ps.STAFF_ID left join personal p " +
             "on sl.STAFF_ID2 = p.STAFF_ID" + " ${ew.customSqlSegment}" + " order by LEAVE_ID desc")//员工请假分页模糊查询
     public IPage<StaffleaveVo> findleaveVo(Page page, @Param(Constants.WRAPPER) QueryWrapper<StaffleaveVo> adminVoQueryWrapper);
+    @Select("select * from staffleave sl left join personal ps on sl.STAFF_ID1 = ps.STAFF_ID left join personal p " +
+            "on sl.STAFF_ID2 = p.STAFF_ID")
+    public List<StaffleaveVo> listleaveVo();
 }

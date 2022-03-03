@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @CrossOrigin(maxAge = 60)
@@ -22,5 +24,11 @@ public class StaffleaveVoController {
         IPage<StaffleaveVo> iPage = voService.findleaveVo(st, it, page, size);
         log.debug(iPage.toString());
         return iPage;
+    }
+    //当前时间超过员工请假结束时间修改状态为正常
+    @GetMapping("/Upstateleavevo")
+    public List<StaffleaveVo> staffleaveVoList(){
+        List<StaffleaveVo> list = voService.listStaffleaveVo();
+        return list;
     }
 }

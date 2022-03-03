@@ -69,7 +69,22 @@ public class SatffsignServiceImpl extends ServiceImpl<SatffsignMapper, Satffsign
                 s.setSignState(0);
                 System.out.println("状态"+s.getSignState());
             }
+            mapper.updateById(s);
         }
         return list;
+    }
+
+    @Override
+    public int addStaffsign(Satffsign satffsign) {
+        int add = mapper.insert(satffsign);
+        return add;
+    }
+
+    @Override
+    public Long StaffSignCount() {
+        QueryWrapper<Satffsign> wrapper = new QueryWrapper<>();
+        wrapper.notLike("SIGN_STATE",0);
+        long count = mapper.selectCount(wrapper);
+        return count;
     }
 }

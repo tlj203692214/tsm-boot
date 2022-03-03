@@ -6,4 +6,5 @@ import com.tsm.vo.AdminVo;
 
 public interface IAdminVoService extends IService<AdminVo> {
     public IPage<AdminVo> findsadmins(String ri, String st, String it, int page, int size);
+    public AdminVo admins(int aid);
 }

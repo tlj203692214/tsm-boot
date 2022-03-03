@@ -31,4 +31,7 @@ public interface IStaffService extends IService<Staff> {
         //将密码加密
         public  String md5(String staffPass);
 
+        //查询所有员工工作台
+        public long staffCount();
+
 }

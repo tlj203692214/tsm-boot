@@ -26,8 +26,8 @@ public class DeptController {
     @Autowired
     private IDeptService service;
     @GetMapping("/depts")
-    public IPage<Dept> findDepts(@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size){
-        IPage<Dept> iPage = service.findDepts(it, page, size);
+    public IPage<Dept> findDepts(@RequestParam("input") String it, @RequestParam("currentPage") int page, @RequestParam("pagesize") int size, @RequestParam("tid") int tid){
+        IPage<Dept> iPage = service.findDepts(it, page, size, tid);
         log.debug(iPage.toString());
         return iPage;
     }
