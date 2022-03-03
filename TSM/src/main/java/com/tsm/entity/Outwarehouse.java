@@ -41,11 +41,14 @@ public class Outwarehouse implements Serializable {
     @TableField("STAFF_ID")
     private int staffId;
 
-    @TableField("STAFF_ID2")
-    private int staffId2;
+   // @TableField("STAFF_ID2")
+    //private int staffId2;
 
-    @TableField("WAREHOUSE_ID")
-    private int warehouseId;
+  //  @TableField("WAREHOUSE_ID")
+   // private int warehouseId;
+
+    @TableField("PURCHASE_ID")
+    private int purchaseId;
 
     @TableField("DELETED")
     @TableLogic

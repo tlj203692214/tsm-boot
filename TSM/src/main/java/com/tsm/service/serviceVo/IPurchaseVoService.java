@@ -10,4 +10,7 @@ public interface IPurchaseVoService extends IService<PurchaseVo> {
 
     //分页模糊查询采购信息
     public IPage<PurchaseVo> selectmhPurchase(int page,int size,String name , String jcmc);
+
+    //分页模糊查询出库表
+    public IPage<PurchaseVo> selectWarehouse(int page,int size,String name );
 }

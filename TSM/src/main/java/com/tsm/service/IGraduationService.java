@@ -13,4 +13,6 @@ import com.tsm.entity.Graduation;
  */
 public interface IGraduationService extends IService<Graduation> {
 public int addgraduation(Graduation graduation);
+
+public int updatazt(Graduation graduation);
 }

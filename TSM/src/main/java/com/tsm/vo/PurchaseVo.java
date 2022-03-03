@@ -32,4 +32,18 @@ public class PurchaseVo {
 
     private int courseId;
     private String courseName;
+
+    //出库
+    private int outwarehouseId;
+    private int outwarehouseNumber;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date outwarehouseTime;
+    private int classesId;
+    private String classesName;
+
+
+
+
+
+
 }

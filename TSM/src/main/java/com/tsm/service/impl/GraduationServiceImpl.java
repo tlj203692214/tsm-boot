@@ -28,4 +28,10 @@ public class GraduationServiceImpl extends ServiceImpl<GraduationMapper, Graduat
         int a=graduationMapper.insert(graduation);
         return a;
     }
+
+    @Override
+    public int updatazt(Graduation graduation) {
+        int a=graduationMapper.updatezt(graduation);
+        return a;
+    }
 }

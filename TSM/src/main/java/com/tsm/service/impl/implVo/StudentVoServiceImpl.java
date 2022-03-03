@@ -23,8 +23,8 @@ public class StudentVoServiceImpl  extends ServiceImpl<StudentVoMapper, StudnetV
     public IPage<StudnetVo> cxstudentfy(int page, int size) {
         Page<StudnetVo> page1=new Page<>(page,size);
         QueryWrapper<StudnetVo> wrapper=new QueryWrapper<>();
-        wrapper.orderByDesc("s.STUDENT_ID");
         wrapper.eq("s.DELETED",0);
+        wrapper.orderByDesc("s.STUDENT_ID");
         IPage<StudnetVo> iPage=mapper.ipage(page1,wrapper);
         return iPage;
     }
@@ -68,6 +68,8 @@ if(values.equals("学生姓名")) {
         wrapper.isNull("c.CLASSES_ID");
     }
 }
+        wrapper.eq("s.DELETED",0);
+        wrapper.orderByDesc("s.STUDENT_ID");
         IPage<StudnetVo> iPage=mapper.mohustudent(page1,wrapper);
         return iPage;
     }

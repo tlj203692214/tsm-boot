@@ -19,4 +19,8 @@ public interface IRefundService extends IService<Refund> {
         public int updateState(int id);
 
         public int deleteById(int id);
+        //逻辑删除
+        public int udatezt(Refund refund);
+        //添加退费
+        public int addrefund(Refund refund);
 }

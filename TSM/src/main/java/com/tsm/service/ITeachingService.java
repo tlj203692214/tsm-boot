@@ -12,5 +12,8 @@ import com.tsm.entity.Teaching;
  * @since 2021-12-09
  */
 public interface ITeachingService extends IService<Teaching> {
-
+    //添加排课表
+public int addteaching(Teaching teaching);
+    //查询最大编号
+    public int selectmax();
 }

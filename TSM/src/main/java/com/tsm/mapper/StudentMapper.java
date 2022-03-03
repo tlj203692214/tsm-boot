@@ -19,11 +19,11 @@ import org.apache.ibatis.annotations.Update;
  */
 @Mapper
 public interface StudentMapper extends BaseMapper<Student> {
-    @Update("update student  set CLASSES_ID = #{classesId,jdbcType=INTEGER},COURSE_ID = #{courseid,jdbcType=INTEGER}" +
+    @Update("update student  set CLASSES_ID = #{classesId,jdbcType=INTEGER}" +
             "where student_id = #{studentid}")
-    int updateSysRoleById(Student student, UpdateWrapper<Student> wrapper, @Param("classesId") Long classesId, @Param("courseid") Long courseid,@Param("studentid") int studentid);
+    int updateSysRoleById(Student student, UpdateWrapper<Student> wrapper, @Param("classesId") Long classesId,@Param("studentid") int studentid);
 
-    @Update("update Student set deleted=1 where STUDENT_ID = #{studentId}")
+    @Update("update Student set deleted=1,CLASSES_ID=#{classesId,jdbcType=INTEGER}  where STUDENT_ID = #{studentId}")
     int updatestudent(Student student);
 
 

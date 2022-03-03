@@ -41,8 +41,8 @@ public class Refund implements Serializable {
     @TableField("LEAVESCHOOL_ID")
     private int leaveschoolId;
 
-    @TableField("CLASSRECORD_ID")
-    private int classrecordId;
+//    @TableField("CLASSRECORD_ID")
+//    private int classrecordId;
 
     @TableField("COURSE_ID")
     private int courseId;

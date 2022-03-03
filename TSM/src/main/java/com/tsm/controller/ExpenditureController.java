@@ -23,11 +23,22 @@ public class ExpenditureController {
 
     @Autowired
     private IExpenditureService expenditureService;
-
-//    @PostMapping("/interexpenditure")
-//    public int interexpenditure(@RequestBody Expenditure expenditure){
-//        int a=expenditureService.addexpenditure(expenditure);
-//        return a;
-//    }
-
+    //添加支出表
+    @PostMapping("/interexpenditure")
+    public int interexpenditure(@RequestBody Expenditure expenditure){
+        int a=expenditureService.addexpenditure(expenditure);
+        return a;
+    }
+    //修改支出表金额
+    @PostMapping("/updateexpend")
+    public int updateexpend(@RequestBody Expenditure expenditure){
+        int a = expenditureService.updateexpend(expenditure);
+        return a;
+    }
+    //退学添加支出
+    @PostMapping("/addexpend")
+    public int addexpend(@RequestBody Expenditure expenditure){
+        int a=expenditureService.addexpend(expenditure);
+        return a;
+    }
 }

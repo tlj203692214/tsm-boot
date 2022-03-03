@@ -12,5 +12,7 @@ import com.tsm.entity.Leaveschool;
  * @since 2021-12-09
  */
 public interface ILeaveschoolService extends IService<Leaveschool> {
+    public int addleaveschool(Leaveschool leaveschool);
 
+    public int selectid();
 }

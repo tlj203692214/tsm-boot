@@ -18,6 +18,7 @@ public class GraduationVoserviceImpl extends ServiceImpl<GraduationVoMapper, Gra
     public IPage<GraduationVo> fyselect(int page, int size) {
         Page<GraduationVo> iPage=new Page<>(page,size);
         QueryWrapper<GraduationVo> wrapper=new QueryWrapper<>();
+        wrapper.eq("gra.DELETED",0);
         wrapper.orderByDesc("gra.GRADUATION_ID");
         IPage<GraduationVo> iPage1=graduationVoMapper.selectPayMoneyVo(iPage,wrapper);
         return iPage1;
@@ -37,6 +38,8 @@ public class GraduationVoserviceImpl extends ServiceImpl<GraduationVoMapper, Gra
         } else {
             log.debug(bj + "bj是空");
         }
+        wrapper.eq("gra.DELETED",0);
+        wrapper.orderByDesc("gra.GRADUATION_ID");
         IPage<GraduationVo> iPage=graduationVoMapper.selectPayMoneyVo(page1,wrapper);
         return iPage;
     }
@@ -55,6 +58,8 @@ public class GraduationVoserviceImpl extends ServiceImpl<GraduationVoMapper, Gra
         } else {
             log.debug(bj + "bj是空");
         }
+        wrapper.eq("gra.DELETED",0);
+        wrapper.orderByDesc("gra.GRADUATION_ID");
         IPage<GraduationVo> iPage=graduationVoMapper.selectPayMoneyVo(page1,wrapper);
         return iPage;
     }

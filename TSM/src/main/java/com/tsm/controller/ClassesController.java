@@ -63,4 +63,10 @@ public class ClassesController {
         int a=service.updataclasseszt(classes);
         return a;
     }
+
+    @GetMapping("/cxclasscountid")
+    public List<Classes> cxclassesid(@RequestParam("courid") int id){
+        List<Classes> list=service.cxid(id);
+        return list;
+    }
 }

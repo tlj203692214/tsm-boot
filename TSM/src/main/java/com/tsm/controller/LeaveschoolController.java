@@ -1,8 +1,10 @@
 package com.tsm.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tsm.entity.Leaveschool;
+import com.tsm.service.ILeaveschoolService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -15,5 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/leaveschool")
 public class LeaveschoolController {
-
+@Autowired
+    private ILeaveschoolService service;
+@PostMapping("/addleave")
+    public int addleave(@RequestBody Leaveschool leaveschool){
+    int a=service.addleaveschool(leaveschool);
+    return a;
+}
+@GetMapping("/selectid")
+    public int selectid(){
+    int a=service.selectid();
+    return a;
+}
 }
