@@ -42,8 +42,7 @@ public class StaffController {
     public Staff selectStaff(@RequestBody Staff staff) {
         String name = staff.getStaffName();
         String pass = staff.getStaffPass();
-        String s = md5Utils.md5(pass);
-        Staff staff2 = iStaffService.selectStaff(name, s);
+        Staff staff2 = iStaffService.selectStaff(name, pass);
         return staff2;
     }
 
