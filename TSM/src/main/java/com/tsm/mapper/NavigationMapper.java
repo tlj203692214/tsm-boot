@@ -18,10 +18,11 @@ import java.util.Set;
  */
 @Mapper
 public interface NavigationMapper extends BaseMapper<Navigation> {
-    @Select("select * from POSITION_NAV pn \n" +
+    @Select("select * from POSITION_NAV pn\n" +
             "left join NAVIGATION n on pn.NAV_ID = n.NAVIGATION_ID\n" +
             "left join POSITION p on pn.POSITION_id=p.POSITION_ID\n" +
             "left join STAFF_POSITION sp on p.POSITION_ID=sp.POSITION_ID \n" +
-            "left join STAFF s on sp.staff_id=s.staff_id where s.staff_id=#{id}")
+            "left join STAFF s on sp.staff_id=s.staff_id \n" +
+            "where s.staff_id=#{id} and pn.deleted=0 and sp.DELETED=0")
     List<Navigation> selectNavAll(int id);
 }

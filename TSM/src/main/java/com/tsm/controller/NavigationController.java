@@ -29,6 +29,7 @@ public class NavigationController {
     public List<Navigation> selectAll(@PathVariable("id") int id){
         List<Navigation> list = navigationService.selectAll(id);
         List<Navigation> list1=new ArrayList<>();
+
         for (Navigation navigation : list) {
             for (Navigation n : list) {
                 if(n.getNavigationPid()==navigation.getNavigationId()){
@@ -37,8 +38,10 @@ public class NavigationController {
             }
             if (navigation.getNavigationPid()==0){
                 list1.add(navigation);
+
             }
         }
+        System.out.println(list1+"权限数据");
         return list1;
     }
 
