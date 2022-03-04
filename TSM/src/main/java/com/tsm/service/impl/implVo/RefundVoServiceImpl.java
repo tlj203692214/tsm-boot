@@ -56,6 +56,7 @@ public class RefundVoServiceImpl extends ServiceImpl<RefundVoMapper, RefundVo> i
     @Override
     public double selectRefundVo() {
         QueryWrapper<RefundVo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByDesc("r.REFUND_ID");
         List<RefundVo> refundVos = refundVoMapper.selectRefundVo(queryWrapper);
         int a = refundVoMapper.countMoney();
         double money = 0;

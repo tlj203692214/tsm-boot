@@ -44,7 +44,7 @@ public interface ExpenditureVoMapper extends BaseMapper<ExpenditureVo> {
             "left join staff s on p.staff_id=s.staff_id \n" +
             "left join COURSE c on p.course_id=c.course_id \n" +
             "left join LEAVESCHOOL l on r.LEAVESCHOOL_id = l.LEAVESCHOOL_id\n" +
-            "left join STUDENT t on l.student_id=t.student_id")
+            "left join STUDENT t on l.student_id=t.student_id order by e.expenditure_id desc")
     public int countMoney();
 
     /**

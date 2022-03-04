@@ -39,7 +39,7 @@ public class ExpenditureVoServiceImpl extends ServiceImpl<ExpenditureVoMapper, E
     public IPage<ExpenditureVo> selectExpenditurePage(int page, int size) {
         Page<ExpenditureVo> page1 = new Page<>(page, size);
         QueryWrapper<ExpenditureVo> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc("EXPENDITURE_ID");
+        queryWrapper.orderByDesc("e.EXPENDITURE_ID");
         IPage<ExpenditureVo> expenditureIPage = expenditureMapper.sel(page1, queryWrapper);
         return expenditureIPage;
     }

@@ -21,12 +21,12 @@ import java.util.List;
  */
 @Repository
 public interface StaffVoMapper extends BaseMapper<StaffVo> {
-    @Select("select sp.STAFFPOSITION_ID,sp.DELETED as spDel,s.STAFF_ID,s.STAFF_NAME,s.STAFF_STATE,p.POSITION_ID,p.POSITION_NAME,p.POSITION_REMARK,p.POSITION_CREATED,p.POSITION_UPDATED,p.POSITION_STATE,d.DEPT_ID,d.DEPT_NAME,per.PERSONAL_ID,per.PERSONAL_NAME,per.PERSONAL_AGE,per.PERSONAL_SEX,per.PERSONAL_BIRTHDAY,per.PERSONAL_IDCARD,per.PERSONAL_PHONE,per.ENTRY_TIME,per.PERSONAL_STATE\n" +
+    @Select("select a.ADMINISTRATION_ID,a.DELETED as spDel,s.STAFF_ID,s.STAFF_NAME,s.STAFF_STATE,p.POSITION_ID,p.POSITION_NAME,p.POSITION_REMARK,p.POSITION_CREATED,p.POSITION_UPDATED,p.POSITION_STATE,d.DEPT_ID,d.DEPT_NAME,per.PERSONAL_ID,per.PERSONAL_NAME,per.PERSONAL_AGE,per.PERSONAL_SEX,per.PERSONAL_BIRTHDAY,per.PERSONAL_IDCARD,per.PERSONAL_PHONE,per.ENTRY_TIME,per.PERSONAL_STATE\n" +
             "from staff s\n" +
-            "left join STAFF_POSITION sp  on sp.STAFF_ID = s.STAFF_ID \n" +
-            "left join POSITION p on sp.POSITION_ID = p.POSITION_ID \n" +
+            "left join ADMINISTRATION a  on a.STAFF_ID = s.STAFF_ID \n" +
+            "left join POSITION p on a.POSITION_ID = p.POSITION_ID \n" +
             "left join DEPT d on p.dept_id = d.DEPT_ID\n" +
-            "left join personal per on per.staff_id = s.staff_id where sp.STAFFPOSITION_ID is not null and per.personal_name like '%${name}%' and sp.DELETED=0 ")
+            "left join personal per on per.staff_id = s.staff_id where a.DELETED=0 and per.personal_name like '%${name}%'")
     public IPage<StaffVo> selectAllStaff(Page page,@Param("name") String name);
 
     @Select("select p.position_id from staff_position sp \n" +

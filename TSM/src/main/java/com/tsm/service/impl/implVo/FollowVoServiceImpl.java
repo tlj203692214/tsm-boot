@@ -70,9 +70,8 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-//        if (gjr!=null&&gjr.length()!=0){
-//            queryWrapper.like("sta.STAFF_ID",gjr);
-//        }
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
@@ -102,6 +101,8 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
                queryWrapper.eq("cou.COURSE_ID",yxkc);
            }
        }
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
         return followVoIPage;
     }
@@ -135,9 +136,8 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-//        if (gjr!=null&&gjr.length()!=0){
-//            queryWrapper.like("sta.STAFF_ID",gjr);
-//        }
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
@@ -181,9 +181,8 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-//        if (gjr!=null&&gjr.length()!=0){
-//            queryWrapper.like("sta.STAFF_ID",gjr);
-//        }
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;
@@ -218,9 +217,8 @@ public class FollowVoServiceImpl extends ServiceImpl<FollowVoMapper, FollowVo> i
         }else{
             System.out.println("yxkc空");
         }
-//        if (gjr!=null&&gjr.length()!=0){
-//            queryWrapper.like("sta.STAFF_ID",gjr);
-//        }
+        queryWrapper.eq("s.DELETED",0);
+        queryWrapper.orderByDesc("s.STUDENTFILES_ID");
         IPage<FollowVo> followVoIPage=followVoMapper.selectmohufollowvo(followVoPage,queryWrapper);
 
         return followVoIPage;

@@ -31,6 +31,7 @@ public class ChannelServiceImpl extends ServiceImpl<ChannelMapper, Channel> impl
     public IPage<Channel> fycxchannel(int page, int size) {
         Page<Channel> page1=new Page<>(page,size);
         QueryWrapper<Channel> wrapper=new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
         wrapper.orderByDesc("CHANNEL_ID");
         IPage<Channel> channelIPage=channelMapper.selectPage(page1,wrapper);
         return channelIPage;
@@ -40,6 +41,7 @@ public class ChannelServiceImpl extends ServiceImpl<ChannelMapper, Channel> impl
     public IPage<Channel> ancxchannel(int page, int size, String channelLoc) {
         Page<Channel> page1=new Page<>(page,size);
         QueryWrapper<Channel> wrapper = new QueryWrapper<>();
+        wrapper.eq("DELETED",0);
         wrapper
                .like("CHANNEL_LOC",channelLoc).orderByDesc("CHANNEL_ID")
         ;

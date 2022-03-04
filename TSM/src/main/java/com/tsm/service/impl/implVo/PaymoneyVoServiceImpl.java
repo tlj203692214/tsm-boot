@@ -33,7 +33,7 @@ public class PaymoneyVoServiceImpl extends ServiceImpl<PaymoneyVoMapper, payMone
     public IPage<payMoneyVo> selectPayMoney(int page, int pageInfo, String stuname, String payName, int state) {
         Page<payMoneyVo> page1 = new Page<>(page, pageInfo);
         QueryWrapper<payMoneyVo> queryWrapper = new QueryWrapper<>();
-
+        queryWrapper.orderByDesc("p.PAYMONEY_ID");
         queryWrapper.like("st.STUDENTFILES_NAME", stuname)
                 .eq("p.DELETED", 0);
         if (payName.equals("全部支付")) {
